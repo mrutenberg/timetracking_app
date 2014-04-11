@@ -1,0 +1,68 @@
+{
+  "app": {
+    "description":  "Helps you track time spent on tickets.",
+    "name": "Time Tracking",
+    "parameters": {
+      "time_field_id": {
+        "label": "Time Field ID",
+        "helpText": "The ID of a custom numeric field that will hold the total time."
+      },
+      "time_object_field_id": {
+        "label": "Config Field ID",
+        "helpText": "The ID of a custom multi-line field that will hold the config/timelogs."
+      },
+      "display_timer": {
+        "label": "Display time",
+        "helpText": "Agent can see the timers (current/total)"
+      },
+      "display_timelogs": {
+        "label": "Display Timelogs",
+        "helpText": "Agent can see timelogs."
+      },
+      "auto_pause_resume": {
+        "label": "Auto Pause/Resume",
+        "helpText": "The time will pause when the focus on the ticket is lost and resume itself as soon as the agent is back on the ticket."
+      },
+      "manual_pause_resume": {
+        "label": "Manual Pause/Resume/Reset",
+        "helpText": "Agent can manually pause/resume/reset the timer."
+      },
+      "reset": {
+        "label": "Reset current time",
+        "helpText": "Agent can reset his current time spent on a ticket."
+      },
+      "time_submission": {
+        "label": "Time submission",
+        "helpText": "Agent submit his own time."
+      },
+      "time_unit": {
+        "label": "Unit of time",
+        "helpText": "Choose in which unit the time will be saved. You can choose millisecond/second/minute. Defaults to second."
+      }
+    }
+  },
+  "views": {
+    "main": {
+      "pause": "Pause",
+      "current_time_spent": "Current Time Spent",
+      "total_time_spent": "Total Time Spent",
+      "pause_resume": "Pause/Resume",
+      "reset": "Reset",
+      "timelogs": "Timelogs",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Time",
+        "status": "Status"
+      }
+    },
+    "modal": {
+      "body": "The system shows that you spent the following time on this ticket, you can either edit it or leave it as is and click \"Save Ticket\".",
+      "close": "Close",
+      "save": "Save Ticket"
+    }
+  },
+  "errors": {
+    "save_hook": "You need to submit a time before saving this ticket!",
+    "bad_time_format": "Bad time format (HH:MM:SS)."
+  }
+}

@@ -1,0 +1,31 @@
+.current-timer {
+  font-weight: bold;
+}
+
+.live-timer {
+  font-size: 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input {
+  text-align: inherit;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.timelogs-container {
+  display: none;
+}
+
+table {
+  margin-bottom: none;
+}
+
+.btn-group {
+  display: inline-block;
+  padding-top: 7px;
+}

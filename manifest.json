@@ -1,0 +1,63 @@
+{
+  "name": "Time Tracking",
+  "author": {
+    "name": "Zendesk",
+    "email": "support@zendesk.com",
+    "url": "https://www.zendesk.com"
+  },
+
+  "defaultLocale": "en",
+  "private": false,
+  "singleInstall": true,
+  "location": [ "new_ticket_sidebar", "ticket_sidebar" ],
+  "frameworkVersion": "1.0",
+  "version": "0.1",
+
+  "parameters": [
+    {
+      "name": "time_field_id",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "time_object_field_id",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "display_timer",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "display_timelogs",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "auto_pause_resume",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "manual_pause_resume",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "reset",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "time_submission",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "time_unit",
+      "type": "text",
+      "default": "second"
+    }
+  ]
+}
