@@ -20,7 +20,7 @@
       "required": true
     },
     {
-      "name": "time_object_field_id",
+      "name": "total_time_field_id",
       "type": "number",
       "required": true
     },
@@ -53,11 +53,6 @@
       "name": "time_submission",
       "type": "checkbox",
       "default": true
-    },
-    {
-      "name": "time_unit",
-      "type": "text",
-      "default": "second"
     }
   ]
 }

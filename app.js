@@ -105,7 +105,7 @@
       var timeString = this.$('.modal-time').val();
 
       try {
-        this.updateTime(this.TimeHelper.timeStringToMs(timeString));
+        this.updateTime(this.TimeHelper.timeStringToSeconds(timeString));
         this.saveHookPromiseIsDone = true; // Flag that saveHookPromiseDone is gonna be called after hiding the modal
         this.$('.modal').modal('hide');
         this.saveHookPromiseDone();
@@ -149,11 +149,11 @@
      */
 
     initialize: function() {
+      var timelogs = [];
+
       this.hideFields();
 
-      this.time = this.getTimeObject();
       this.timeLoopID = this.setTimeLoop();
-      var timelogs = this.TimeHelper.prettyTimeLogs(this.time.logs);
 
       this.switchTo('main', {
         manual_pause_resume: this.setting('manual_pause_resume'),
@@ -170,14 +170,14 @@
     },
 
     updateMainView: function(time) {
-      this.$('.live-timer').html(this.TimeHelper.msToTime(time));
-      this.$('.live-totaltimer').html(this.TimeHelper.msToTime(
-        this.time.value + time
+      this.$('.live-timer').html(this.TimeHelper.secondsToTimeString(time));
+      this.$('.live-totaltimer').html(this.TimeHelper.secondsToTimeString(
+        this.totalTime() + time
       ));
     },
 
     hideFields: function() {
-      _.each([this.timeFieldLabel(), this.timeObjectFieldLabel()], function(f) {
+      _.each([this.timeFieldLabel(), this.totalTimeFieldLabel()], function(f) {
         var field = this.ticketFields(f);
 
         if (field) {
@@ -191,43 +191,21 @@
      */
 
     setTimeLoop: function() {
-      var interval = 1000;
-
       this.elapsedTime = 0;
 
       return setInterval(function() {
         if (!this.paused) {
-          this.elapsedTime += interval;
+          // Update elapsed time by 1 second
+          this.elapsedTime += 1;
 
           this.updateMainView(this.elapsedTime);
         }
-      }.bind(this), interval);
+      }.bind(this), 1000);
     },
 
     updateTime: function(time) {
-      this.time.logs.push({
-        time: time,
-        submitter_id: this.currentUser().id(),
-        submitter_name: this.currentUser().name(),
-        submitted_at: new Date().getTime(),
-        status: this.ticket().status()
-      });
-
-      this.time.value += time;
-
-      this.saveTimeObject();
-    },
-
-    saveTimeObject: function() {
-      this.ticket().customField(
-        this.timeFieldLabel(),
-        String(this.normalizeTimeForSave(this.time.value))
-      );
-
-      this.ticket().customField(
-        this.timeObjectFieldLabel(),
-        JSON.stringify(this.time)
-      );
+      this.time(time);
+      this.totalTime(this.totalTime() + time);
     },
 
     autoResume: function() {
@@ -239,7 +217,7 @@
     },
 
     renderTimeModal: function() {
-      this.$('.modal-time').val(this.TimeHelper.msToTime(this.elapsedTime));
+      this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
       this.$('.modal').modal('show');
     },
 
@@ -255,31 +233,16 @@
       }, 'Time,Submitter,Submitted At,status\n', this);
     },
 
-    // Returns a new time in unit specified by the setting (mm|ss|ms)
-    normalizeTimeForSave: function(time) {
-      var timeUnits = {
-                        "minute": 60000,
-                        "second": 1000,
-                        "millisecond": 1
-                       },
-      exponent = timeUnits[this.setting('time_unit')] || timeUnits.second;
-
-
-      return Math.floor(time / exponent);
+    time: function(time) {
+      return this.getOrSetField(this.timeFieldLabel(), time);
     },
 
-    getTimeObject: function() {
-      var timeObject = this.ticket().customField(this.timeObjectFieldLabel());
-
-      if (timeObject) {
-        return JSON.parse(timeObject);
-      } else {
-        return { value: 0, logs: [] };
-      }
+    totalTime: function(time) {
+      return this.getOrSetField(this.totalTimeFieldLabel(), time);
     },
 
-    timeObjectFieldLabel: function() {
-      return this.buidFieldLabel(this.setting('time_object_field_id'));
+    totalTimeFieldLabel: function() {
+      return this.buidFieldLabel(this.setting('total_time_field_id'));
     },
 
     timeFieldLabel: function() {
@@ -290,33 +253,37 @@
       return helpers.fmt('custom_field_%@', id);
     },
 
+    getOrSetField: function(fieldLabel, value) {
+      if (value) {
+        return this.ticket().customField(fieldLabel, value);
+      }
+
+      return parseInt((this.ticket().customField(fieldLabel) || 0), 0);
+    },
+
     TimeHelper: {
-      msToTime: function(millis) {
-        var time = parseInt(millis / 1000, 10),
-            seconds = time % 60;
-
-        time = parseInt(time / 60, 10);
-
-        var minutes = time % 60,
-        hours = parseInt(time / 60, 10) % 24;
+      secondsToTimeString: function(seconds) {
+        var hours   = Math.floor(seconds / 3600),
+            minutes = Math.floor((seconds - (hours * 3600)) / 60);
+            secs    = seconds - (hours * 3600) - (minutes * 60);
 
         return helpers.fmt('%@:%@:%@',
                            this.addInsignificantZero(hours),
                            this.addInsignificantZero(minutes),
-                           this.addInsignificantZero(seconds));
+                           this.addInsignificantZero(secs));
       },
 
-      timeStringToMs: function(str) {
+      timeStringToSeconds: function(timeString) {
         var re = /^([\d]{2}):([\d]{2}):([\d]{2})$/,
-            result = re.exec(str);
+            result = re.exec(timeString);
 
         if (!result ||
             result.length != 4) {
           throw { message: 'bad_time_format' };
         } else {
-          return (parseInt(result[1], 10) * 3600000) +
-            (parseInt(result[2], 10) * 60000) +
-            (parseInt(result[3], 10) * 1000); // hours + minutes + seconds in milliseconds
+          return (parseInt(result[1], 10) * 3600) +
+            (parseInt(result[2], 10) * 60) +
+            (parseInt(result[3], 10));
         }
       },
 
