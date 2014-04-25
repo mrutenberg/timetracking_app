@@ -37,6 +37,13 @@
       }
     }
   },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "p",
+    "hold": "h",
+    "solved": "s"
+  },
   "views": {
     "main": {
       "pause": "Pause",
@@ -48,7 +55,7 @@
       "timelogs_table": {
         "agent": "Agent",
         "time": "Time",
-        "date": "Date"
+        "status": "Status"
       }
     },
     "modal": {

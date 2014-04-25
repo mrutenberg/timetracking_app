@@ -85,14 +85,26 @@
 
     onFetchAuditsDone: function(data) {
       var timelogs = _.reduce(data.audits, function(memo, audit) {
-        var event = _.find(audit.events, function(event) {
+        var newStatus = _.find(audit.events, function(event) {
+          return event.field_name == 'status';
+        }, this),
+        event = _.find(audit.events, function(event) {
           return event.field_name == this.setting('time_field_id');
-        }, this);
+        }, this),
+        status;
 
         if (event) {
+          if (newStatus){
+            status = newStatus.value;
+          } else {
+            status = _.last(memo).status;
+          }
+
           memo.push({
             time: this.TimeHelper.secondsToTimeString(parseInt(event.value, 0)),
             date: new Date(audit.created_at).toLocaleString(),
+            status: status,
+            localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
             user: _.find(data.users, function(user) {
               return user.id === audit.author_id;
             })
@@ -217,6 +229,8 @@
 
         }));
 
+      this.$('tr').tooltip({ placement: 'left', html: true });
+
       this.$('.timelogs-opener')
         .removeAttr('disabled')
         .removeClass('disabled');
@@ -310,7 +324,7 @@
     TimeHelper: {
       secondsToTimeString: function(seconds) {
         var hours   = Math.floor(seconds / 3600),
-            minutes = Math.floor((seconds - (hours * 3600)) / 60);
+            minutes = Math.floor((seconds - (hours * 3600)) / 60),
             secs    = seconds - (hours * 3600) - (minutes * 60);
 
         return helpers.fmt('%@:%@:%@',
