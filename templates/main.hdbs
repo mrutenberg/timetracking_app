@@ -26,41 +26,11 @@
     {{#if display_reset}}
     <a class="btn reset" title="{{t "views.main.reset"}}"><i class="icon-repeat"></i></a>
     {{/if}}
-    {{#if display_timelogs}}
-    {{#if timelogs}}
-    <a class="btn timelogs-opener"><strong>{{t "views.main.timelogs"}}</strong></a>
-    {{/if}}
-    {{/if}}
+    <a class="btn timelogs-opener disabled" disabled="disabled"><strong>{{t "views.main.timelogs"}}</strong></a>
   </div>
 </div>
 
-{{#if timelogs}}
-<div class="row-fluid timelogs-container">
-  <table class="table">
-    <thead>
-      <th>{{t "views.main.timelogs_table.agent"}}</th>
-      <th>{{t "views.main.timelogs_table.time"}}</th>
-      <th>{{t "views.main.timelogs_table.status"}}</th>
-    </thead>
-    <tbody>
-      {{#each timelogs}}
-      <tr data-toggle="tooltip" title="{{date_submitted_at}}">
-        <td>{{submitter_name}}</td>
-        <td>{{time}}</td>
-        <td>
-          <span class="ticket_status_label {{status}}">
-            <strong>{{status}}</strong>
-          </span>
-        </td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  <div class="text-center">
-    <a download="{{timelogs_csv_filename}}" href="data:text/csv;charset=utf-8,{{timelogs_csv_string}}" class="btn"><i class="icon-file"></i> CSV Timelogs</a>
-  </div>
-</div>
-{{/if}}
+<div class="row-fluid timelogs-container"></div>
 
 <div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">

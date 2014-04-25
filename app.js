@@ -3,17 +3,29 @@
   'use_strict';
 
   return {
+    requests: {
+      fetchAudits: function() {
+        return {
+          url: helpers.fmt(
+            '/api/v2/tickets/%@/audits.json?include=users',
+            this.ticket().id()
+          )
+        };
+      }
+    },
+
     events: {
       'app.activated'           : 'onAppActivated',
       'app.deactivated'         : 'onAppFocusOut',
       'app.willDestroy'         : 'onAppWillDestroy',
       'ticket.save'             : 'onTicketSave',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
+      'fetchAudits.done'        : 'onFetchAuditsDone',
       'click .pause'            : 'onPauseClicked',
       'click .resume'           : 'onResumeClicked',
       'click .reset'            : 'onResetClicked',
       'click .modal-save'       : 'onModalSaveClicked',
-      'click .timelogs-opener'  : 'onTimeLogsContainerClicked',
+      'click a.timelogs-opener:not([disabled])'  : 'onTimeLogsContainerClicked',
       'shown .modal'            : 'onModalShown',
       'hidden .modal'           : 'onModalHidden'
     },
@@ -26,6 +38,10 @@
     onAppActivated: function(app) {
       if (app.firstLoad) {
         _.defer(this.initialize.bind(this));
+
+        if (this.ticket().id() && this.setting('display_timelogs')) {
+          this.ajax('fetchAudits');
+        }
       } else {
         this.onAppFocusIn();
       }
@@ -65,6 +81,28 @@
 
         return true;
       }
+    },
+
+    onFetchAuditsDone: function(data) {
+      var timelogs = _.reduce(data.audits, function(memo, audit) {
+        var event = _.find(audit.events, function(event) {
+          return event.field_name == this.setting('time_field_id');
+        }, this);
+
+        if (event) {
+          memo.push({
+            time: this.TimeHelper.secondsToTimeString(parseInt(event.value, 0)),
+            date: new Date(audit.created_at).toLocaleString(),
+            user: _.find(data.users, function(user) {
+              return user.id === audit.author_id;
+            })
+          });
+        }
+
+        return memo;
+      }, [], this);
+
+      this.renderTimelogs(timelogs.reverse());
     },
 
     onPauseClicked: function(e) {
@@ -149,21 +187,14 @@
      */
 
     initialize: function() {
-      var timelogs = [];
-
       this.hideFields();
 
       this.timeLoopID = this.setTimeLoop();
 
       this.switchTo('main', {
         manual_pause_resume: this.setting('manual_pause_resume'),
-        timelogs: timelogs,
         display_reset: this.setting('reset'),
-        display_timer: this.setting('display_timer'),
-        display_timelogs: this.setting('display_timelogs'),
-        timelogs_csv_filename: helpers.fmt('ticket-timelogs-%@',
-                                           this.ticket().id()),
-        timelogs_csv_string: encodeURI(this.timelogsToCsvString(timelogs))
+        display_timer: this.setting('display_timer')
       });
 
       this.$('tr').tooltip({ placement: 'left', html: true });
@@ -174,6 +205,21 @@
       this.$('.live-totaltimer').html(this.TimeHelper.secondsToTimeString(
         this.totalTime() + time
       ));
+    },
+
+    renderTimelogs: function(timelogs) {
+      this.$('.timelogs-container')
+        .html(this.renderTemplate('timelogs', {
+          timelogs: timelogs,
+          csv_filename: helpers.fmt('ticket-timelogs-%@',
+                                    this.ticket().id()),
+          csv_string: encodeURI(this.timelogsToCsvString(timelogs))
+
+        }));
+
+      this.$('.timelogs-opener')
+        .removeAttr('disabled')
+        .removeClass('disabled');
     },
 
     hideFields: function() {
@@ -227,12 +273,6 @@
      *
      */
 
-    timelogsToCsvString: function(logs) {
-      return _.reduce(logs, function(memo, log) {
-        return memo + helpers.fmt('%@\n', [ log.time, log.submitter_name, log.date_submitted_at, log.status ]);
-      }, 'Time,Submitter,Submitted At,status\n', this);
-    },
-
     time: function(time) {
       return this.getOrSetField(this.timeFieldLabel(), time);
     },
@@ -259,6 +299,12 @@
       }
 
       return parseInt((this.ticket().customField(fieldLabel) || 0), 0);
+    },
+
+    timelogsToCsvString: function(timelogs) {
+      return _.reduce(timelogs, function(memo, timelog) {
+        return memo + helpers.fmt('%@\n', [ timelog.time, timelog.user.name, timelog.date].join());
+      }, 'Time,Submitter,Submitted At\n', this);
     },
 
     TimeHelper: {
@@ -289,20 +335,6 @@
 
       addInsignificantZero: function(n) {
         return ( n < 10 ? '0' : '') + n;
-      },
-
-      prettyTimeLogs: function(logs) {
-        return _.reduce(logs, function(memo, log) {
-          var logDecorator = _.clone(log),
-              submitted_at = new Date(log.submitted_at);
-
-          logDecorator.date_submitted_at = submitted_at.toLocaleString();
-          logDecorator.time = this.msToTime(log.time);
-
-          memo.push(logDecorator);
-
-          return memo;
-        }, [], this);
       }
     }
   };

@@ -48,7 +48,7 @@
       "timelogs_table": {
         "agent": "Agent",
         "time": "Time",
-        "status": "Status"
+        "date": "Date"
       }
     },
     "modal": {
