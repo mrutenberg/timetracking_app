@@ -1,5 +1,9 @@
 {{#if timelogs}}
-  <table class="table">
+  <div class="heading">
+    <strong>{{t "views.timelogs.title"}}</strong>
+    <a download="{{csv_filename}}" href="data:text/csv;charset=utf-8,{{csv_string}}" class="csv-export pull-right">{{t "views.timelogs.csv_export"}}</a>
+  </div>
+  <table class="table table-condensed">
     <thead>
       <th>{{t "views.main.timelogs_table.status"}}</th>
       <th>{{t "views.main.timelogs_table.agent"}}</th>
@@ -19,7 +23,4 @@
       {{/each}}
     </tbody>
   </table>
-  <div class="text-center">
-    <a download="{{csv_filename}}" href="data:text/csv;charset=utf-8,{{csv_string}}" class="btn"><i class="icon-file"></i> CSV Timelogs</a>
-  </div>
 {{/if}}

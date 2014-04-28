@@ -1,32 +1,21 @@
 <div class="timers {{#unless display_timer }}hidden{{/unless}}">
   <div class="row-fluid current-timer">
-    <div class="span8">
-      {{t "views.main.current_time_spent"}}:
+    <div class="span6">
+      <div class="live-timer ">00:00:00</div>
     </div>
-    <div class="span4">
-      <div class="live-timer  pull-right">00:00:00</div>
+    <div class="span6">
+      <div class="text-center pull-right">
+        <button class="btn play" title="{{t "views.main.play"}}" {{#unless manual_pause_resume}}disabled{{/unless}}><i class="icon-time-play active"></i></button>
+        <button class="btn pause" title="{{t "views.main.pause"}}" {{#unless manual_pause_resume}}disabled{{/unless}}><i class="icon-time-pause"></i></button>
+        <button class="btn reset" title="{{t "views.main.reset"}}" {{#unless display_reset}}disabled{{/unless}}><i class="icon-time-reset"></i></button>
+      </div>
     </div>
   </div>
 
-  <div class="row-fluid">
-    <div class="span8">
-      {{t "views.main.total_time_spent"}}:
+  <div class="row-fluid total-time">
+    <div class="span12">
+      <strong>{{t "views.main.total_time_spent"}}</strong>: <span class="live-totaltimer">00:00:00</span>
     </div>
-    <div class="span4">
-      <div class="live-totaltimer pull-right">00:00:00</div>
-    </div>
-  </div>
-</div>
-
-<div class="text-center">
-  <div class="btn-group">
-    {{#if manual_pause_resume}}
-    <a class="btn pause" title="{{t "views.main.pause_resume"}}"><i class="icon-pause"></i></a>
-    {{/if}}
-    {{#if display_reset}}
-    <a class="btn reset" title="{{t "views.main.reset"}}"><i class="icon-repeat"></i></a>
-    {{/if}}
-    <a class="btn timelogs-opener disabled" disabled="disabled"><strong>{{t "views.main.timelogs"}}</strong></a>
   </div>
 </div>
 

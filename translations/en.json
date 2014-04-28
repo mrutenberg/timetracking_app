@@ -47,9 +47,9 @@
   "views": {
     "main": {
       "pause": "Pause",
-      "current_time_spent": "Current Time Spent",
-      "total_time_spent": "Total Time Spent",
-      "pause_resume": "Pause/Resume",
+      "total_time_spent": "Total time",
+      "play": "Play",
+      "pause": "Pause",
       "reset": "Reset",
       "timelogs": "Timelogs",
       "timelogs_table": {
@@ -57,6 +57,10 @@
         "time": "Time",
         "status": "Status"
       }
+    },
+    "timelogs": {
+      "title": "Timelogs",
+      "csv_export": "Export CSV"
     },
     "modal": {
       "body": "The system shows that you spent the following time on this ticket, you can either edit it or leave it as is and click \"Save Ticket\".",

@@ -22,12 +22,13 @@
       'ticket.form.id.changed'  : 'onTicketFormChanged',
       'fetchAudits.done'        : 'onFetchAuditsDone',
       'click .pause'            : 'onPauseClicked',
-      'click .resume'           : 'onResumeClicked',
+      'click .play'             : 'onPlayClicked',
       'click .reset'            : 'onResetClicked',
       'click .modal-save'       : 'onModalSaveClicked',
       'click a.timelogs-opener:not([disabled])'  : 'onTimeLogsContainerClicked',
       'shown .modal'            : 'onModalShown',
-      'hidden .modal'           : 'onModalHidden'
+      'hidden .modal'           : 'onModalHidden',
+      'click .expand-bar'       : 'onTimelogsClicked'
     },
 
     /*
@@ -84,35 +85,33 @@
     },
 
     onFetchAuditsDone: function(data) {
-      var timelogs = _.reduce(data.audits, function(memo, audit) {
-        var newStatus = _.find(audit.events, function(event) {
-          return event.field_name == 'status';
-        }, this),
-        event = _.find(audit.events, function(event) {
-          return event.field_name == this.setting('time_field_id');
-        }, this),
-        status;
+      var status = "",
+          timelogs = _.reduce(data.audits, function(memo, audit) {
+            var newStatus = _.find(audit.events, function(event) {
+              return event.field_name == 'status';
+            }, this),
+            event = _.find(audit.events, function(event) {
+              return event.field_name == this.setting('time_field_id');
+            }, this);
 
-        if (event) {
-          if (newStatus){
-            status = newStatus.value;
-          } else {
-            status = _.last(memo).status;
-          }
+            if (newStatus){
+              status = newStatus.value;
+            }
 
-          memo.push({
-            time: this.TimeHelper.secondsToTimeString(parseInt(event.value, 0)),
-            date: new Date(audit.created_at).toLocaleString(),
-            status: status,
-            localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
-            user: _.find(data.users, function(user) {
-              return user.id === audit.author_id;
-            })
-          });
-        }
+            if (event) {
+              memo.push({
+                time: this.TimeHelper.secondsToTimeString(parseInt(event.value, 0)),
+                date: new Date(audit.created_at).toLocaleString(),
+                status: status,
+                localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
+                user: _.find(data.users, function(user) {
+                  return user.id === audit.author_id;
+                })
+              });
+            }
 
-        return memo;
-      }, [], this);
+            return memo;
+          }, [], this);
 
       this.renderTimelogs(timelogs.reverse());
     },
@@ -120,17 +119,17 @@
     onPauseClicked: function(e) {
       var $el = this.$(e.currentTarget);
 
-      $el.removeClass('pause').addClass('resume');
-      $el.find('i').prop('class', 'icon-play');
+      $el.find('i').addClass('active');
+      this.$('.play i').removeClass('active');
 
       this.manuallyPaused = this.paused = true;
     },
 
-    onResumeClicked: function(e) {
+    onPlayClicked: function(e) {
       var $el = this.$(e.currentTarget);
 
-      $el.removeClass('resume').addClass('pause');
-      $el.find('i').prop('class', 'icon-pause');
+      $el.find('i').addClass('active');
+      this.$('.pause i').removeClass('active');
 
       this.manuallyPaused = this.paused = false;
     },
@@ -139,16 +138,8 @@
       this.elapsedTime = 0;
     },
 
-    onTimeLogsContainerClicked: function(e) {
-      var $el = this.$(e.currentTarget);
-
-      if (!this.$('.timelogs-container').is(':visible')) {
-        $el.addClass('active');
-        this.$('.timelogs-container').show();
-      } else {
-        $el.removeClass('active');
-        this.$('.timelogs-container').hide();
-      }
+    onTimelogsClicked: function() {
+      this.$('.timelogs-container').slideToggle();
     },
 
     onModalSaveClicked: function() {

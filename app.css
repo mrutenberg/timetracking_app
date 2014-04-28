@@ -1,9 +1,46 @@
-.current-timer {
-  font-weight: bold;
+&.box.apps_ticket_sidebar.app_view {
+  padding-bottom: 0px;
+}
+
+section[data-main] {
+  font-family: Lucida Grande;
 }
 
 .live-timer {
-  font-size: 15px;
+  font-size: 26px;
+  font-weight: regular;
+  color: #333;
+}
+
+.total-time {
+  padding-top: 15px;
+  paddint-bottom: 0px;
+  font-size: 12px;
+  color: #999;
+}
+
+[class^="icon-time-"] {
+  background-position: initial;
+}
+
+.icon-time-play {
+  background-image: app-asset-url("_play_inactive@1x.png");
+
+  &.active {
+    background-image: app-asset-url("_play_active@1x.png");
+  }
+}
+
+.icon-time-pause {
+  background-image: app-asset-url("_pause_inactive@1x.png");
+
+  &.active {
+    background-image: app-asset-url("_pause_active@1x.png");
+  }
+}
+
+.icon-time-reset {
+  background-image: app-asset-url("_refresh_inactive@1x.png");
 }
 
 .text-center {
@@ -19,13 +56,79 @@ input {
 
 .timelogs-container {
   display: none;
+  padding-bottom: 10px;
 }
 
-table {
-  margin-bottom: none;
+.timelogs-container .heading {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0px 10px 0px;
 }
 
-.btn-group {
-  display: inline-block;
-  padding-top: 7px;
+.csv-export {
+  font-size: 11px;
+}
+
+.table {
+  margin-bottom: 0px;
+  
+  tr:hover td {
+    background-color:white;
+  }
+
+  th {
+    font-size: 11px;
+    font-weight: normal;
+    color: #333;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;    
+  }
+  
+  td {
+    border-top: 0px;
+    padding-top: 10px;
+    font-weight: normal;
+    font-size: 11px;
+    color: #8c8c8c;
+  }
+}
+
+.expand-bar {
+  background-color: #F8F8F8;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  display: block;
+  margin-left: -15px;
+  margin-right: -15px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  .arrow {
+    margin-top: 12px;
+    height: 6px;
+    min-width: 11px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: app-asset-url("ico-arrow-up-normal.png");
+  }
+
+  &:hover {
+    background-image: app-asset-url("hover-bg.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  span {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.4;
+  }
 }
