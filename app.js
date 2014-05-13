@@ -213,11 +213,7 @@
     renderTimelogs: function(timelogs) {
       this.$('.timelogs-container')
         .html(this.renderTemplate('timelogs', {
-          timelogs: timelogs,
-          csv_filename: helpers.fmt('ticket-timelogs-%@',
-                                    this.ticket().id()),
-          csv_string: encodeURI(this.timelogsToCsvString(timelogs))
-
+          timelogs: timelogs
         }));
 
       this.$('tr').tooltip({ placement: 'left', html: true });
@@ -304,12 +300,6 @@
       }
 
       return parseInt((this.ticket().customField(fieldLabel) || 0), 0);
-    },
-
-    timelogsToCsvString: function(timelogs) {
-      return _.reduce(timelogs, function(memo, timelog) {
-        return memo + helpers.fmt('%@\n', [ timelog.time, timelog.user.name, timelog.date].join());
-      }, 'Time,Submitter,Submitted At\n', this);
     },
 
     TimeHelper: {
