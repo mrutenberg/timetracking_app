@@ -140,6 +140,7 @@
 
     onTimelogsClicked: function() {
       this.$('.timelogs-container').slideToggle();
+      this.$('.expand-bar').toggleClass('expanded');
     },
 
     onModalSaveClicked: function() {

@@ -1,3 +1,19 @@
+$VENDORS: webkit, moz, ms, o, kthml;
+
+@mixin vendor-prefix($property, $values...) {
+  @each $vendor in $VENDORS {
+    -#{$vendor}-#{$property}: $values;
+  }
+  #{$property}: $values;
+}
+
+@mixin vendor-prefixed-values($property, $values...) {
+  @each $vendor in $VENDORS {
+    -#{$vendor}-#{$property}: -#{$vendor}-$values;
+  }
+  #{$property}: $values;
+}
+
 &.box.apps_ticket_sidebar.app_view {
   padding-bottom: 0px;
 }
@@ -102,12 +118,7 @@ input {
   display: block;
   margin-left: -15px;
   margin-right: -15px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  @include vendor-prefix(border-radius, 0 0 5px 5px);
 
   .arrow {
     margin-top: 12px;
@@ -117,6 +128,12 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     background-image: app-asset-url("ico-arrow-up-normal.png");
+    @include vendor-prefix(transform, rotateX(180deg));
+    @include vendor-prefixed-values(transition, transform 0.5s);
+  }
+
+  &.expanded .arrow {
+    @include vendor-prefix(transform, rotateX(0deg));
   }
 
   &:hover {
