@@ -15,16 +15,6 @@
 
   "parameters": [
     {
-      "name": "time_field_id",
-      "type": "number",
-      "required": true
-    },
-    {
-      "name": "total_time_field_id",
-      "type": "number",
-      "required": true
-    },
-    {
       "name": "display_timer",
       "type": "checkbox",
       "default": true
