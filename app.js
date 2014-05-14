@@ -181,7 +181,7 @@
         this.saveHookPromiseDone();
       } catch (e) {
         if (e.message == 'bad_time_format') {
-          services.notify(this.I18n.t('errors.bad_time_format'), alert);
+          services.notify(this.I18n.t('errors.bad_time_format'), 'error');
         } else {
           throw e;
         }
