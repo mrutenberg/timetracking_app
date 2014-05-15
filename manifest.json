@@ -16,13 +16,11 @@
   "parameters": [
     {
       "name": "time_field_id",
-      "type": "number",
-      "hidden": true
+      "type": "hidden"
     },
     {
       "name": "total_time_field_id",
-      "type": "number",
-      "hidden": true
+      "type": "hidden"
     },
     {
       "name": "display_timer",
