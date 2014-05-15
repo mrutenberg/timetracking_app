@@ -284,14 +284,14 @@
     },
 
     totalTimeFieldLabel: function() {
-      return this.buidFieldLabel(this.setting('total_time_field_id'));
+      return this.buildFieldLabel(this.setting('total_time_field_id'));
     },
 
     timeFieldLabel: function() {
-      return this.buidFieldLabel(this.setting('time_field_id'));
+      return this.buildFieldLabel(this.setting('time_field_id'));
     },
 
-    buidFieldLabel: function(id) {
+    buildFieldLabel: function(id) {
       return helpers.fmt('custom_field_%@', id);
     },
 
