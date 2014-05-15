@@ -15,6 +15,16 @@
 
   "parameters": [
     {
+      "name": "time_field_id",
+      "type": "number",
+      "hidden": true
+    },
+    {
+      "name": "total_time_field_id",
+      "type": "number",
+      "hidden": true
+    },
+    {
       "name": "display_timer",
       "type": "checkbox",
       "default": true
