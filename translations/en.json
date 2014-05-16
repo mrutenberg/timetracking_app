@@ -12,29 +12,29 @@
         "helpText": "The ID of a custom multi-line field that will hold the config/timelogs."
       },
       "display_timer": {
-        "label": "Display time",
-        "helpText": "Agent can see the timers (current/total)"
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
-        "label": "Display Timelogs",
-        "helpText": "Agent can see timelogs."
-      },
-      "auto_pause_resume": {
-        "label": "Auto Pause/Resume",
-        "helpText": "The time will pause when the focus on the ticket is lost and resume itself as soon as the agent is back on the ticket."
+        "label": "Display timelogs to agents",
+        "helpText": "Agent can see timelog activity on tickets."
       },
       "manual_pause_resume": {
-        "label": "Manual Pause/Resume/Reset",
-        "helpText": "Agent can manually pause/resume/reset the timer."
+        "label": "Display timer controls ",
+        "helpText": "Agents can manually pause or reset the timer."
+      },
+      "auto_pause_resume": {
+        "label": "Auto pause",
+        "helpText": "The timer pauses when the agent navigates away from the ticket and resumes when the agent is back on the ticket."
       },
       "reset": {
         "label": "Reset current time",
         "helpText": "Agent can reset his current time spent on a ticket."
       },
       "time_submission": {
-        "label": "Time submission",
-        "helpText": "Agent submit his own time."
-      }
+        "label": "Edit time submission",
+        "helpText": "Agents can review and edit their time before submitting the ticket."
+      },
     }
   },
   "statuses": {
@@ -63,13 +63,13 @@
       "csv_export": "Export CSV"
     },
     "modal": {
-      "body": "The system shows that you spent the following time on this ticket, you can either edit it or leave it as is and click \"Save Ticket\".",
-      "close": "Close",
-      "save": "Save Ticket"
+      "body": "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\".",
+      "close": "Cancel",
+      "save": "Submit time"
     }
   },
   "errors": {
-    "save_hook": "You need to submit a time before saving this ticket!",
-    "bad_time_format": "Bad time format (HH:MM:SS)."
+    "save_hook": "You need to submit your time on this ticket.",
+    "bad_time_format": "Incorrect time format (HH:MM:SS)."
   }
 }
