@@ -343,7 +343,7 @@
       return this.buidFieldLabel(this.storage.time_field_id);
     },
 
-    buidFieldLabel: function(id) {
+    buildFieldLabel: function(id) {
       return helpers.fmt('custom_field_%@', id);
     },
 

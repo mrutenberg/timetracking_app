@@ -5,9 +5,9 @@
     </div>
     <div class="span6">
       <div class="text-center pull-right">
-        <button class="btn play" title="{{t "views.main.play"}}" {{#unless manual_pause_resume}}disabled{{/unless}}><i class="icon-time-play active"></i></button>
-        <button class="btn pause" title="{{t "views.main.pause"}}" {{#unless manual_pause_resume}}disabled{{/unless}}><i class="icon-time-pause"></i></button>
-        <button class="btn reset" title="{{t "views.main.reset"}}" {{#unless display_reset}}disabled{{/unless}}><i class="icon-time-reset"></i></button>
+        {{#if manual_pause_resume}}<button class="btn play" title="{{t "views.main.play"}}"><i class="icon-time-play active"></i></button>{{/if}}
+        {{#if manual_pause_resume}}<button class="btn pause" title="{{t "views.main.pause"}}"><i class="icon-time-pause"></i></button>{{/if}}
+        {{#if display_reset}}<button class="btn reset" title="{{t "views.main.reset"}}"><i class="icon-time-reset"></i></button>{{/if}}
       </div>
     </div>
   </div>
