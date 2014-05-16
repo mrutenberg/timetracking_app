@@ -54,8 +54,8 @@
         this.ajax('fetchRequirements').done(this.initialize.bind(this));
       } else {
         _.defer(this.initialize.bind(this));
-        this.storage.total_time_field_id = this.setting('total_time_field_id');
-        this.storage.time_field_id = this.setting('time_field_id');
+        this.storage.totalTimeFieldId = this.setting('total_time_field_id');
+        this.storage.timeFieldId = this.setting('time_field_id');
       }
 
       if (this.ticket().id() && this.setting('display_timelogs')) {
@@ -112,7 +112,7 @@
               return event.field_name == 'status';
             }, this),
             event = _.find(audit.events, function(event) {
-              return event.field_name == this.storage.time_field_id;
+              return event.field_name == this.storage.timeFieldId;
             }, this);
 
             if (newStatus){
@@ -138,10 +138,10 @@
     },
 
     onFetchRequirementsDone: function(data) {
-      var total_time_field = this._findWhere(data.requirements, {identifier: 'total_time_field'});
-      var time_last_update_field = this._findWhere(data.requirements, {identifier: 'time_last_update_field'});
-      this.storage.total_time_field_id = total_time_field && total_time_field.requirement_id;
-      this.storage.time_field_id = time_last_update_field && time_last_update_field.requirement_id;
+      var totalTimeField = this._findWhere(data.requirements, {identifier: 'total_time_field'});
+      var timeLastUpdateField = this._findWhere(data.requirements, {identifier: 'time_last_update_field'});
+      this.storage.totalTimeFieldId = totalTimeField && totalTimeField.requirement_id;
+      this.storage.timeFieldId = timeLastUpdateField && timeLastUpdateField.requirement_id;
     },
 
     onPauseClicked: function(e) {
@@ -336,11 +336,11 @@
     },
 
     totalTimeFieldLabel: function() {
-      return this.buidFieldLabel(this.storage.total_time_field_id);
+      return this.buildFieldLabel(this.storage.totalTimeFieldId);
     },
 
     timeFieldLabel: function() {
-      return this.buidFieldLabel(this.storage.time_field_id);
+      return this.buildFieldLabel(this.storage.timeFieldId);
     },
 
     buildFieldLabel: function(id) {
