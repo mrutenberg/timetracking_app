@@ -1,66 +1,25 @@
 <div class="timers {{#unless display_timer }}hidden{{/unless}}">
   <div class="row-fluid current-timer">
-    <div class="span8">
-      {{t "views.main.current_time_spent"}}:
+    <div class="span6">
+      <div class="live-timer ">00:00:00</div>
     </div>
-    <div class="span4">
-      <div class="live-timer  pull-right">00:00:00</div>
+    <div class="span6">
+      <div class="text-center pull-right">
+        {{#if manual_pause_resume}}<button class="btn play" title="{{t "views.main.play"}}"><i class="icon-time-play active"></i></button>{{/if}}
+        {{#if manual_pause_resume}}<button class="btn pause" title="{{t "views.main.pause"}}"><i class="icon-time-pause"></i></button>{{/if}}
+        {{#if display_reset}}<button class="btn reset" title="{{t "views.main.reset"}}"><i class="icon-time-reset"></i></button>{{/if}}
+      </div>
     </div>
   </div>
 
-  <div class="row-fluid">
-    <div class="span8">
-      {{t "views.main.total_time_spent"}}:
-    </div>
-    <div class="span4">
-      <div class="live-totaltimer pull-right">00:00:00</div>
+  <div class="row-fluid total-time">
+    <div class="span12">
+      <strong>{{t "views.main.total_time_spent"}}</strong>: <span class="live-totaltimer">00:00:00</span>
     </div>
   </div>
 </div>
 
-<div class="text-center">
-  <div class="btn-group">
-    {{#if manual_pause_resume}}
-    <a class="btn pause" title="{{t "views.main.pause_resume"}}"><i class="icon-pause"></i></a>
-    {{/if}}
-    {{#if display_reset}}
-    <a class="btn reset" title="{{t "views.main.reset"}}"><i class="icon-repeat"></i></a>
-    {{/if}}
-    {{#if display_timelogs}}
-    {{#if timelogs}}
-    <a class="btn timelogs-opener"><strong>{{t "views.main.timelogs"}}</strong></a>
-    {{/if}}
-    {{/if}}
-  </div>
-</div>
-
-{{#if timelogs}}
-<div class="row-fluid timelogs-container">
-  <table class="table">
-    <thead>
-      <th>{{t "views.main.timelogs_table.agent"}}</th>
-      <th>{{t "views.main.timelogs_table.time"}}</th>
-      <th>{{t "views.main.timelogs_table.status"}}</th>
-    </thead>
-    <tbody>
-      {{#each timelogs}}
-      <tr data-toggle="tooltip" title="{{date_submitted_at}}">
-        <td>{{submitter_name}}</td>
-        <td>{{time}}</td>
-        <td>
-          <span class="ticket_status_label {{status}}">
-            <strong>{{status}}</strong>
-          </span>
-        </td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  <div class="text-center">
-    <a download="{{timelogs_csv_filename}}" href="data:text/csv;charset=utf-8,{{timelogs_csv_string}}" class="btn"><i class="icon-file"></i> CSV Timelogs</a>
-  </div>
-</div>
-{{/if}}
+<div class="row-fluid timelogs-container"></div>
 
 <div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
