@@ -3,6 +3,8 @@
   'use_strict';
 
   return {
+    storage: {},
+
     requests: {
       fetchAudits: function() {
         return {
@@ -11,16 +13,27 @@
             this.ticket().id()
           )
         };
+      },
+      fetchRequirements: function() {
+        return {
+          url: helpers.fmt(
+            '/api/v2/apps/installations/%@/requirements.json',
+            this.installationId()
+          ),
+          dataType: 'json'
+        };
       }
     },
 
     events: {
+      'app.created'             : 'onAppCreated',
       'app.activated'           : 'onAppActivated',
       'app.deactivated'         : 'onAppFocusOut',
       'app.willDestroy'         : 'onAppWillDestroy',
       'ticket.save'             : 'onTicketSave',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
       'fetchAudits.done'        : 'onFetchAuditsDone',
+      'fetchRequirements.done'  : 'onFetchRequirementsDone',
       'click .pause'            : 'onPauseClicked',
       'click .play'             : 'onPlayClicked',
       'click .reset'            : 'onResetClicked',
@@ -36,14 +49,22 @@
      *  EVENT CALLBACKS
      *
      */
-    onAppActivated: function(app) {
-      if (app.firstLoad) {
-        _.defer(this.initialize.bind(this));
-
-        if (this.ticket().id() && this.setting('display_timelogs')) {
-          this.ajax('fetchAudits');
-        }
+    onAppCreated: function() {
+      if (this.installationId()) {
+        this.ajax('fetchRequirements').done(this.initialize.bind(this));
       } else {
+        _.defer(this.initialize.bind(this));
+        this.storage.totalTimeFieldId = this.setting('total_time_field_id');
+        this.storage.timeFieldId = this.setting('time_field_id');
+      }
+
+      if (this.ticket().id() && this.setting('display_timelogs')) {
+        this.ajax('fetchAudits');
+      }
+    },
+
+    onAppActivated: function(app) {
+      if (!app.firstLoad) {
         this.onAppFocusIn();
       }
     },
@@ -91,7 +112,7 @@
               return event.field_name == 'status';
             }, this),
             event = _.find(audit.events, function(event) {
-              return event.field_name == this.setting('time_field_id');
+              return event.field_name == this.storage.timeFieldId;
             }, this);
 
             if (newStatus){
@@ -114,6 +135,13 @@
           }, [], this);
 
       this.renderTimelogs(timelogs.reverse());
+    },
+
+    onFetchRequirementsDone: function(data) {
+      var totalTimeField = this._findWhere(data.requirements, {identifier: 'total_time_field'});
+      var timeLastUpdateField = this._findWhere(data.requirements, {identifier: 'time_last_update_field'});
+      this.storage.totalTimeFieldId = totalTimeField && totalTimeField.requirement_id;
+      this.storage.timeFieldId = timeLastUpdateField && timeLastUpdateField.requirement_id;
     },
 
     onPauseClicked: function(e) {
@@ -153,7 +181,7 @@
         this.saveHookPromiseDone();
       } catch (e) {
         if (e.message == 'bad_time_format') {
-          services.notify(this.I18n.t('errors.bad_time_format'), alert);
+          services.notify(this.I18n.t('errors.bad_time_format'), 'error');
         } else {
           throw e;
         }
@@ -271,6 +299,30 @@
 
     /*
      *
+     * UTILS
+     *
+     */
+
+    // CRUFT: Can be removed when using recent versions of Underscore.js
+
+    // Returns a predicate for checking whether an object has a given set of `key:value` pairs.
+    _matches: function(attrs) {
+      return function(obj) {
+        if (obj == null) return _.isEmpty(attrs);
+        if (obj === attrs) return true;
+        for (var key in attrs) if (attrs[key] !== obj[key]) return false;
+        return true;
+      };
+    },
+
+    // Convenience version of a common use case of `find`: getting the first object
+    // containing specific `key:value` pairs.
+    _findWhere: function(obj, attrs) {
+      return _.find(obj, this._matches(attrs));
+    },
+
+    /*
+     *
      * HELPERS
      *
      */
@@ -284,11 +336,11 @@
     },
 
     totalTimeFieldLabel: function() {
-      return this.buildFieldLabel(this.setting('total_time_field_id'));
+      return this.buildFieldLabel(this.storage.totalTimeFieldId);
     },
 
     timeFieldLabel: function() {
-      return this.buildFieldLabel(this.setting('time_field_id'));
+      return this.buildFieldLabel(this.storage.timeFieldId);
     },
 
     buildFieldLabel: function(id) {
