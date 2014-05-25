@@ -142,7 +142,7 @@
         },
         "timelogs_table": {
           "agent": {
-            "value": " Agent",
+            "value": "Agent",
             "title": "This is one of the labels of the timelogs column table this column will contain the agent name and last name"
           },
           "time": {
