@@ -90,7 +90,8 @@
           "title": "this is the explanation helptext of edit time submission checkbox for the admin who is installing the app"
         }
       }
-    },
+    }
+  },
     "statuses": {
       "new": {
         "value": "n",
@@ -153,7 +154,7 @@
             "title": "This is one of the labels of the timelogs column table this column will contain the status of the zendesk ticket at the time of the update"
           }
         }
-      },
+    },
       "timelogs": {
         "title": {
           "value": "Timelogs",
@@ -190,4 +191,3 @@
       }
     }
   }
-}
