@@ -92,102 +92,102 @@
       }
     }
   },
-    "statuses": {
-      "new": {
-        "value": "n",
-        "title": "first letter of status new"
-      },
-      "open": {
-        "value": "o",
-        "title": "first letter of status open"
-      },
-      "pending": {
-        "value": "p",
-        "title": "first letter of status pending"
-      },
-      "hold": {
-        "value": "h",
-        "title": "first letter of status hold (on hold)"
-      },
-      "solved": {
-        "value": "s",
-        "title": "first letter of status solved"
-      },
-      "closed": {
-        "value": "c",
-        "title": "first letter of status closed"
-      }
+  "statuses": {
+    "new": {
+      "value": "n",
+      "title": "first letter of status new"
     },
-    "views": {
-      "main": {
-        "pause": {
-          "value": "Pause",
-          "title": "Title of the pause button on the app, this will make the timer pause"
-        },
-        "total_time_spent": {
-          "value": "Total time",
-          "title": "Label of the timer, following this is a time on the following format HH:MM"
-        },
-        "play": {
-          "value": "Play",
-          "title": "Label of the play button on the app, this will make the timer resume"
-        },
-        "reset": {
-          "value": "Reset",
-          "title": "Label of the reset button on the app, this will make the timer go back to 00:00"
-        },
-        "timelogs": {
-          "value": "Timelogs",
-          "title": "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
-        },
-        "timelogs_table": {
-          "agent": {
-            "value": "Agent",
-            "title": "This is one of the labels of the timelogs column table this column will contain the agent name and last name"
-          },
-          "time": {
-            "value": "Time",
-            "title": "This is one of the labels of the timelogs column table this column will contain the time in minutes and seconds"
-          },
-          "status": {
-            "value": "Status",
-            "title": "This is one of the labels of the timelogs column table this column will contain the status of the zendesk ticket at the time of the update"
-          }
-        }
+    "open": {
+      "value": "o",
+      "title": "first letter of status open"
     },
+    "pending": {
+      "value": "p",
+      "title": "first letter of status pending"
+    },
+    "hold": {
+      "value": "h",
+      "title": "first letter of status hold (on hold)"
+    },
+    "solved": {
+      "value": "s",
+      "title": "first letter of status solved"
+    },
+    "closed": {
+      "value": "c",
+      "title": "first letter of status closed"
+    }
+  },
+  "views": {
+    "main": {
+      "pause": {
+        "value": "Pause",
+        "title": "Title of the pause button on the app, this will make the timer pause"
+      },
+      "total_time_spent": {
+        "value": "Total time",
+        "title": "Label of the timer, following this is a time on the following format HH:MM"
+      },
+      "play": {
+        "value": "Play",
+        "title": "Label of the play button on the app, this will make the timer resume"
+      },
+      "reset": {
+        "value": "Reset",
+        "title": "Label of the reset button on the app, this will make the timer go back to 00:00"
+      },
       "timelogs": {
-        "title": {
-          "value": "Timelogs",
-          "title": "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
-        },
-        "csv_export": {
-          "value": "Export CSV",
-          "title": "this is an export CSV button that generates a CSV export of the timelog"
-        }
+        "value": "Timelogs",
+        "title": "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
       },
-      "modal": {
-        "body": {
-          "value": "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\".",
-          "title": "this is the body of the modal, this modal contains the time that the agents has spent as calculated by the system he can decide to amend it or move forward with it directly"
+      "timelogs_table": {
+        "agent": {
+          "value": "Agent",
+          "title": "This is one of the labels of the timelogs column table this column will contain the agent name and last name"
         },
-        "close": {
-          "value": "Cancel",
-          "title": "this is a button on the modal to cancel time submission"
+        "time": {
+          "value": "Time",
+          "title": "This is one of the labels of the timelogs column table this column will contain the time in minutes and seconds"
         },
-        "save": {
-          "value": "Submit time",
-          "title": "This is the validation button for submitting the time from the modal"
+        "status": {
+          "value": "Status",
+          "title": "This is one of the labels of the timelogs column table this column will contain the status of the zendesk ticket at the time of the update"
         }
       }
     },
-    "errors": {
-      "save_hook": {
-        "value": "You need to submit your time on this ticket.",
-        "title": "Error message when the agent forgot to submit the time on this ticket"
+    "timelogs": {
+      "title": {
+        "value": "Timelogs",
+        "title": "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
       },
-      "bad_time_format": {
-        "value": "Incorrect time format (HH:MM:SS).",
-        "title": "error message when the agent has submitted time in an incorrect format"
+      "csv_export": {
+        "value": "Export CSV",
+        "title": "this is an export CSV button that generates a CSV export of the timelog"
+      }
+    },
+    "modal": {
+      "body": {
+        "value": "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\".",
+        "title": "this is the body of the modal, this modal contains the time that the agents has spent as calculated by the system he can decide to amend it or move forward with it directly"
+      },
+      "close": {
+        "value": "Cancel",
+        "title": "this is a button on the modal to cancel time submission"
+      },
+      "save": {
+        "value": "Submit time",
+        "title": "This is the validation button for submitting the time from the modal"
       }
     }
+  },
+  "errors": {
+    "save_hook": {
+      "value": "You need to submit your time on this ticket.",
+      "title": "Error message when the agent forgot to submit the time on this ticket"
+    },
+    "bad_time_format": {
+      "value": "Incorrect time format (HH:MM:SS).",
+      "title": "error message when the agent has submitted time in an incorrect format"
+    }
   }
+}
