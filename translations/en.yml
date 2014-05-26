@@ -124,7 +124,7 @@ parts:
   - translation:
       key: "txt.apps.time_tracking.app.views.main.timelogs_table.agent"
       title: "This is one of the labels of the timelogs column table this column will contain the agent name and last name"
-      value: " Agent"
+      value: "Agent"
   - translation:
       key: "txt.apps.time_tracking.app.views.main.timelogs_table.time"
       title: "This is one of the labels of the timelogs column table this column will contain the time in minutes and seconds"
