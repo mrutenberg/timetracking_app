@@ -142,6 +142,10 @@ parts:
       title: "this is an export CSV button that generates a CSV export of the timelog"
       value: "Export CSV"
   - translation:
+      key: "txt.apps.time_tracking.views.timelogs.empty"
+      title: "This is a message being displayed when there are no logs"
+      value: "No timelogs to display"
+  - translation:
       key: "txt.apps.time_tracking.views.modal.body"
       title: "this is the body of the modal, this modal contains the time that the agents has spent as calculated by the system he can decide to amend it or move forward with it directly"
       value: "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\"."
