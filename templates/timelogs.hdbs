@@ -1,25 +1,28 @@
-{{#if timelogs}}
-  <div class="heading">
-    <strong>{{t "views.timelogs.title"}}</strong>
-  </div>
-  <table class="table table-condensed">
-    <thead>
-      <th>{{t "views.main.timelogs_table.status"}}</th>
-      <th>{{t "views.main.timelogs_table.agent"}}</th>
-      <th>{{t "views.main.timelogs_table.time"}}</th>
-    </thead>
-    <tbody>
-      {{#each timelogs}}
-      <tr data-toggle="tooltip" title="{{date}}">
-        <td>
-          <span class="ticket_status_label {{status}}">
-            <strong>{{localized_status}}</strong>
-          </span>
-        </td>
-        <td>{{user.name}}</td>
-        <td>{{time}}</td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-{{/if}}
+<div class="heading">
+  <strong>{{t "views.timelogs.title"}}</strong>
+</div>
+<table class="table table-condensed">
+  <thead>
+    <th>{{t "views.main.timelogs_table.status"}}</th>
+    <th>{{t "views.main.timelogs_table.agent"}}</th>
+    <th>{{t "views.main.timelogs_table.time"}}</th>
+  </thead>
+  <tbody>
+    {{#each timelogs}}
+    <tr data-toggle="tooltip" title="{{date}}">
+      <td>
+        <span class="ticket_status_label {{status}}">
+          <strong>{{localized_status}}</strong>
+        </span>
+      </td>
+      <td>{{user.name}}</td>
+      <td>{{time}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{#unless timelogs}}
+  <p class="timelogs-empty">
+    {{t "views.timelogs.empty"}}
+  </p>
+{{/unless}}
