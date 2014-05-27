@@ -1,7 +1,7 @@
+<div class="heading">
+  <strong>{{t "views.timelogs.title"}}</strong>
+</div>
 {{#if timelogs}}
-  <div class="heading">
-    <strong>{{t "views.timelogs.title"}}</strong>
-  </div>
   <table class="table table-condensed">
     <thead>
       <th>{{t "views.main.timelogs_table.status"}}</th>
@@ -22,4 +22,8 @@
       {{/each}}
     </tbody>
   </table>
+{{else}}
+  <p class="timelogs-empty">
+    {{t "views.timelogs.empty"}}
+  </p>
 {{/if}}

@@ -78,86 +78,90 @@ parts:
       title: "this is the explanation helptext of edit time submission checkbox for the admin who is installing the app"
       value: "Agents can review and edit their time before submitting the ticket."
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.new"
+      key: "txt.apps.time_tracking.statuses.new"
       title: "first letter of status new"
       value: "n"
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.open"
+      key: "txt.apps.time_tracking.statuses.open"
       title: "first letter of status open"
       value: "o"
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.pending"
+      key: "txt.apps.time_tracking.statuses.pending"
       title: "first letter of status pending"
       value: "p"
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.hold"
+      key: "txt.apps.time_tracking.statuses.hold"
       title: "first letter of status hold (on hold)"
       value: "h"
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.solved"
+      key: "txt.apps.time_tracking.statuses.solved"
       title: "first letter of status solved"
       value: "s"
   - translation:
-      key: "txt.apps.time_tracking.app.statuses.closed"
+      key: "txt.apps.time_tracking.statuses.closed"
       title: "first letter of status closed"
       value: "c"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.pause"
+      key: "txt.apps.time_tracking.views.main.pause"
       title: "Title of the pause button on the app, this will make the timer pause"
       value: "Pause"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.total_time_spent"
+      key: "txt.apps.time_tracking.views.main.total_time_spent"
       title: "Label of the timer, following this is a time on the following format HH:MM"
       value: "Total time"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.play"
+      key: "txt.apps.time_tracking.views.main.play"
       title: "Label of the play button on the app, this will make the timer resume"
       value: "Play"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.reset"
+      key: "txt.apps.time_tracking.views.main.reset"
       title: "Label of the reset button on the app, this will make the timer go back to 00:00"
       value: "Reset"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.timelogs"
+      key: "txt.apps.time_tracking.views.main.timelogs"
       title: "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
       value: "Timelogs"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.timelogs_table.agent"
+      key: "txt.apps.time_tracking.views.main.timelogs_table.agent"
       title: "This is one of the labels of the timelogs column table this column will contain the agent name and last name"
       value: "Agent"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.timelogs_table.time"
+      key: "txt.apps.time_tracking.views.main.timelogs_table.time"
       title: "This is one of the labels of the timelogs column table this column will contain the time in minutes and seconds"
       value: "Time"
   - translation:
-      key: "txt.apps.time_tracking.app.views.main.timelogs_table.status"
+      key: "txt.apps.time_tracking.views.main.timelogs_table.status"
       title: "This is one of the labels of the timelogs column table this column will contain the status of the zendesk ticket at the time of the update"
       value: "Status"
   - translation:
-      key: "txt.apps.time_tracking.app.views.timelogs.title"
+      key: "txt.apps.time_tracking.views.timelogs.title"
       title: "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
       value: "Timelogs"
   - translation:
-      key: "txt.apps.time_tracking.app.views.timelogs.csv_export"
+      key: "txt.apps.time_tracking.views.timelogs.csv_export"
       title: "this is an export CSV button that generates a CSV export of the timelog"
       value: "Export CSV"
   - translation:
-      key: "txt.apps.time_tracking.app.views.modal.body"
+      key: "txt.apps.time_tracking.views.timelogs.empty"
+      title: "This is a message being displayed when there are no logs"
+      value: "No timelogs to display"
+  - translation:
+      key: "txt.apps.time_tracking.views.modal.body"
       title: "this is the body of the modal, this modal contains the time that the agents has spent as calculated by the system he can decide to amend it or move forward with it directly"
       value: "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\"."
   - translation:
-      key: "txt.apps.time_tracking.app.views.modal.close"
+      key: "txt.apps.time_tracking.views.modal.close"
       title: "this is a button on the modal to cancel time submission"
       value: "Cancel"
   - translation:
-      key: "txt.apps.time_tracking.app.views.modal.save"
+      key: "txt.apps.time_tracking.views.modal.save"
       title: "This is the validation button for submitting the time from the modal"
       value: "Submit time"
   - translation:
-      key: "txt.apps.time_tracking.app.errors.save_hook"
+      key: "txt.apps.time_tracking.errors.save_hook"
       title: "Error message when the agent forgot to submit the time on this ticket"
       value: "You need to submit your time on this ticket."
   - translation:
-      key: "txt.apps.time_tracking.app.errors.bad_time_format"
+      key: "txt.apps.time_tracking.errors.bad_time_format"
       title: "error message when the agent has submitted time in an incorrect format"
       value: "Incorrect time format (HH:MM:SS)."
