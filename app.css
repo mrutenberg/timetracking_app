@@ -39,24 +39,32 @@ section[data-main] {
   background-position: initial;
 }
 
+.icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: app-asset-url("icons.png");
+  background-repeat: no-repeat;
+}
+
 .icon-time-play {
-  background-image: app-asset-url("_play_inactive@1x.png");
+  background-position: -30px -30px;
 
   &.active {
-    background-image: app-asset-url("_play_active@1x.png");
+    background-position: -5px -30px;
   }
 }
 
 .icon-time-pause {
-  background-image: app-asset-url("_pause_inactive@1x.png");
+  background-position: -30px -5px;
 
   &.active {
-    background-image: app-asset-url("_pause_active@1x.png");
+    background-position: -5px -5px;
   }
 }
 
 .icon-time-reset {
-  background-image: app-asset-url("_refresh_inactive@1x.png");
+  background-position: -55px -5px;
 }
 
 .text-center {
