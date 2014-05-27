@@ -164,6 +164,7 @@
 
     onResetClicked: function() {
       this.elapsedTime = 0;
+      this.updateMainView(this.elapsedTime);
     },
 
     onTimelogsClicked: function() {
