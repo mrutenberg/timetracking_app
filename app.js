@@ -22,6 +22,11 @@
           ),
           dataType: 'json'
         };
+      },
+      fetchTicketForms: function(url) {
+        return {
+          url: url || '/api/v2/ticket_forms.json'
+        };
       }
     },
 
@@ -219,8 +224,40 @@
      *
      */
 
+    checkForms: (function() {
+      var forms = [];
+
+      function fetch(url) {
+        this.ajax('fetchTicketForms', url).done(callback.bind(this));
+      }
+
+      function callback(data) {
+        forms.push.apply(forms, data.ticket_forms);
+
+        if (data.next_page) {
+          fetch.call(this, data.next_page);
+        } else {
+          var requiredTicketFieldIds = [
+                this.storage.timeFieldId,
+                this.storage.totalTimeFieldId
+              ];
+
+          var valid = _.all(forms, function(form) {
+            return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === 2;
+          });
+
+          if (!valid) {
+
+          }
+        }
+      }
+
+      return fetch;
+    })(),
+
     initialize: function() {
       this.hideFields();
+      this.checkForms();
 
       this.timeLoopID = this.setTimeLoop();
 

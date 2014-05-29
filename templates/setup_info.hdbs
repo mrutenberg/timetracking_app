@@ -1,0 +1,4 @@
+<div class="alert alert-warning">
+  <p>{{t 'errors.setup.question'}}</p><br>
+  <p>{{{t 'errors.setup.solution' url=link}}}</p>
+</div>
