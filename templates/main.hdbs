@@ -1,4 +1,4 @@
-<div class="timers {{#unless display_timer }}hidden{{/unless}}">
+<div class="timers">
   <div class="row-fluid current-timer">
     <div class="span6">
       <div class="live-timer ">00:00:00</div>

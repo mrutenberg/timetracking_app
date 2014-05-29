@@ -23,11 +23,6 @@
       "type": "hidden"
     },
     {
-      "name": "display_timer",
-      "type": "checkbox",
-      "default": true
-    },
-    {
       "name": "display_timelogs",
       "type": "checkbox",
       "default": true

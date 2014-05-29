@@ -33,10 +33,12 @@ parts:
       key: "txt.apps.time_tracking.app.parameters.display_timer.label"
       title: "This is an app setting allowing the admin to choose if he wants the time to be shown to his agents or not"
       value: "Display timer to agents"
+      obsolete: "2014-06-15"
   - translation:
       key: "txt.apps.time_tracking.app.parameters.display_timer.helpText"
       title: "this is the helptext for that previously defined setting explaining what it does to the admin"
       value: "Agents can see the timers for elapsed and total time on tickets."
+      obsolete: "2014-06-15"
   - translation:
       key: "txt.apps.time_tracking.app.parameters.display_timelogs.label"
       title: "This is an app setting allowing the admin to choose if he wants the timelogs to be shown to his agents or not"
