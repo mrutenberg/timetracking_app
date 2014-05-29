@@ -252,7 +252,11 @@
         }
       }
 
-      return fetch;
+      return function() {
+        if (!this.ticket().form().id()) { return; }
+
+        fetch.call(this);
+      };
     })(),
 
     initialize: function() {
