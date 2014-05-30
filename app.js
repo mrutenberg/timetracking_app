@@ -3,6 +3,8 @@
   'use_strict';
 
   return {
+    SETUP_INFO: 'https://support.zendesk.com/',
+
     storage: {},
 
     requests: {
@@ -21,6 +23,11 @@
             this.installationId()
           ),
           dataType: 'json'
+        };
+      },
+      fetchTicketForms: function(url) {
+        return {
+          url: url || '/api/v2/ticket_forms.json'
         };
       }
     },
@@ -219,8 +226,46 @@
      *
      */
 
+    checkForms: (function() {
+      var forms = [];
+
+      function fetch(url) {
+        this.ajax('fetchTicketForms', url).done(callback.bind(this));
+      }
+
+      function callback(data) {
+        forms.push.apply(forms, data.ticket_forms);
+
+        if (data.next_page) {
+          fetch.call(this, data.next_page);
+        } else {
+          var requiredTicketFieldIds = [
+                this.storage.timeFieldId,
+                this.storage.totalTimeFieldId
+              ];
+
+          var valid = _.all(forms, function(form) {
+            return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === requiredTicketFieldIds.length;
+          });
+
+          if (!valid) {
+            this.switchTo('setup_info', { link: this.SETUP_INFO });
+            this.$('.expand-bar').remove();
+            this.onAppWillDestroy();
+          }
+        }
+      }
+
+      return function() {
+        if (!this.ticket().form().id()) { return; }
+
+        fetch.call(this);
+      };
+    })(),
+
     initialize: function() {
       this.hideFields();
+      this.checkForms();
 
       this.timeLoopID = this.setTimeLoop();
 
