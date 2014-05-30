@@ -185,6 +185,16 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": {
+        "value": "Did you follow the installation instructions for this app and configure both required ticket fields to appear on every ticket form?",
+        "title": "A question that gives the user a hint about what could be wrong"
+      },
+      "solution": {
+        "value": "If not, please see <a href=\"{{url}}\">these instructions</a> and go to your ticket forms management page to finalize the set-up.",
+        "title": "A suggestion about how to setup the app correctly"
+      }
+    },
     "save_hook": {
       "value": "You need to submit your time on this ticket.",
       "title": "Error message when the agent forgot to submit the time on this ticket"

@@ -3,6 +3,8 @@
   'use_strict';
 
   return {
+    SETUP_INFO: 'https://support.zendesk.com/',
+
     storage: {},
 
     requests: {
@@ -247,7 +249,7 @@
           });
 
           if (!valid) {
-
+            this.$('.app-container').prepend(this.renderTemplate('setup_info', { link: this.SETUP_INFO }));
           }
         }
       }
