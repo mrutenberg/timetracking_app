@@ -226,8 +226,7 @@
 
       this.switchTo('main', {
         manual_pause_resume: this.setting('manual_pause_resume'),
-        display_reset: this.setting('reset'),
-        display_timer: this.setting('display_timer')
+        display_reset: this.setting('reset')
       });
 
       this.$('tr').tooltip({ placement: 'left', html: true });

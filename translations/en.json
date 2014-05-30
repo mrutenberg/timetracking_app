@@ -30,16 +30,6 @@
           "title": "this is the helptext for that previously defined setting"
         }
       },
-      "display_timer": {
-        "label": {
-          "value": "Display timer to agents",
-          "title": "This is an app setting allowing the admin to choose if he wants the time to be shown to his agents or not"
-        },
-        "helpText": {
-          "value": "Agents can see the timers for elapsed and total time on tickets.",
-          "title": "this is the helptext for that previously defined setting explaining what it does to the admin"
-        }
-      },
       "display_timelogs": {
         "label": {
           "value": "Display timelogs to agents",
