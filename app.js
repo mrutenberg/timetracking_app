@@ -245,7 +245,7 @@
               ];
 
           var valid = _.all(forms, function(form) {
-            return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === 2;
+            return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === requiredTicketFieldIds.length;
           });
 
           if (!valid) {
