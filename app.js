@@ -249,7 +249,9 @@
           });
 
           if (!valid) {
-            this.$('.app-container').prepend(this.renderTemplate('setup_info', { link: this.SETUP_INFO }));
+            this.switchTo('setup_info', { link: this.SETUP_INFO });
+            this.$('.expand-bar').remove();
+            this.onAppWillDestroy();
           }
         }
       }
