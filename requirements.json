@@ -2,12 +2,12 @@
   "ticket_fields": {
     "total_time_field": {
        "type": "integer",
-       "title": "Total time spent"
+       "title": "Total time spent (sec)"
       },
 
     "time_last_update_field": {
        "type": "integer",
-       "title": "Time spent since last update"
+       "title": "Time spent last update (sec)"
       }
    }
 }
