@@ -135,11 +135,15 @@ input {
   margin-right: -15px;
   @include vendor-prefix(border-radius, 0 0 5px 5px);
 
+  .spinner {
+    margin-bottom: 0;
+  }
+
   .arrow {
     margin-top: 12px;
     height: 6px;
     min-width: 11px;
-    display: block;
+    display: none;
     background-repeat: no-repeat;
     background-position: center;
     background-image: app-asset-url("ico-arrow-up-normal.png");

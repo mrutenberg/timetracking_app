@@ -6,5 +6,6 @@
   <section data-main/>
 </div>
 <div class="expand-bar">
+  {{spinner "dotted"}}
   <div class="arrow"></div>
 </div>
