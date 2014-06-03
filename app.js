@@ -45,7 +45,6 @@
       'click .play'             : 'onPlayClicked',
       'click .reset'            : 'onResetClicked',
       'click .modal-save'       : 'onModalSaveClicked',
-      'click a.timelogs-opener:not([disabled])'  : 'onTimeLogsContainerClicked',
       'shown .modal'            : 'onModalShown',
       'hidden .modal'           : 'onModalHidden',
       'click .expand-bar'       : 'onTimelogsClicked'
@@ -295,10 +294,6 @@
         }));
 
       this.$('tr').tooltip({ placement: 'left', html: true });
-
-      this.$('.timelogs-opener')
-        .removeAttr('disabled')
-        .removeClass('disabled');
     },
 
     hideFields: function() {
