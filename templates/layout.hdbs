@@ -5,4 +5,6 @@
   </header>
   <section data-main/>
 </div>
-<a class="expand-bar"><i class="arrow"/></a>
+<div class="expand-bar">
+  <div class="arrow"></div>
+</div>
