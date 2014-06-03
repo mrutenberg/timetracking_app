@@ -141,6 +141,8 @@
           }, [], this);
 
       this.renderTimelogs(timelogs.reverse());
+
+      this.timelogsLoaded = true;
     },
 
     onFetchRequirementsDone: function(data) {
@@ -174,8 +176,10 @@
     },
 
     onTimelogsClicked: function() {
-      this.$('.timelogs-container').slideToggle();
-      this.$('.expand-bar').toggleClass('expanded');
+      if (this.timelogsLoaded) {
+        this.$('.timelogs-container').slideToggle();
+        this.$('.expand-bar').toggleClass('expanded');
+      }
     },
 
     onModalSaveClicked: function() {
