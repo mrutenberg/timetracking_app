@@ -244,6 +244,10 @@
                 this.storage.totalTimeFieldId
               ];
 
+          forms = _.filter(forms, function(form) {
+            return form.active;
+          });
+
           var valid = _.all(forms, function(form) {
             return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === requiredTicketFieldIds.length;
           });
