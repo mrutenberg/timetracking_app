@@ -45,7 +45,6 @@
       'click .play'             : 'onPlayClicked',
       'click .reset'            : 'onResetClicked',
       'click .modal-save'       : 'onModalSaveClicked',
-      'click a.timelogs-opener:not([disabled])'  : 'onTimeLogsContainerClicked',
       'shown .modal'            : 'onModalShown',
       'hidden .modal'           : 'onModalHidden',
       'click .expand-bar'       : 'onTimelogsClicked'
@@ -244,6 +243,10 @@
                 this.storage.totalTimeFieldId
               ];
 
+          forms = _.filter(forms, function(form) {
+            return form.active;
+          });
+
           var valid = _.all(forms, function(form) {
             return _.intersection(form.ticket_field_ids, requiredTicketFieldIds).length === requiredTicketFieldIds.length;
           });
@@ -291,10 +294,6 @@
         }));
 
       this.$('tr').tooltip({ placement: 'left', html: true });
-
-      this.$('.timelogs-opener')
-        .removeAttr('disabled')
-        .removeClass('disabled');
     },
 
     hideFields: function() {
