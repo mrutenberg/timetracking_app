@@ -128,7 +128,6 @@ input {
 .expand-bar {
   background-color: #F8F8F8;
   border-top: 1px solid #f0f0f0;
-  cursor: pointer;
   padding-top: 0px;
   padding-bottom: 15px;
   margin-left: -15px;
@@ -149,6 +148,18 @@ input {
     background-image: app-asset-url("ico-arrow-up-normal.png");
     @include vendor-prefix(transform, rotateX(180deg));
     @include vendor-prefixed-values(transition, transform 0.5s);
+  }
+
+  &.loaded {
+    cursor: pointer;
+
+    .arrow {
+      display: block;
+    }
+
+    .loading-spinner {
+      display: none;
+    }
   }
 
   &.expanded .arrow {

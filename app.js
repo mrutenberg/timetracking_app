@@ -143,8 +143,7 @@
       this.renderTimelogs(timelogs.reverse());
 
       this.timelogsLoaded = true;
-      this.$('.spinner').hide();
-      this.$('.arrow').show();
+      this.$('.expand-bar').addClass('loaded');
     },
 
     onFetchRequirementsDone: function(data) {

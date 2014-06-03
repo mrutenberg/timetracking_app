@@ -6,6 +6,6 @@
   <section data-main/>
 </div>
 <div class="expand-bar">
-  {{spinner "dotted"}}
+  <div class="loading-spinner">{{spinner "dotted"}}</div>
   <div class="arrow"></div>
 </div>
