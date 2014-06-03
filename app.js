@@ -60,8 +60,8 @@
         this.ajax('fetchRequirements').done(this.initialize.bind(this));
       } else {
         _.defer(this.initialize.bind(this));
-        this.storage.totalTimeFieldId = this.setting('total_time_field_id');
-        this.storage.timeFieldId = this.setting('time_field_id');
+        this.storage.totalTimeFieldId = parseInt(this.setting('total_time_field_id'));
+        this.storage.timeFieldId = parseInt(this.setting('time_field_id'));
       }
 
       if (this.ticket().id() && this.setting('display_timelogs')) {
