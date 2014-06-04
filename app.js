@@ -63,10 +63,6 @@
         this.storage.totalTimeFieldId = this.setting('total_time_field_id');
         this.storage.timeFieldId = this.setting('time_field_id');
       }
-
-      if (this.ticket().id() && this.setting('display_timelogs')) {
-        this.ajax('fetchAudits');
-      }
     },
 
     onAppActivated: function(app) {
@@ -269,6 +265,10 @@
     })(),
 
     initialize: function() {
+      if (this.ticket().id() && this.setting('display_timelogs')) {
+        this.ajax('fetchAudits');
+      }
+
       this.hideFields();
       this.checkForms();
 
