@@ -19,7 +19,13 @@
   </div>
 </div>
 
-<div class="row-fluid timelogs-container"></div>
+<div class="row-fluid timelogs-container">
+  {{spinner "dotted"}}
+</div>
+
+<div class="expand-bar">
+  <div class="arrow"></div>
+</div>
 
 <div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">

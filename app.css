@@ -81,12 +81,12 @@ input {
 .timelogs-container {
   display: none;
   padding-bottom: 10px;
-}
 
-.timelogs-container .heading {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0px 10px 0px;
+  .heading {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0px 10px 0px;
+  }
 }
 
 .timelogs-empty {
@@ -128,38 +128,22 @@ input {
 .expand-bar {
   background-color: #F8F8F8;
   border-top: 1px solid #f0f0f0;
+  cursor: pointer;
   padding-top: 0px;
   padding-bottom: 15px;
   margin-left: -15px;
   margin-right: -15px;
   @include vendor-prefix(border-radius, 0 0 5px 5px);
 
-  .spinner {
-    margin-bottom: 0;
-  }
-
   .arrow {
     margin-top: 12px;
     height: 6px;
     min-width: 11px;
-    display: none;
     background-repeat: no-repeat;
     background-position: center;
     background-image: app-asset-url("ico-arrow-up-normal.png");
     @include vendor-prefix(transform, rotateX(180deg));
     @include vendor-prefixed-values(transition, transform 0.5s);
-  }
-
-  &.loaded {
-    cursor: pointer;
-
-    .arrow {
-      display: block;
-    }
-
-    .loading-spinner {
-      display: none;
-    }
   }
 
   &.expanded .arrow {

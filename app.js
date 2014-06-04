@@ -57,7 +57,7 @@
      */
     onAppCreated: function() {
       if (this.installationId()) {
-        this.ajax('fetchRequirements').done(this.initialize.bind(this));
+        this.ajax('fetchRequirements');
       } else {
         _.defer(this.initialize.bind(this));
         this.storage.totalTimeFieldId = this.setting('total_time_field_id');
@@ -141,9 +141,6 @@
           }, [], this);
 
       this.renderTimelogs(timelogs.reverse());
-
-      this.timelogsLoaded = true;
-      this.$('.expand-bar').addClass('loaded');
     },
 
     onFetchRequirementsDone: function(data) {
@@ -151,6 +148,8 @@
       var timeLastUpdateField = this._findWhere(data.requirements, {identifier: 'time_last_update_field'});
       this.storage.totalTimeFieldId = totalTimeField && totalTimeField.requirement_id;
       this.storage.timeFieldId = timeLastUpdateField && timeLastUpdateField.requirement_id;
+
+      this.initialize();
     },
 
     onPauseClicked: function(e) {
@@ -177,10 +176,8 @@
     },
 
     onTimelogsClicked: function() {
-      if (this.timelogsLoaded) {
-        this.$('.timelogs-container').slideToggle();
-        this.$('.expand-bar').toggleClass('expanded');
-      }
+      this.$('.timelogs-container').slideToggle();
+      this.$('.expand-bar').toggleClass('expanded');
     },
 
     onModalSaveClicked: function() {
@@ -281,8 +278,6 @@
         manual_pause_resume: this.setting('manual_pause_resume'),
         display_reset: this.setting('reset')
       });
-
-      this.$('tr').tooltip({ placement: 'left', html: true });
     },
 
     updateMainView: function(time) {

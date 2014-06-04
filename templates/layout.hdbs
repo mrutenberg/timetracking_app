@@ -5,7 +5,3 @@
   </header>
   <section data-main/>
 </div>
-<div class="expand-bar">
-  <div class="loading-spinner">{{spinner "dotted"}}</div>
-  <div class="arrow"></div>
-</div>
