@@ -60,8 +60,8 @@
         this.ajax('fetchRequirements');
       } else {
         _.defer(this.initialize.bind(this));
-        this.storage.totalTimeFieldId = parseInt(this.setting('total_time_field_id'));
-        this.storage.timeFieldId = parseInt(this.setting('time_field_id'));
+        this.storage.totalTimeFieldId = parseInt(this.setting('total_time_field_id'), 10);
+        this.storage.timeFieldId = parseInt(this.setting('time_field_id'), 10);
       }
     },
 
@@ -419,9 +419,9 @@
             result.length != 4) {
           throw { message: 'bad_time_format' };
         } else {
-          return (parseInt(result[1], 10) * 3600) +
-            (parseInt(result[2], 10) * 60) +
-            (parseInt(result[3], 10));
+          return (parseInt(result[1], 10) * 3600, 10) +
+            (parseInt(result[2], 10) * 60, 10) +
+            (parseInt(result[3], 10), 10);
         }
       },
 
