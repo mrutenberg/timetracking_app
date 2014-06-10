@@ -22,7 +22,7 @@
       },
       "time_object_field_id": {
         "label": {
-          "value": "Config Field ID",
+          "value": "Configuration Field ID",
           "title": "This is the title of a setting of the app, this setting is hidden and not shown to users but in this setting we will put the ID of a field that will store the time values"
         },
         "helpText": {

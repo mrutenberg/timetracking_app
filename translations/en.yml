@@ -24,7 +24,7 @@ parts:
   - translation:
       key: "txt.apps.time_tracking.app.parameters.time_object_field_id.label"
       title: "This is the title of a setting of the app, this setting is hidden and not shown to users but in this setting we will put the ID of a field that will store the time values"
-      value: "Config Field ID"
+      value: "Configuration Field ID"
   - translation:
       key: "txt.apps.time_tracking.app.parameters.time_object_field_id.helpText"
       title: "this is the helptext for that previously defined setting"
