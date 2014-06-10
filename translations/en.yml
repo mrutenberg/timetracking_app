@@ -122,7 +122,7 @@ parts:
   - translation:
       key: "txt.apps.time_tracking.views.main.timelogs"
       title: "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
-      value: "Timelogs"
+      value: "Timelog"
   - translation:
       key: "txt.apps.time_tracking.views.main.timelogs_table.agent"
       title: "This is one of the labels of the timelogs column table this column will contain the agent name and last name"

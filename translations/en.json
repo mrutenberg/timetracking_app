@@ -127,7 +127,7 @@
         "title": "Label of the reset button on the app, this will make the timer go back to 00:00"
       },
       "timelogs": {
-        "value": "Timelogs",
+        "value": "Timelog",
         "title": "This is the label for the timelogs table, the timelogs table are a list of times per agent, kind of the history of the ticket if you will. Following this label will be a table containg time per agent and status of the ticket at the time"
       },
       "timelogs_table": {
