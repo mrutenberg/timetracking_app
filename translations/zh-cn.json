@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "帮助您跟踪花在工单上的时间。",
+    "name": "时间跟踪",
+    "parameters": {
+      "time_field_id": {
+        "label": "时间字段 ID",
+        "helpText": "自定义数字字段的 ID，显示总时间。"
+      },
+      "time_object_field_id": {
+        "label": "配置字段 ID",
+        "helpText": "自定义数字字段的 ID，显示花在工单上的时间。"
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "向代理显示时间日志",
+        "helpText": "代理可在工单上看到时间日志。"
+      },
+      "manual_pause_resume": {
+        "label": "显示计时器控件",
+        "helpText": "代理可手动暂停或重置计时器。"
+      },
+      "auto_pause_resume": {
+        "label": "自动暂停",
+        "helpText": "当代理离开工单时，计时器会暂停，当代理返回工单时，计时器会继续。"
+      },
+      "reset": {
+        "label": "重置当前时间",
+        "helpText": "代理可重置当前花在工单上的时间。"
+      },
+      "time_submission": {
+        "label": "编辑提交的时间",
+        "helpText": "代理在提交工单前，可查看并编辑其时间。"
+      }
+    }
+  },
+  "statuses": {
+    "new": "新",
+    "open": "开",
+    "pending": "未",
+    "hold": "停",
+    "solved": "解",
+    "closed": "闭"
+  },
+  "views": {
+    "main": {
+      "pause": "暂停",
+      "total_time_spent": "总时间",
+      "play": "开始",
+      "reset": "重置",
+      "timelogs": "时间日志",
+      "timelogs_table": {
+        "agent": "代理",
+        "time": "时间",
+        "status": "状态"
+      }
+    },
+    "timelogs": {
+      "title": "时间日志",
+      "csv_export": "导出 CSV",
+      "empty": "没有时间日志可显示"
+    },
+    "modal": {
+      "body": "这是您花在此工单上的时间。如果需要的话，可编辑时间，然后单击“提交时间”。",
+      "close": "取消",
+      "save": "提交时间"
+    }
+  },
+  "errors": {
+    "save_hook": "您需要提交花在此工单上的时间。",
+    "bad_time_format": "错误的时间格式（HH:MM:SS）。"
+  }
+}

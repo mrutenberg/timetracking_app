@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "幫您追蹤工單花費的時間。",
+    "name": "時間追蹤",
+    "parameters": {
+      "time_field_id": {
+        "label": "時間欄位 ID",
+        "helpText": "顯示總時間的自訂數值欄位 ID。"
+      },
+      "time_object_field_id": {
+        "label": "設定欄位 ID",
+        "helpText": "顯示工單花費時間的自訂數值欄位 ID。"
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "向代理顯示時間記錄",
+        "helpText": "代理可在工單上看到時間記錄。"
+      },
+      "manual_pause_resume": {
+        "label": "顯示計時器控制項",
+        "helpText": "代理可手動暫停或重設計時器。"
+      },
+      "auto_pause_resume": {
+        "label": "自動暫停",
+        "helpText": "代理離開工單時計時器暫停，代理返回工單時計時器繼續。"
+      },
+      "reset": {
+        "label": "重設目前時間",
+        "helpText": "代理可重設目前工單花費的時間。"
+      },
+      "time_submission": {
+        "label": "編輯提交的時間",
+        "helpText": "提交工單前，代理可檢查並編輯其時間。"
+      }
+    }
+  },
+  "statuses": {
+    "new": "新",
+    "open": "開",
+    "pending": "未",
+    "hold": "停",
+    "solved": "解",
+    "closed": "閉"
+  },
+  "views": {
+    "main": {
+      "pause": "暫停",
+      "total_time_spent": "總時間",
+      "play": "開始",
+      "reset": "重設",
+      "timelogs": "時間記錄",
+      "timelogs_table": {
+        "agent": "代理",
+        "time": "時間",
+        "status": "狀態"
+      }
+    },
+    "timelogs": {
+      "title": "時間記錄",
+      "csv_export": "匯出 CSV",
+      "empty": "沒有可顯示的時間記錄"
+    },
+    "modal": {
+      "body": "這是您此張工單花費的時間。編輯時間（若需要），再按一下「提交時間」。",
+      "close": "取消",
+      "save": "提交時間"
+    }
+  },
+  "errors": {
+    "save_hook": "您需要提交工單花費的時間。",
+    "bad_time_format": "錯誤時間格式（HH:MM:SS）。"
+  }
+}

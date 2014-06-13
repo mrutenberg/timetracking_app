@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Erfasst die mit der Bearbeitung von Tickets verbrachte Zeit.",
+    "name": "Zeiterfassung",
+    "parameters": {
+      "time_field_id": {
+        "label": "ID des Zeitfelds",
+        "helpText": "Die ID eines angepassten numerischen Felds für die Gesamtzeit."
+      },
+      "time_object_field_id": {
+        "label": "ID des Konfigurationsfelds",
+        "helpText": "Die ID eines angepassten numerischen Felds für die mit der Bearbeitung des Tickets verbrachte Zeit."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Zeitprotokolle für Agenten anzeigen",
+        "helpText": "Agenten können die Zeitprotokollaktivitäten in Tickets sehen."
+      },
+      "manual_pause_resume": {
+        "label": "Timerfunktionen anzeigen",
+        "helpText": "Agenten können den Timer manuell anhalten oder zurücksetzen."
+      },
+      "auto_pause_resume": {
+        "label": "Automatisch anhalten",
+        "helpText": "Der Timer wird angehalten, wenn der Agent vom Ticket zu einem anderen Bereich wechselt, und läuft automatisch weiter, wenn der Agent zum Ticket zurückkehrt."
+      },
+      "reset": {
+        "label": "Aktuelle Zeit zurücksetzen",
+        "helpText": "Agenten können die aktuelle mit der Bearbeitung eines Tickets verbrachte Zeit zurücksetzen."
+      },
+      "time_submission": {
+        "label": "Eingereichte Zeit bearbeiten",
+        "helpText": "Agenten können die verbrachte Zeit vor dem Einreichen des Tickets überprüfen und bearbeiten"
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "w",
+    "hold": "a",
+    "solved": "l",
+    "closed": "g"
+  },
+  "views": {
+    "main": {
+      "pause": "Anhalten",
+      "total_time_spent": "Gesamtzeit",
+      "play": "Wiedergeben",
+      "reset": "Zurücksetzen",
+      "timelogs": "Zeitprotokolle",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Zeit",
+        "status": "Status"
+      }
+    },
+    "timelogs": {
+      "title": "Zeitprotokolle",
+      "csv_export": "CSV exportieren",
+      "empty": "Keine Zeitprotokoll zur Anzeige verfügbar"
+    },
+    "modal": {
+      "body": "Dies ist die Zeit, die Sie mit der Bearbeitung dieses Tickets verbracht haben. Nehmen Sie ggf. Änderungen vor und klicken Sie dann auf „Zeit einreichen“.",
+      "close": "Abbrechen",
+      "save": "Zeit einreichen"
+    }
+  },
+  "errors": {
+    "save_hook": "Sie müssen die mit der Bearbeitung dieses Tickets verbrachte Zeit einreichen.",
+    "bad_time_format": "Falsches Zeitformat (HH:MM:SS)."
+  }
+}

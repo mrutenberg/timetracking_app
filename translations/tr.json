@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Kayıtlar üzerinde harcanan zamanı txt.apps.time_tracking.app.name=kolayca takip edin.",
+    "name": "Zaman İzleme",
+    "parameters": {
+      "time_field_id": {
+        "label": "Zaman Alanı Kimliği",
+        "helpText": "Toplam zamanı gösterecek özel bir sayısal alan kimliği."
+      },
+      "time_object_field_id": {
+        "label": "Yapılandırma Alanı Kimliği",
+        "helpText": "Bir kayıt üzerinde harcanan zamanı gösterecek özel bir sayısal alan kimliği."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Zaman günlüklerini temsilcilere göster",
+        "helpText": "Temsilciler, kayıtlar üzerindeki zaman günlüğü etkinliklerini görebilirler."
+      },
+      "manual_pause_resume": {
+        "label": "Zamanlayıcı kontrollerini görüntüle",
+        "helpText": "Temsilciler zamanlayıcıyı manüel olarak duraklatabilir ya da sıfırlayabilir."
+      },
+      "auto_pause_resume": {
+        "label": "Otomatik duraklat",
+        "helpText": "Temsilci kayıttan farklı bir yere geçiş yaptığında zamanlayıcı durur, temsilci kayıta geri döndüğünde kaldığı yerden devam eder."
+      },
+      "reset": {
+        "label": "Güncel zamanı sıfırla",
+        "helpText": "Temsilciler bir kayıt üzerinde harcanan güncel zamanı sıfırlayabilir."
+      },
+      "time_submission": {
+        "label": "Zaman bilgilerinin gönderilmesini düzenle",
+        "helpText": "Temsilciler kaydı göndermeden önce harcadıkları zamanı görüntüleyebilir ve düzenleyebilirler."
+      }
+    }
+  },
+  "statuses": {
+    "new": "y",
+    "open": "a",
+    "pending": "b",
+    "hold": "h",
+    "solved": "ç",
+    "closed": "k"
+  },
+  "views": {
+    "main": {
+      "pause": "Duraklat",
+      "total_time_spent": "Toplam zaman",
+      "play": "Çalıştır",
+      "reset": "Sıfırla",
+      "timelogs": "Zaman günlüğü",
+      "timelogs_table": {
+        "agent": "Temsilci",
+        "time": "Zaman",
+        "status": "Durum"
+      }
+    },
+    "timelogs": {
+      "title": "Zaman günlüğü",
+      "csv_export": "CSV olarak dışarı Aktar",
+      "empty": "Görüntülenecek zaman günlüğü yok"
+    },
+    "modal": {
+      "body": "Bu değer, bu kayıt için harcadığınız zamanı ifade eder. Gerekirse zamanı değiştirin ve \"Zaman bilgisini gönder\" düğmesine tıklayın.",
+      "close": "İptal",
+      "save": "Zaman bilgisini gönder"
+    }
+  },
+  "errors": {
+    "save_hook": "Bu kayıt için harcadığınız zamanı bildirmeniz gerekiyor.",
+    "bad_time_format": "Zaman biçimi hatalı (SA:DD:SN)."
+  }
+}

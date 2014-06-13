@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Ułatwia śledzenie czasu poświęcanego na obsługę zgłoszeń.",
+    "name": "Śledzenie czasu",
+    "parameters": {
+      "time_field_id": {
+        "label": "Identyfikator pola czasu",
+        "helpText": "Identyfikator niestandardowego pola numerycznego, w którym będzie przechowywany czas całkowity."
+      },
+      "time_object_field_id": {
+        "label": "Identyfikator pola konfiguracji",
+        "helpText": "Identyfikator niestandardowego pola numerycznego, w którym będzie przechowywany czas poświęcony na zgłoszenie."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Pokaż rejestry czasu agentom",
+        "helpText": "Rejestry czasu obsługi zgłoszeń są widoczne dla agentów."
+      },
+      "manual_pause_resume": {
+        "label": "Pokaż elementy sterujące licznikiem",
+        "helpText": "Agenci mogą ręcznie wstrzymywać lub resetować licznik."
+      },
+      "auto_pause_resume": {
+        "label": "Automatyczne wstrzymanie",
+        "helpText": "Licznik jest wstrzymywany, gdy agent przechodzi poza zgłoszenie, i wznawiany, gdy agent wraca do zgłoszenia."
+      },
+      "reset": {
+        "label": "Resetuj bieżący czas",
+        "helpText": "Agenci mogą resetować bieżący czas poświęcony na zgłoszenie."
+      },
+      "time_submission": {
+        "label": "Edytuj wysyłany czas",
+        "helpText": "Agenci mogą przeglądać i edytować swój czas przed wysłaniem zgłoszenia."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "p",
+    "pending": "o",
+    "hold": "w",
+    "solved": "z",
+    "closed": "m"
+  },
+  "views": {
+    "main": {
+      "pause": "Wstrzymaj",
+      "total_time_spent": "Czas całkowity",
+      "play": "Uruchom",
+      "reset": "Resetuj",
+      "timelogs": "Rejestr czasu",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Godzina",
+        "status": "Status"
+      }
+    },
+    "timelogs": {
+      "title": "Rejestr czasu",
+      "csv_export": "Eksportuj jako CSV",
+      "empty": "Brak rejestrów czasu do wyświetlenia"
+    },
+    "modal": {
+      "body": "Jest to ilość czasu poświęconego na to zgłoszenie. W razie potrzeby edytuj czas i kliknij „Wyślij czas”.",
+      "close": "Anuluj",
+      "save": "Wyślij czas"
+    }
+  },
+  "errors": {
+    "save_hook": "Musisz wysłać informacje o czasie poświęconym na to zgłoszenie.",
+    "bad_time_format": "Nieprawidłowy format czasu (GG:MM:SS)."
+  }
+}
