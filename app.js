@@ -419,9 +419,9 @@
             result.length != 4) {
           throw { message: 'bad_time_format' };
         } else {
-          return (parseInt(result[1], 10) * 3600, 10) +
-            (parseInt(result[2], 10) * 60, 10) +
-            (parseInt(result[3], 10), 10);
+          return parseInt(result[1], 10) * 3600 +
+            parseInt(result[2], 10) * 60 +
+            parseInt(result[3], 10);
         }
       },
 
