@@ -70,7 +70,7 @@ parts:
   - translation:
       key: "txt.apps.time_tracking.app.parameters.reset.helpText"
       title: "this is the explanation helptext of the reset current time checkbox for the admin who is installing the app"
-      value: "Agent can reset his current time spent on a ticket."
+      value: "Agents can reset the current time spent on a ticket."
   - translation:
       key: "txt.apps.time_tracking.app.parameters.time_submission.label"
       title: "This is a checkbox setting label as well. If the admin checks that box, when the agent submits a time he will be asked to edit the time that was detected by the system."
