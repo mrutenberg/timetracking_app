@@ -1,76 +1,76 @@
 {
   "app": {
-    "description": "Helps you track time spent on tickets.",
+    "description": "Ajuda a monitorar o tempo gasto em tickets.",
     "name": "Time Tracking",
     "parameters": {
       "time_field_id": {
-        "label": "Time Field ID",
-        "helpText": "The ID of a custom numeric field that will hold the total time."
+        "label": "ID do campo de tempo",
+        "helpText": "A ID de um campo numérico personalizado que contará o tempo total."
       },
       "time_object_field_id": {
-        "label": "Config Field ID",
-        "helpText": "The ID of a custom numeric field that will hold the time spent on ticket."
+        "label": "ID do campo de configuração",
+        "helpText": "A ID de um campo numérico personalizado que contará o tempo gasto em um ticket."
       },
       "display_timer": {
         "label": "Display timer to agents",
         "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
-        "label": "Display timelogs to agents",
-        "helpText": "Agents can see timelog activity on tickets."
+        "label": "Exibir registros de tempo para os agentes",
+        "helpText": "Os agentes podem ver a atividade de registro de tempo em tickets."
       },
       "manual_pause_resume": {
-        "label": "Display timer controls",
-        "helpText": "Agents can manually pause or reset the timer."
+        "label": "Exibir controles do cronômetro",
+        "helpText": "Os agentes podem pausar ou redefinir manualmente o cronômetro."
       },
       "auto_pause_resume": {
-        "label": "Auto pause",
-        "helpText": "The timer pauses when the agent navigates away from the ticket and resumes when the agent is back on the ticket."
+        "label": "Pausa automática",
+        "helpText": "O cronômetro para quando um agente sai do ticket e retoma sua contagem quando ele volta ao ticket."
       },
       "reset": {
-        "label": "Reset current time",
-        "helpText": "Agents can reset the current time spent on a ticket."
+        "label": "Redefinir tempo atual",
+        "helpText": "Os agentes podem redefinir o tempo gasto atualmente em um ticket."
       },
       "time_submission": {
-        "label": "Edit time submission",
-        "helpText": "Agents can review and edit their time before submitting the ticket."
+        "label": "Editar envio de tempo",
+        "helpText": "Os agentes podem consultar e editar o tempo deles antes de enviarem o ticket."
       }
     }
   },
   "statuses": {
     "new": "n",
-    "open": "o",
+    "open": "a",
     "pending": "p",
-    "hold": "h",
-    "solved": "s",
-    "closed": "c"
+    "hold": "e",
+    "solved": "r",
+    "closed": "f"
   },
   "views": {
     "main": {
-      "pause": "Pause",
-      "total_time_spent": "Total time",
-      "play": "Play",
-      "reset": "Reset",
-      "timelogs": "Timelogs",
+      "pause": "Pausar",
+      "total_time_spent": "Tempo total",
+      "play": "Iniciar",
+      "reset": "Redefinir",
+      "timelogs": "Registro de tempo",
       "timelogs_table": {
-        "agent": "Agent",
-        "time": "Time",
+        "agent": "Agente",
+        "time": "Tempo",
         "status": "Status"
       }
     },
     "timelogs": {
-      "title": "Timelogs",
-      "csv_export": "Export CSV",
-      "empty": "No timelogs to display"
+      "title": "Registros de tempo",
+      "csv_export": "Exportar CSV",
+      "empty": "Sem registros de tempo para exibir"
     },
     "modal": {
-      "body": "This is the amount of time you spent on this ticket. Edit the time, if you need to, then click \"Submit time\".",
-      "close": "Cancel",
-      "save": "Submit time"
+      "body": "Essa é a quantidade de tempo gasto nesse ticket. Edite o tempo, se necessário, e clique em \"Enviar tempo\".",
+      "close": "Cancelar",
+      "save": "Enviar tempo"
     }
   },
   "errors": {
-    "save_hook": "You need to submit your time on this ticket.",
-    "bad_time_format": "Incorrect time format (HH:MM:SS)."
+    "save_hook": "Você precisa enviar seu tempo neste ticket.",
+    "bad_time_format": "Formato de tempo incorreto (HH:MM:SS)."
   }
 }
