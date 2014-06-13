@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Le ayuda a llevar un registro del tiempo que dedica a los tickets.",
+    "name": "Time Tracking",
+    "parameters": {
+      "time_field_id": {
+        "label": "ID de campo de tiempo",
+        "helpText": "La ID de un campo numérico personalizado que muestra el tiempo total."
+      },
+      "time_object_field_id": {
+        "label": "ID de campo de configuración",
+        "helpText": "La ID de un campo numérico personalizado que muestra el tiempo dedicado al ticket."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Mostrar registros de tiempo a los agentes",
+        "helpText": "Los agentes pueden ver la actividad del registro de tiempo en los tickets."
+      },
+      "manual_pause_resume": {
+        "label": "Mostrar controles del temporizador",
+        "helpText": "Los agentes pueden detener o restablecer manualmente el temporizador."
+      },
+      "auto_pause_resume": {
+        "label": "Pausa automática",
+        "helpText": "El temporizador se detiene cuando el agente abandona el ticket y vuelve a comenzar cuando regresa al ticket."
+      },
+      "reset": {
+        "label": "Restablecer tiempo actual",
+        "helpText": "Los agentes pueden restablecer el tiempo actual dedicado al ticket."
+      },
+      "time_submission": {
+        "label": "Editar envío de tiempo",
+        "helpText": "Los agentes pueden revisar y editar su tiempo antes de enviar el ticket."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "a",
+    "pending": "p",
+    "hold": "e",
+    "solved": "r",
+    "closed": "c"
+  },
+  "views": {
+    "main": {
+      "pause": "Detener",
+      "total_time_spent": "Tiempo total",
+      "play": "Reproducir",
+      "reset": "Restablecer",
+      "timelogs": "Registros de tiempo",
+      "timelogs_table": {
+        "agent": "Agente",
+        "time": "Tiempo",
+        "status": "Estado"
+      }
+    },
+    "timelogs": {
+      "title": "Registros de tiempo",
+      "csv_export": "Exportar como CSV",
+      "empty": "No hay registros de tiempo para mostrar"
+    },
+    "modal": {
+      "body": "La cantidad de tiempo que se dedica al ticket. Edite el tiempo, si es necesario, y luego haga clic en \"Enviar tiempo\".",
+      "close": "Cancelar",
+      "save": "Enviar tiempo"
+    }
+  },
+  "errors": {
+    "save_hook": "Tiene que enviar su tiempo para este ticket.",
+    "bad_time_format": "Formato de tiempo incorrecto (HH:MM:SS)."
+  }
+}

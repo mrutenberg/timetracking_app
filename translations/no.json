@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Holder rede på hvor my tid som brukes på sakene.",
+    "name": "\r",
+    "parameters": {
+      "time_field_id": {
+        "label": "Tidsfelt-ID",
+        "helpText": "IDen til et tilpasset tallfelt som inneholder sammenlagt tid."
+      },
+      "time_object_field_id": {
+        "label": "Konfigurasjonsfelt-ID",
+        "helpText": "IDen til et tilpasset tallfelt som inneholder tiden som ble brukt på saken."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Vis tidslogg til konsulentene",
+        "helpText": "Konsulentene kan se aktivitet i tidsloggen for sakene."
+      },
+      "manual_pause_resume": {
+        "label": "Vis tidtakerkontroller",
+        "helpText": "Konsulentene kan manuelt stanse eller tilbakestille tidtakeren."
+      },
+      "auto_pause_resume": {
+        "label": "Auto-stans",
+        "helpText": "Tidtakeren tar pause når konsulenten går bort fra saken og starter igjen når konsulenten kommer tilbake til saken."
+      },
+      "reset": {
+        "label": "Tilbakestill gjeldende tid",
+        "helpText": "Konsulentene kan tilbakestille tiden som til nå er brukt på saken."
+      },
+      "time_submission": {
+        "label": "Rediger tiden som sendes inn",
+        "helpText": "Konsulentene kan se gjennom og korrigere tiden før saken sendes inn."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "å",
+    "pending": "v",
+    "hold": "p",
+    "solved": "l",
+    "closed": "a"
+  },
+  "views": {
+    "main": {
+      "pause": "Stans",
+      "total_time_spent": "Sammenlagt tid",
+      "play": "Kjør",
+      "reset": "Tilbakestill",
+      "timelogs": "Tidslogger",
+      "timelogs_table": {
+        "agent": "Konsulent",
+        "time": "Tid",
+        "status": "Status"
+      }
+    },
+    "timelogs": {
+      "title": "Tidslogger",
+      "csv_export": "Eksporter CSV",
+      "empty": "Ingen tidslogger å vise"
+    },
+    "modal": {
+      "body": "Dette viser hvor mye tid du har brukt på denne saken. Rediger tiden, om nødvendig, og klikk på «Send inn tiden».",
+      "close": "Avbryt",
+      "save": "Send inn tiden"
+    }
+  },
+  "errors": {
+    "save_hook": "Du må sende inn tiden brukt på denne saken.",
+    "bad_time_format": "Feil tidsformat (TT:MM:SS)."
+  }
+}

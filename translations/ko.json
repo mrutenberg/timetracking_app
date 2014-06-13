@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "티켓에 소모한 시간 추적을 돕습니다.",
+    "name": "시간 추적",
+    "parameters": {
+      "time_field_id": {
+        "label": "시간 필드 ID",
+        "helpText": "총 시간을 보유할 사용자 지정 숫자 필드의 ID."
+      },
+      "time_object_field_id": {
+        "label": "구성 필드 ID",
+        "helpText": "티켓에 소모한 시간을 보유할 사용자 지정 숫자 필드의 ID."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "상담원에게 시간 로그 표시",
+        "helpText": "상담원은 티켓에 대한 시간 로그 활동을 볼 수 있습니다."
+      },
+      "manual_pause_resume": {
+        "label": "타이머 컨트롤 표시",
+        "helpText": "상담원은 타이머를 수동으로 일시 중지하거나 재설정할 수 있습니다."
+      },
+      "auto_pause_resume": {
+        "label": "자동 일시 중지",
+        "helpText": "상담원이 티켓에서 나가면 타이머가 일시 중지하고 상담원이 티켓에 돌아올 때 타이머가 다시 시작합니다."
+      },
+      "reset": {
+        "label": "현재 시간 재설정",
+        "helpText": "상담원은 티켓에 소모한 현재 시간을 재설정할 수 있습니다."
+      },
+      "time_submission": {
+        "label": "시간 제출 편집",
+        "helpText": "상담원은 티켓을 제출하기 전에 시간을 검토 및 편집할 수 있습니다."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "p",
+    "hold": "h",
+    "solved": "s",
+    "closed": "c"
+  },
+  "views": {
+    "main": {
+      "pause": "일시 중지",
+      "total_time_spent": "총 시간",
+      "play": "실행",
+      "reset": "재설정",
+      "timelogs": "시간 로그",
+      "timelogs_table": {
+        "agent": "상담원",
+        "time": "시간",
+        "status": "상태"
+      }
+    },
+    "timelogs": {
+      "title": "시간 로그",
+      "csv_export": "CSV로 내보내기",
+      "empty": "표시할 시간 로그가 없습니다"
+    },
+    "modal": {
+      "body": "이 티켓에 소모한 시간입니다. 필요하면 시간을 편집한 후 “시간 제출”을 클릭하십시오.",
+      "close": "취소",
+      "save": "시간 제출"
+    }
+  },
+  "errors": {
+    "save_hook": "이 티켓에 대한 시간을 제출해야 합니다.",
+    "bad_time_format": "올바르지 않은 시간 형식(HH:MM:SS)."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "チケットに費やす時間をトラッキングできます。",
+    "name": "Time Tracking",
+    "parameters": {
+      "time_field_id": {
+        "label": "時間フィールドID",
+        "helpText": "合計時間を表示するカスタム数値フィールドのID。"
+      },
+      "time_object_field_id": {
+        "label": "設定フィールドID",
+        "helpText": "チケットに費やした時間を表示するカスタム数値フィールドのID。"
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "タイムログをエージェントに表示",
+        "helpText": "エージェントはチケットのタイムログ動作を表示できます。"
+      },
+      "manual_pause_resume": {
+        "label": "タイマーコントロールを表示",
+        "helpText": "エージェントが手動でタイマーを一時停止またはリセットすることができます。"
+      },
+      "auto_pause_resume": {
+        "label": "自動一時停止",
+        "helpText": "このタイマーはエージェントがチケットから離れると一時停止し、チケットに戻ると再開されます。"
+      },
+      "reset": {
+        "label": "現在の時間をリセット",
+        "helpText": "エージェントがチケットに費やした現在の時間をリセットできます。"
+      },
+      "time_submission": {
+        "label": "時間の送信を編集",
+        "helpText": "エージェントはチケットを送信する前に時間を確認し、編集することができます。"
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "p",
+    "hold": "h",
+    "solved": "s",
+    "closed": "c"
+  },
+  "views": {
+    "main": {
+      "pause": "一時停止",
+      "total_time_spent": "合計時間",
+      "play": "再生",
+      "reset": "リセット",
+      "timelogs": "タイムログ",
+      "timelogs_table": {
+        "agent": "エージェント",
+        "time": "時間",
+        "status": "ステータス"
+      }
+    },
+    "timelogs": {
+      "title": "タイムログ",
+      "csv_export": "CSVをエクスポート",
+      "empty": "表示するタイムログがありません"
+    },
+    "modal": {
+      "body": "これはこのチケットに費やした時間数です。必要であれば時間を編集して、「時間を送信」をクリックしてください。",
+      "close": "キャンセル",
+      "save": "時間を送信"
+    }
+  },
+  "errors": {
+    "save_hook": "このチケットの時間を送信する必要があります。",
+    "bad_time_format": "時間の表記（HH:MM:SS）が正しくありません。"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Aiuta a tenere traccia del tempo passato sui ticket.",
+    "name": "Traccia del tempo",
+    "parameters": {
+      "time_field_id": {
+        "label": "ID campo temporale",
+        "helpText": "ID di un campo numerico personalizzato che conterrà il tempo totale."
+      },
+      "time_object_field_id": {
+        "label": "ID campo configurazione",
+        "helpText": "ID di un campo numerico personalizzato che conterrà il tempo passato su un ticket."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Mostra registro temporale agli agenti",
+        "helpText": "Gli agenti possono vedere le attività nel registro temporale per i ticket."
+      },
+      "manual_pause_resume": {
+        "label": "Mostra controlli timer",
+        "helpText": "Gli agenti possono avviare o fermare il timer manualmente."
+      },
+      "auto_pause_resume": {
+        "label": "Pausa automatica",
+        "helpText": "Il timer viene fermato quando l’agente esce dal ticket e viene riavviato quando l’agente torna al ticket."
+      },
+      "reset": {
+        "label": "Ripristina tempo corrente",
+        "helpText": "Gli agenti possono resettare il tempo corrente passato su un ticket."
+      },
+      "time_submission": {
+        "label": "Modifica tempo al momento dell’inoltro",
+        "helpText": "Gli agenti possono rivedere e modificare il proprio tempo prima di inoltrare il ticket."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "a",
+    "pending": "s",
+    "hold": "i",
+    "solved": "r",
+    "closed": "c"
+  },
+  "views": {
+    "main": {
+      "pause": "In pausa",
+      "total_time_spent": "Tempo totale",
+      "play": "Riproduci",
+      "reset": "Ripristina",
+      "timelogs": "Registri temporali",
+      "timelogs_table": {
+        "agent": "Agente",
+        "time": "Tempo",
+        "status": "Stato"
+      }
+    },
+    "timelogs": {
+      "title": "Registri temporali",
+      "csv_export": "Esporta CSV",
+      "empty": "Nessun registro temporale da visualizzare"
+    },
+    "modal": {
+      "body": "Il tempo passato su questo ticket. Modificate il valore, se necessario, quindi fate clic su \"Invia tempo\".",
+      "close": "Annulla",
+      "save": "Invia tempo"
+    }
+  },
+  "errors": {
+    "save_hook": "Dovete inviare il tempo per questo ticket.",
+    "bad_time_format": "Formato orario errato (HH:MM:SS)."
+  }
+}

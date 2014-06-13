@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Hiermee kunt u bijhouden hoeveel tijd u aan tickets besteedt.",
+    "name": "Time Tracking",
+    "parameters": {
+      "time_field_id": {
+        "label": "Id van tijdveld",
+        "helpText": "De id van een aangepast numeriek veld waarin de totale tijd is vastgelegd."
+      },
+      "time_object_field_id": {
+        "label": "Id van configuratieveld",
+        "helpText": "De id van een aangepast numeriek veld waarin de totale tijd is vastgelegd die aan een ticket is besteed."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Tijdlogs weergeven aan agenten",
+        "helpText": "Agenten kunnen de tijdlogactiviteit op de tickets zien."
+      },
+      "manual_pause_resume": {
+        "label": "Bedieningselementen voor timer weergeven",
+        "helpText": "Agenten kunnen de timer handmatig onderbreken en opnieuw instellen."
+      },
+      "auto_pause_resume": {
+        "label": "Automatisch onderbreken",
+        "helpText": "De timer wordt onderbroken als de agent van het ticket weg navigeert en wordt hervat als de agent weer terug is bij het ticket."
+      },
+      "reset": {
+        "label": "Huidige tijd opnieuw instellen",
+        "helpText": "Agenten kunnen de huidige tijd die aan een ticket wordt besteed opnieuw instellen."
+      },
+      "time_submission": {
+        "label": "In te dienen tijd bewerken",
+        "helpText": "Agenten kunnen hun tijd bekijken en bewerken alvorens het ticket in te dienen."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "a",
+    "hold": "p",
+    "solved": "s",
+    "closed": "g"
+  },
+  "views": {
+    "main": {
+      "pause": "Pauzeren",
+      "total_time_spent": "Totale tijd",
+      "play": "Afspelen",
+      "reset": "Opnieuw instellen",
+      "timelogs": "Tijdlog",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Tijd",
+        "status": "Status"
+      }
+    },
+    "timelogs": {
+      "title": "Tijdlogs",
+      "csv_export": "Exporteren als CSV",
+      "empty": "Geen tijdlogs om weer te geven"
+    },
+    "modal": {
+      "body": "Dit is de hoeveelheid tijd die u aan dit ticket hebt besteed. Bewerk de tijd, indien nodig, en klik op Tijd verzenden.",
+      "close": "Annuleren",
+      "save": "Tijd verzenden"
+    }
+  },
+  "errors": {
+    "save_hook": "U dient uw tijd voor dit ticket in te dienen.",
+    "bad_time_format": "Onjuiste tijdnotatie (HH:MM:SS)."
+  }
+}

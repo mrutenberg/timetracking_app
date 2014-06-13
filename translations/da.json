@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Hjælper dig med at spore tid brugt på tickets.",
+    "name": "Time Tracking",
+    "parameters": {
+      "time_field_id": {
+        "label": "Tidsfelt-id",
+        "helpText": "Id'et til et brugerdefineret numerisk felt, der vil indeholde samlet tid."
+      },
+      "time_object_field_id": {
+        "label": "Konfig felt-id",
+        "helpText": "Id'et til et brugerdefineret numerisk felt, der vil indeholde tid brugt på ticket."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Vis agenter tidslogge",
+        "helpText": "Agenter kan se tidslog-aktiviteter for tickets."
+      },
+      "manual_pause_resume": {
+        "label": "Vis kontrolelementer for timeren",
+        "helpText": "Agenter kan standse timeren midlertidigt eller nulstille den manuelt."
+      },
+      "auto_pause_resume": {
+        "label": "Auto-pause",
+        "helpText": "Timeren standser midlertidigt, når agenten navigerer væk fra ticket'en, og går i gang igen, når agenten er vendt tilbage til tickeet'en."
+      },
+      "reset": {
+        "label": "Nulstil aktuel tid",
+        "helpText": "Agenter kan nulstille den aktuelle tid brugt på en ticket."
+      },
+      "time_submission": {
+        "label": "Rediger indsendt tid",
+        "helpText": "Agenter kan gennemse og redigere deres tid, inden de sender ticket'en."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "å",
+    "pending": "v",
+    "hold": "t",
+    "solved": "s",
+    "closed": "l"
+  },
+  "views": {
+    "main": {
+      "pause": "Pause",
+      "total_time_spent": "Samlet tid",
+      "play": "Afspil",
+      "reset": "Nulstil",
+      "timelogs": "Tidslog",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Tid",
+        "status": "Status"
+      }
+    },
+    "timelogs": {
+      "title": "Tidslog",
+      "csv_export": "Eksporter som CSV",
+      "empty": "Ingen tidslogge at vise"
+    },
+    "modal": {
+      "body": "Dette er den mængde tid, som du brugte på denne ticket. Rediger om nødvendigt tiden, klik derefter på \"Send tid\".",
+      "close": "Annuller",
+      "save": "Send tid"
+    }
+  },
+  "errors": {
+    "save_hook": "Du skal indsende din tid for denne ticket.",
+    "bad_time_format": "Forkert tidsformat (TT:MM:SS)."
+  }
+}

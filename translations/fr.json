@@ -1,0 +1,76 @@
+{
+  "app": {
+    "description": "Vous aide à suivre le temps consacré aux tickets.",
+    "name": "Suivi du temps",
+    "parameters": {
+      "time_field_id": {
+        "label": "ID du champ de temps",
+        "helpText": "L’ID d’un champ numérique personnalisé qui contiendra le temps total."
+      },
+      "time_object_field_id": {
+        "label": "ID du champ de configuration",
+        "helpText": "L’ID d’un champ numérique personnalisé qui contiendra le temps consacré au ticket."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Afficher les journaux horaires pour les agents",
+        "helpText": "Les agents peuvent voir l’activité des journaux horaires."
+      },
+      "manual_pause_resume": {
+        "label": "Afficher les contrôles du minuteur",
+        "helpText": "Les agents peuvent arrêter ou réinitialiser le minuteur manuellement."
+      },
+      "auto_pause_resume": {
+        "label": "Pause automatique",
+        "helpText": "Le minuteur s’arrête quand l’agent quitte le ticket et reprend quand l’agent revient au ticket."
+      },
+      "reset": {
+        "label": "Réinitialiser le temps actuel",
+        "helpText": "Les agents peuvent réinitialiser le temps actuel consacré à un ticket."
+      },
+      "time_submission": {
+        "label": "Modifier l’envoi du temps",
+        "helpText": "Les agents peuvent consulter et modifier leur temps avant d’envoyer le ticket."
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "a",
+    "hold": "p",
+    "solved": "r",
+    "closed": "c"
+  },
+  "views": {
+    "main": {
+      "pause": "Pause",
+      "total_time_spent": "Temps total",
+      "play": "Lire",
+      "reset": "Réinitialiser",
+      "timelogs": "Journal horaire",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Temps",
+        "status": "Statut"
+      }
+    },
+    "timelogs": {
+      "title": "Journal horaire",
+      "csv_export": "Exporter au format CSV",
+      "empty": "Aucun journal horaire à afficher"
+    },
+    "modal": {
+      "body": "C’est le temps que vous avez consacré à ce ticket. Modifiez le temps si nécessaire, puis cliquez sur Envoyer le temps.",
+      "close": "Annuler",
+      "save": "Envoyer le temps"
+    }
+  },
+  "errors": {
+    "save_hook": "Vous devez envoyer votre temps pour ce ticket.",
+    "bad_time_format": "Format de temps incorrect (HH:MM:SS)."
+  }
+}
