@@ -66,7 +66,7 @@
           "title": "This is a checkbox setting label as well. What this does is let the agent reset the current time he has spent on a specific ticket using a reset button."
         },
         "helpText": {
-          "value": "Agent can reset his current time spent on a ticket.",
+          "value": "Agents can reset the current time spent on a ticket.",
           "title": "this is the explanation helptext of the reset current time checkbox for the admin who is installing the app"
         }
       },
