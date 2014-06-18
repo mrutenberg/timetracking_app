@@ -30,16 +30,6 @@ parts:
       title: "this is the helptext for that previously defined setting"
       value: "The ID of a custom numeric field that will hold the time spent on ticket."
   - translation:
-      key: "txt.apps.time_tracking.app.parameters.display_timer.label"
-      title: "This is an app setting allowing the admin to choose if he wants the time to be shown to his agents or not"
-      value: "Display timer to agents"
-      obsolete: "2014-06-15"
-  - translation:
-      key: "txt.apps.time_tracking.app.parameters.display_timer.helpText"
-      title: "this is the helptext for that previously defined setting explaining what it does to the admin"
-      value: "Agents can see the timers for elapsed and total time on tickets."
-      obsolete: "2014-06-15"
-  - translation:
       key: "txt.apps.time_tracking.app.parameters.display_timelogs.label"
       title: "This is an app setting allowing the admin to choose if he wants the timelogs to be shown to his agents or not"
       value: "Display timelogs to agents"
@@ -159,6 +149,14 @@ parts:
       key: "txt.apps.time_tracking.views.modal.save"
       title: "This is the validation button for submitting the time from the modal"
       value: "Submit time"
+  - translation:
+      key: "txt.apps.time_tracking.errors.setup.question"
+      title: "A question that gives the user a hint about what could be wrong"
+      value: "Did you follow the installation instructions for this app and configure both required ticket fields to appear on every ticket form?"
+  - translation:
+      key: "txt.apps.time_tracking.errors.setup.solution"
+      title: "A suggestion about how to setup the app correctly"
+      value: "If not, please see <a href=\"{{url}}\">these instructions</a> and go to your ticket forms management page to finalize the set-up."
   - translation:
       key: "txt.apps.time_tracking.errors.save_hook"
       title: "Error message when the agent forgot to submit the time on this ticket"
