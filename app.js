@@ -265,7 +265,9 @@
     })(),
 
     initialize: function() {
-      if (this.ticket().id() && this.setting('display_timelogs')) {
+      var displayTimelogs = this.ticket().id() && this.setting('display_timelogs');
+
+      if (displayTimelogs) {
         this.ajax('fetchAudits');
       }
 
@@ -275,8 +277,9 @@
       this.timeLoopID = this.setTimeLoop();
 
       this.switchTo('main', {
-        manual_pause_resume: this.setting('manual_pause_resume'),
-        display_reset: this.setting('reset')
+        manualPauseResume: this.setting('manual_pause_resume'),
+        displayReset: this.setting('reset'),
+        displayTimelogs: displayTimelogs
       });
     },
 

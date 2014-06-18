@@ -5,9 +5,9 @@
     </div>
     <div class="span6">
       <div class="text-center pull-right">
-        {{#if manual_pause_resume}}<button class="btn play" title="{{t "views.main.play"}}"><i class="icon icon-time-play active"></i></button>{{/if}}
-        {{#if manual_pause_resume}}<button class="btn pause" title="{{t "views.main.pause"}}"><i class="icon icon-time-pause"></i></button>{{/if}}
-        {{#if display_reset}}<button class="btn reset" title="{{t "views.main.reset"}}"><i class="icon icon-time-reset"></i></button>{{/if}}
+        {{#if manualPauseResume}}<button class="btn play" title="{{t "views.main.play"}}"><i class="icon icon-time-play active"></i></button>{{/if}}
+        {{#if manualPauseResume}}<button class="btn pause" title="{{t "views.main.pause"}}"><i class="icon icon-time-pause"></i></button>{{/if}}
+        {{#if displayReset}}<button class="btn reset" title="{{t "views.main.reset"}}"><i class="icon icon-time-reset"></i></button>{{/if}}
       </div>
     </div>
   </div>
@@ -19,13 +19,15 @@
   </div>
 </div>
 
-<div class="row-fluid timelogs-container">
-  {{spinner "dotted"}}
-</div>
+{{#if displayTimelogs}}
+  <div class="row-fluid timelogs-container">
+    {{spinner "dotted"}}
+  </div>
 
-<div class="expand-bar">
-  <div class="arrow"></div>
-</div>
+  <div class="expand-bar">
+    <div class="arrow"></div>
+  </div>
+{{/if}}
 
 <div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
