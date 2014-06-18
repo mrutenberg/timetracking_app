@@ -3,7 +3,7 @@
   'use_strict';
 
   return {
-    SETUP_INFO: 'https://support.zendesk.com/',
+    SETUP_INFO: 'https://support.zendesk.com/entries/69791168-Setting-up-the-Time-Tracking-app',
 
     storage: {},
 
