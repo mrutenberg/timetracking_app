@@ -8,7 +8,7 @@
         "helpText": "The ID of a custom numeric field that will hold the total time."
       },
       "time_object_field_id": {
-        "label": "Config Field ID",
+        "label": "Configuration Field ID",
         "helpText": "The ID of a custom numeric field that will hold the time spent on ticket."
       },
       "display_timer": {
@@ -29,7 +29,7 @@
       },
       "reset": {
         "label": "Reset current time",
-        "helpText": "Agent can reset his current time spent on a ticket."
+        "helpText": "Agents can reset the current time spent on a ticket."
       },
       "time_submission": {
         "label": "Edit time submission",
@@ -51,7 +51,7 @@
       "total_time_spent": "Total time",
       "play": "Play",
       "reset": "Reset",
-      "timelogs": "Timelogs",
+      "timelogs": "Timelog",
       "timelogs_table": {
         "agent": "Agent",
         "time": "Time",
@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Did you follow the installation instructions for this app and configure both required ticket fields to appear on every ticket form?",
+      "solution": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the setup."
+    },
     "save_hook": "You need to submit your time on this ticket.",
     "bad_time_format": "Incorrect time format (HH:MM:SS)."
   }

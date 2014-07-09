@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Fulgte du installasjonsveiledningen for denne appen og konfigurerte den slik at begge de obligatoriske saksfeltene vises på alle saksskjema?",
+      "solution": "Hvis ikke, kan du lese <a href=\"{{url}}\" target=\"_blank\">disse instruksjonene</a> og gå til siden for saksskjemabehandling for å konfigurere ferdig."
+    },
     "save_hook": "Du må sende inn tiden brukt på denne saken.",
     "bad_time_format": "Feil tidsformat (TT:MM:SS)."
   }

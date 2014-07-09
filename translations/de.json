@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Haben Sie die Installationsanweisungen für diese App befolgt und beide erforderliche Ticketfelder so konfiguriert, dass sie in jedem Ticketformular erscheinen?",
+      "solution": "Wenn nicht, lesen Sie <a href=\"{{url}}\" target=\"_blank\">diese Anweisungen</a> und stellen Sie die Einrichtung auf der Seite zur Verwaltung von Ticketformularen fertig."
+    },
     "save_hook": "Sie müssen die mit der Bearbeitung dieses Tickets verbrachte Zeit einreichen.",
     "bad_time_format": "Falsches Zeitformat (HH:MM:SS)."
   }

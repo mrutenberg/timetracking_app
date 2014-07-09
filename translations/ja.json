@@ -38,12 +38,12 @@
     }
   },
   "statuses": {
-    "new": "n",
-    "open": "o",
-    "pending": "p",
-    "hold": "h",
-    "solved": "s",
-    "closed": "c"
+    "new": "新",
+    "open": "オ",
+    "pending": "保",
+    "hold": "待",
+    "solved": "済",
+    "closed": "終"
   },
   "views": {
     "main": {
@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "このアプリのインストール手順に従って、2つの必要なチケットフィールドがすべてのチケットフォームに表示されるように設定しましたか。",
+      "solution": "そのように設定していない場合は、<a href=\"{{url}}\" target=\"_blank\">こちらの手順</a>を参照し、チケットフォームの管理ページに進んで、設定を完了してください。"
+    },
     "save_hook": "このチケットの時間を送信する必要があります。",
     "bad_time_format": "時間の表記（HH:MM:SS）が正しくありません。"
   }

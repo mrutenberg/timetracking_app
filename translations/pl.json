@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Czy w przypadku tej aplikacji postąpiono zgodnie z instrukcjami instalacji i skonfigurowano oba wymagane pola zgłoszenia do wyświetlania w każdym formularzu zgłoszenia?",
+      "solution": "Jeśli nie, zapoznaj się z <a href=\"{{url}}\" target=\"_blank\">instrukcjami</a> i przejdź do strony zarządzania formularzami zgłoszeń, aby ukończyć konfigurację."
+    },
     "save_hook": "Musisz wysłać informacje o czasie poświęconym na to zgłoszenie.",
     "bad_time_format": "Nieprawidłowy format czasu (GG:MM:SS)."
   }

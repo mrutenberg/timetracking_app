@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Bu uygulama için kurulum talimatlarını izleyip her kayıt formunda görünecek olan gerekli kayıt alanlarının ikisini de yapılandırdınız mı?",
+      "solution": "Yapmadıysanız, lütfen <a href=\"{{url}}\" target=\"_blank\">bu talimatları</a> izleyin ve kurulumu tamamlamak için kayıt formları yönetim sayfanıza gidin."
+    },
     "save_hook": "Bu kayıt için harcadığınız zamanı bildirmeniz gerekiyor.",
     "bad_time_format": "Zaman biçimi hatalı (SA:DD:SN)."
   }

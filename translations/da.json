@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Fulgte du installationsvejledningen for denne app, og konfigurerede du begge påkrævede ticket-felter til at blive vist på alle ticket-formularer?",
+      "solution": "Hvis ikke, henvises du til <a href=\"{{url}}\" target=\"_blank\">disse instruktioner,</a> og du skal åbne siden til adminstration af ticket-formularer for at afslutte installationen."
+    },
     "save_hook": "Du skal indsende din tid for denne ticket.",
     "bad_time_format": "Forkert tidsformat (TT:MM:SS)."
   }

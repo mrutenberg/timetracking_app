@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "您是否已依據此 app 的安裝說明設定顯示在每張工單表單中的兩個必需工單欄位？",
+      "solution": "若尚未設定，請檢視<a href=\"{{url}}\" target=\"_blank\">這些說明</a>，前往您的工單表單管理頁面完成設定。"
+    },
     "save_hook": "您需要提交工單花費的時間。",
     "bad_time_format": "錯誤時間格式（HH:MM:SS）。"
   }
