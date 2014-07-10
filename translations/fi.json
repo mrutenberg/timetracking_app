@@ -1,0 +1,80 @@
+{
+  "app": {
+    "description": "Auttaa pitämään kirjaa tiketteihin käytetystä ajasta.",
+    "name": "Ajankäytön seuranta",
+    "parameters": {
+      "time_field_id": {
+        "label": "Aikakentän tunnus",
+        "helpText": "Tunnus mukautetulle numerokentälle, joka sisältää kokonaisajan."
+      },
+      "time_object_field_id": {
+        "label": "Kokoonpanokentän tunnus",
+        "helpText": "Tunnus mukautetulle numerokentälle, joka sisältää tikettiin käytetyn ajan."
+      },
+      "display_timer": {
+        "label": "Display timer to agents",
+        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+      },
+      "display_timelogs": {
+        "label": "Näytä aikalokit tukihenkilöille",
+        "helpText": "Tukihenkilöt voivat nähdä ajankäytön tiketeissä."
+      },
+      "manual_pause_resume": {
+        "label": "Näytä ajastimen ohjaimet",
+        "helpText": "Tukihenkilöt voivat pysäyttää tai nollata ajastimen manuaalisesti."
+      },
+      "auto_pause_resume": {
+        "label": "Automaattinen tauko",
+        "helpText": "Ajastin pysähtyy, kun tukihenkilö siirtyy pois tiketistä, ja jatkaa, kun tukihenkilö palaa takaisin tikettiin."
+      },
+      "reset": {
+        "label": "Nollaa nykyinen aika",
+        "helpText": "Tukihenkilöt voivat nollata tikettiin tällä hetkellä käytetyn ajan."
+      },
+      "time_submission": {
+        "label": "Muokkaa aikalähetystä",
+        "helpText": "Tukihenkilöt voivat tarkastaa ja muokata aikaa ennen tiketin lähettämistä."
+      }
+    }
+  },
+  "statuses": {
+    "new": "u",
+    "open": "a",
+    "pending": "o",
+    "hold": "p",
+    "solved": "r",
+    "closed": "s"
+  },
+  "views": {
+    "main": {
+      "pause": "Tauko",
+      "total_time_spent": "Kokonaisaika",
+      "play": "Toista",
+      "reset": "Palauta",
+      "timelogs": "Aikaloki",
+      "timelogs_table": {
+        "agent": "Tukihenkilö",
+        "time": "Aika",
+        "status": "Tila"
+      }
+    },
+    "timelogs": {
+      "title": "Aikalokit",
+      "csv_export": "Vie CSV",
+      "empty": "Ei esitettäviä aikalokeja"
+    },
+    "modal": {
+      "body": "Tämä on aika, jonka käytit tähän tikettiin. Muokkaa aikaa, jos se on tarpeen, ja napsauta sitten Lähetä aika.",
+      "close": "Peruuta",
+      "save": "Lähetä aika"
+    }
+  },
+  "errors": {
+    "setup": {
+      "question": "Noudatitko tämän sovelluksen asennusohjeita ja määrititkö molemmat pakolliset tikettikentät, jotta ne näkyvät kaikissa tikettilomakkeissa?",
+      "solution": "Jos et, lue <a href=\"{{url}}\" target=\"_blank\">nämä ohjeet</a> ja suorita asennus loppuun tikettilomakkeiden hallintasivulla."
+    },
+    "save_hook": "Sinun pitää lähettää tähän tikettiin käytetty aika.",
+    "bad_time_format": "Virheellinen aikamuoto (HH:MM:SS)."
+  }
+}

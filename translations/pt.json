@@ -70,6 +70,10 @@
     }
   },
   "errors": {
+    "setup": {
+      "question": "Você seguiu as instruções de instalação para esse aplicativo e configurou os dois campos de ticket obrigatórios a serem exibidos em todos os formulários de ticket?",
+      "solution": "Se não, consulte <a href=\"{{url}}\" target=\"_blank\">essas instruções</a> e vá para a página de gerenciamento de formulários de ticket para finalizar a configuração."
+    },
     "save_hook": "Você precisa enviar seu tempo neste ticket.",
     "bad_time_format": "Formato de tempo incorreto (HH:MM:SS)."
   }

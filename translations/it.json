@@ -25,11 +25,11 @@
       },
       "auto_pause_resume": {
         "label": "Pausa automatica",
-        "helpText": "Il timer viene fermato quando l’agente esce dal ticket e viene riavviato quando l’agente torna al ticket."
+        "helpText": "Il timer viene fermato quando l’agente esce dal ticket e riavviato quando torna sul ticket."
       },
       "reset": {
-        "label": "Ripristina tempo corrente",
-        "helpText": "Gli agenti possono resettare il tempo corrente passato su un ticket."
+        "label": "Azzera conteggio del tempo",
+        "helpText": "Gli agenti possono azzerare il conteggio del tempo trascorso su un ticket."
       },
       "time_submission": {
         "label": "Modifica tempo al momento dell’inoltro",
@@ -50,8 +50,8 @@
       "pause": "In pausa",
       "total_time_spent": "Tempo totale",
       "play": "Riproduci",
-      "reset": "Ripristina",
-      "timelogs": "Registri temporali",
+      "reset": "Azzera",
+      "timelogs": "Registro temporale",
       "timelogs_table": {
         "agent": "Agente",
         "time": "Tempo",
@@ -59,18 +59,22 @@
       }
     },
     "timelogs": {
-      "title": "Registri temporali",
+      "title": "Registro temporale",
       "csv_export": "Esporta CSV",
       "empty": "Nessun registro temporale da visualizzare"
     },
     "modal": {
-      "body": "Il tempo passato su questo ticket. Modificate il valore, se necessario, quindi fate clic su \"Invia tempo\".",
+      "body": "Il tempo trascorso su questo ticket. Modifica il valore se necessario e clicca su \"Invia tempo\".",
       "close": "Annulla",
       "save": "Invia tempo"
     }
   },
   "errors": {
-    "save_hook": "Dovete inviare il tempo per questo ticket.",
+    "setup": {
+      "question": "Hai seguito le istruzioni per l’installazione dell’app e configurato entrambi i campi ticket obbligatori per la visualizzazione su ogni modulo ticket?",
+      "solution": "In caso contrario, consulta <a href=\"{{url}}\" target=\"_blank\">queste istruzioni</a> e visita la pagina di gestione dei moduli ticket per finalizzare l’impostazione."
+    },
+    "save_hook": "Devi indicare il tempo trascorso su questo ticket.",
     "bad_time_format": "Formato orario errato (HH:MM:SS)."
   }
 }
