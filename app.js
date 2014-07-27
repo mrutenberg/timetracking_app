@@ -415,7 +415,7 @@
       },
 
       timeStringToSeconds: function(timeString) {
-        var re = /^(\d{,2}):(\d{,2}):(\d{,2})$/,
+        var re = /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
             result = re.exec(timeString);
 
         if (!result ||
