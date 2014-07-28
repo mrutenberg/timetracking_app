@@ -422,10 +422,14 @@
             result.length != 4) {
           throw { message: 'bad_time_format' };
         } else {
-          return (parseInt(result[1], 10) || 0) * 3600 +
-            (parseInt(result[2], 10) || 0) * 60 +
-            (parseInt(result[3], 10) || 0);
+          return this.parseIntWithDefault(result[1]) * 3600 +
+            this.parseIntWithDefault(result[2]) * 60 +
+            this.parseIntWithDefault(result[3]);
         }
+      },
+
+      parseIntWithDefault: function(num, def) {
+        return parseInt(num, 10) || def || 0;
       },
 
       addInsignificantZero: function(n) {
