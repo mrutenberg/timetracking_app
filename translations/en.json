@@ -191,7 +191,7 @@
         "title": "A question that gives the user a hint about what could be wrong"
       },
       "solution": {
-        "value": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the set-up.",
+        "value": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the setup.",
         "title": "A suggestion about how to setup the app correctly"
       }
     },
