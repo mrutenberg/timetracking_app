@@ -415,16 +415,16 @@
       },
 
       timeStringToSeconds: function(timeString) {
-        var re = /^([\d]{2}):([\d]{2}):([\d]{2})$/,
+        var re = /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
             result = re.exec(timeString);
 
         if (!result ||
             result.length != 4) {
           throw { message: 'bad_time_format' };
         } else {
-          return parseInt(result[1], 10) * 3600 +
-            parseInt(result[2], 10) * 60 +
-            parseInt(result[3], 10);
+          return (parseInt(result[1], 10) || 0) * 3600 +
+            (parseInt(result[2], 10) || 0) * 60 +
+            (parseInt(result[3], 10) || 0);
         }
       },
 
