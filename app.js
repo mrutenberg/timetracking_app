@@ -180,7 +180,7 @@
       var timeString = this.$('.modal-time').val();
 
       try {
-        this.updateTime(this.TimeHelper.timeStringToSeconds(timeString));
+        this.updateTime(this.TimeHelper.timeStringToSeconds(timeString, this.setting('simple_submission')));
         this.saveHookPromiseIsDone = true; // Flag that saveHookPromiseDone is gonna be called after hiding the modal
         this.$('.modal').modal('hide');
         this.saveHookPromiseDone();
@@ -340,7 +340,11 @@
     },
 
     renderTimeModal: function() {
-      this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
+      if (this.setting('simple_submission')) {
+        this.$('modal-time').val(Math.floor(this.elapsedTime / 60))
+      } else {
+        this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
+      }
       this.$('.modal').modal('show');
     },
 
@@ -414,14 +418,24 @@
                            this.addInsignificantZero(secs));
       },
 
-      timeStringToSeconds: function(timeString) {
-        var re = /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
-            result = re.exec(timeString);
+      simpleFormat: /^\d+$/,
 
-        if (!result ||
-            result.length != 4) {
-          throw { message: 'bad_time_format' };
+      complexFormat: /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
+
+      timeStringToSeconds: function(timeString, simple) {
+        var result;
+
+        if (simple) {
+          result = timeString.match(this.simpleFormat);
+
+          if (!result) { throw { message: 'bad_time_format' }; }
+
+          return parseInt(result[0]);
         } else {
+          result = timeString.match(this.complexFormat);
+
+          if (!result || result.length != 4) { throw { message: 'bad_time_format' }; }
+
           return this.parseIntWithDefault(result[1]) * 3600 +
             this.parseIntWithDefault(result[2]) * 60 +
             this.parseIntWithDefault(result[3]);
