@@ -46,6 +46,11 @@
       "name": "time_submission",
       "type": "checkbox",
       "default": true
+    },
+    {
+      "name": "simple_submission",
+      "type": "checkbox",
+      "default": false
     }
   ]
 }
