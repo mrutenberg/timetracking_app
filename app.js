@@ -180,7 +180,7 @@
       var timeString = this.$('.modal-time').val();
 
       try {
-        this.updateTime(this.TimeHelper.timeStringToSeconds(timeString));
+        this.updateTime(this.TimeHelper.timeStringToSeconds(timeString, this.setting('simple_submission')));
         this.saveHookPromiseIsDone = true; // Flag that saveHookPromiseDone is gonna be called after hiding the modal
         this.$('.modal').modal('hide');
         this.saveHookPromiseDone();
@@ -340,7 +340,11 @@
     },
 
     renderTimeModal: function() {
-      this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
+      if (this.setting('simple_submission')) {
+        this.$('.modal-time').val(Math.floor(this.elapsedTime / 60));
+      } else {
+        this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
+      }
       this.$('.modal').modal('show');
     },
 
@@ -404,28 +408,47 @@
 
     TimeHelper: {
       secondsToTimeString: function(seconds) {
-        var hours   = Math.floor(seconds / 3600),
-            minutes = Math.floor((seconds - (hours * 3600)) / 60),
-            secs    = seconds - (hours * 3600) - (minutes * 60);
+        var negative = seconds < 0,
+            absValue = Math.abs(seconds),
+            hours    = Math.floor(absValue / 3600),
+            minutes  = Math.floor((absValue - (hours * 3600)) / 60),
+            secs     = absValue - (hours * 3600) - (minutes * 60);
 
-        return helpers.fmt('%@:%@:%@',
-                           this.addInsignificantZero(hours),
-                           this.addInsignificantZero(minutes),
-                           this.addInsignificantZero(secs));
+        var timeString = helpers.fmt('%@:%@:%@',
+          this.addInsignificantZero(hours),
+          this.addInsignificantZero(minutes),
+          this.addInsignificantZero(secs)
+        );
+
+        return (negative ? '-' : '') + timeString;
       },
 
-      timeStringToSeconds: function(timeString) {
-        var re = /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
-            result = re.exec(timeString);
+      simpleFormat: /^-?\d+$/,
 
-        if (!result ||
-            result.length != 4) {
-          throw { message: 'bad_time_format' };
+      complexFormat: /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
+
+      timeStringToSeconds: function(timeString, simple) {
+        var result;
+
+        if (simple) {
+          result = timeString.match(this.simpleFormat);
+
+          if (!result) { throw { message: 'bad_time_format' }; }
+
+          return parseInt(result[0], 10) * 60;
         } else {
-          return (parseInt(result[1], 10) || 0) * 3600 +
-            (parseInt(result[2], 10) || 0) * 60 +
-            (parseInt(result[3], 10) || 0);
+          result = timeString.match(this.complexFormat);
+
+          if (!result || result.length != 4) { throw { message: 'bad_time_format' }; }
+
+          return this.parseIntWithDefault(result[1]) * 3600 +
+            this.parseIntWithDefault(result[2]) * 60 +
+            this.parseIntWithDefault(result[3]);
         }
+      },
+
+      parseIntWithDefault: function(num, def) {
+        return parseInt(num, 10) || def || 0;
       },
 
       addInsignificantZero: function(n) {
