@@ -341,7 +341,7 @@
 
     renderTimeModal: function() {
       if (this.setting('simple_submission')) {
-        this.$('.modal-time').val(Math.floor(this.elapsedTime / 60))
+        this.$('.modal-time').val(Math.floor(this.elapsedTime / 60));
       } else {
         this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
       }
@@ -408,17 +408,21 @@
 
     TimeHelper: {
       secondsToTimeString: function(seconds) {
-        var hours   = Math.floor(seconds / 3600),
-            minutes = Math.floor((seconds - (hours * 3600)) / 60),
-            secs    = seconds - (hours * 3600) - (minutes * 60);
+        var negative = seconds < 0,
+            absValue = Math.abs(seconds),
+            hours    = Math.floor(absValue / 3600),
+            minutes  = Math.floor((absValue - (hours * 3600)) / 60),
+            secs     = absValue - (hours * 3600) - (minutes * 60);
 
-        return helpers.fmt('%@:%@:%@',
-                           this.addInsignificantZero(hours),
-                           this.addInsignificantZero(minutes),
-                           this.addInsignificantZero(secs));
+        var timeString = helpers.fmt('%@:%@:%@',
+          this.addInsignificantZero(hours),
+          this.addInsignificantZero(minutes),
+          this.addInsignificantZero(secs));
+
+        return (negative ? '-' : '') + timeString;
       },
 
-      simpleFormat: /^\d+$/,
+      simpleFormat: /^-?\d+$/,
 
       complexFormat: /^(\d{0,2}):(\d{0,2}):(\d{0,2})$/,
 
