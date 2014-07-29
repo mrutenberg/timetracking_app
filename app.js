@@ -417,7 +417,8 @@
         var timeString = helpers.fmt('%@:%@:%@',
           this.addInsignificantZero(hours),
           this.addInsignificantZero(minutes),
-          this.addInsignificantZero(secs));
+          this.addInsignificantZero(secs)
+        );
 
         return (negative ? '-' : '') + timeString;
       },
