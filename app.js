@@ -341,7 +341,7 @@
 
     renderTimeModal: function() {
       if (this.setting('simple_submission')) {
-        this.$('modal-time').val(Math.floor(this.elapsedTime / 60))
+        this.$('.modal-time').val(Math.floor(this.elapsedTime / 60))
       } else {
         this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
       }
@@ -430,7 +430,7 @@
 
           if (!result) { throw { message: 'bad_time_format' }; }
 
-          return parseInt(result[0]);
+          return parseInt(result[0], 10) * 60;
         } else {
           result = timeString.match(this.complexFormat);
 
