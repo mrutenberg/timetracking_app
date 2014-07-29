@@ -79,6 +79,16 @@
           "value": "Agents can review and edit their time before submitting the ticket.",
           "title": "this is the explanation helptext of edit time submission checkbox for the admin who is installing the app"
         }
+      },
+      "simple_submission": {
+        "label": {
+          "value": "Simplified time submission",
+          "title": "This is a checkbox setting lable. If the admin checks this box, the agents will be able to submit time in a simple format which consists of just one number, in minutes"
+        },
+        "helpText": {
+          "value": "Prompt agents to simply enter a value in minutes before submitting the ticket",
+          "title": "This is the explanation helptext of the simple submission checkbox for the admin who is installing the app"
+        }
       }
     }
   },
@@ -181,7 +191,7 @@
         "title": "A question that gives the user a hint about what could be wrong"
       },
       "solution": {
-        "value": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the set-up.",
+        "value": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the setup.",
         "title": "A suggestion about how to setup the app correctly"
       }
     },
