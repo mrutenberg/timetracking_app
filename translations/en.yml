@@ -71,12 +71,12 @@ parts:
       value: "Agents can review and edit their time before submitting the ticket."
   - translation:
       key: "txt.apps.time_tracking.app.parameters.simple_submission.label"
-      title: "This is a checkbox setting lable. If the admin checks this box, the agents will be able to submit time in a simple format which consists of just one number, in minutes"
+      title: "This is a checkbox setting lable. If the admin checks this box, the agents will be able to submit time in a simple format which consists of just one number, in minutes: https://www.dropbox.com/s/pw13z83j6qoqktv/Screenshot%202014-08-01%2011.29.46.png"
       value: "Simplified time submission"
   - translation:
       key: "txt.apps.time_tracking.app.parameters.simple_submission.helpText"
-      title: "This is the explanation helptext of the simple submission checkbox for the admin who is installing the app"
-      value: "Prompt agents to simply enter a value in minutes before submitting the ticket"
+      title: "This is the explanation helptext of the simple submission checkbox for the admin who is installing the app: https://www.dropbox.com/s/pw13z83j6qoqktv/Screenshot%202014-08-01%2011.29.46.png"
+      value: "Prompt agents to enter a value in minutes before submitting the ticket"
   - translation:
       key: "txt.apps.time_tracking.statuses.new"
       title: "first letter of status new"
