@@ -38,6 +38,7 @@
       'app.deactivated'         : 'onAppFocusOut',
       'app.willDestroy'         : 'onAppWillDestroy',
       'ticket.save'             : 'onTicketSave',
+      'ticket.submit.done'      : 'onTicketSubmitDone',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
       'fetchAudits.done'        : 'onFetchAuditsDone',
       'fetchRequirements.done'  : 'onFetchRequirementsDone',
@@ -107,6 +108,10 @@
       }
     },
 
+    onTicketSubmitDone: function() {
+      this.resetElapsedTime();
+    },
+
     onFetchAuditsDone: function(data) {
       var status = "",
           timelogs = _.reduce(data.audits, function(memo, audit) {
@@ -167,8 +172,7 @@
     },
 
     onResetClicked: function() {
-      this.elapsedTime = 0;
-      this.updateMainView(this.elapsedTime);
+      this.resetElapsedTime();
     },
 
     onTimelogsClicked: function() {
@@ -346,6 +350,11 @@
         this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
       }
       this.$('.modal').modal('show');
+    },
+
+    resetElapsedTime: function() {
+      this.elapsedTime = 0;
+      this.updateMainView(this.elapsedTime);
     },
 
     /*
