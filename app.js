@@ -110,6 +110,7 @@
 
     onTicketSubmitDone: function() {
       this.resetElapsedTime();
+      _.delay(this.getTimelogs.bind(this), 1000);
     },
 
     onFetchAuditsDone: function(data) {
@@ -269,12 +270,7 @@
     })(),
 
     initialize: function() {
-      var displayTimelogs = this.ticket().id() && this.setting('display_timelogs');
-
-      if (displayTimelogs) {
-        this.ajax('fetchAudits');
-      }
-
+      this.getTimelogs();
       this.hideFields();
       this.checkForms();
 
@@ -283,8 +279,14 @@
       this.switchTo('main', {
         manualPauseResume: this.setting('manual_pause_resume'),
         displayReset: this.setting('reset'),
-        displayTimelogs: displayTimelogs
+        displayTimelogs: this.isTimelogsEnabled()
       });
+    },
+
+    getTimelogs: function() {
+      if (this.isTimelogsEnabled()) {
+        this.ajax('fetchAudits');
+      }
     },
 
     updateMainView: function(time) {
@@ -386,6 +388,10 @@
      * HELPERS
      *
      */
+
+    isTimelogsEnabled: function() {
+      return this.ticket().id() && this.setting('display_timelogs');
+    },
 
     time: function(time) {
       return this.getOrSetField(this.timeFieldLabel(), time);
