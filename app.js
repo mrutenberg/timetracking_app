@@ -38,6 +38,7 @@
       'app.deactivated'         : 'onAppFocusOut',
       'app.willDestroy'         : 'onAppWillDestroy',
       'ticket.save'             : 'onTicketSave',
+      'ticket.submit.done'      : 'onTicketSubmitDone',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
       'fetchAudits.done'        : 'onFetchAuditsDone',
       'fetchRequirements.done'  : 'onFetchRequirementsDone',
@@ -107,6 +108,11 @@
       }
     },
 
+    onTicketSubmitDone: function() {
+      this.resetElapsedTime();
+      _.delay(this.getTimelogs.bind(this), 1000);
+    },
+
     onFetchAuditsDone: function(data) {
       var status = "",
           timelogs = _.reduce(data.audits, function(memo, audit) {
@@ -167,8 +173,7 @@
     },
 
     onResetClicked: function() {
-      this.elapsedTime = 0;
-      this.updateMainView(this.elapsedTime);
+      this.resetElapsedTime();
     },
 
     onTimelogsClicked: function() {
@@ -265,12 +270,7 @@
     })(),
 
     initialize: function() {
-      var displayTimelogs = this.ticket().id() && this.setting('display_timelogs');
-
-      if (displayTimelogs) {
-        this.ajax('fetchAudits');
-      }
-
+      this.getTimelogs();
       this.hideFields();
       this.checkForms();
 
@@ -279,8 +279,14 @@
       this.switchTo('main', {
         manualPauseResume: this.setting('manual_pause_resume'),
         displayReset: this.setting('reset'),
-        displayTimelogs: displayTimelogs
+        displayTimelogs: this.isTimelogsEnabled()
       });
+    },
+
+    getTimelogs: function() {
+      if (this.isTimelogsEnabled()) {
+        this.ajax('fetchAudits');
+      }
     },
 
     updateMainView: function(time) {
@@ -348,6 +354,11 @@
       this.$('.modal').modal('show');
     },
 
+    resetElapsedTime: function() {
+      this.elapsedTime = 0;
+      this.updateMainView(this.elapsedTime);
+    },
+
     /*
      *
      * UTILS
@@ -377,6 +388,10 @@
      * HELPERS
      *
      */
+
+    isTimelogsEnabled: function() {
+      return this.ticket().id() && this.setting('display_timelogs');
+    },
 
     time: function(time) {
       return this.getOrSetField(this.timeFieldLabel(), time);
