@@ -164,6 +164,10 @@
         "value": "Export CSV",
         "title": "this is an export CSV button that generates a CSV export of the timelog"
       },
+      "error": {
+        "value": "We are unable to load any timelogs.",
+        "title": "This message is displayed to the agent when the app is unable to load timelogs for a ticket"
+      },
       "empty": {
         "value": "No timelogs to display",
         "title": "This is a message being displayed when there are no logs"
