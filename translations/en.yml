@@ -142,6 +142,10 @@ parts:
       title: "this is an export CSV button that generates a CSV export of the timelog"
       value: "Export CSV"
   - translation:
+      key: "txt.apps.time_tracking.views.timelogs.error"
+      title: "This message is displayed to the agent when the app is unable to load timelogs for a ticket"
+      value: "We are unable to load any timelogs."
+  - translation:
       key: "txt.apps.time_tracking.views.timelogs.empty"
       title: "This is a message being displayed when there are no logs"
       value: "No timelogs to display"
