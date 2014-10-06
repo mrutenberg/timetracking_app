@@ -8,9 +8,9 @@
     storage: {},
 
     requests: {
-      fetchAudits: function() {
+      fetchAuditsPage: function(url) {
         return {
-          url: helpers.fmt(
+          url: url || helpers.fmt(
             '/api/v2/tickets/%@/audits.json?include=users',
             this.ticket().id()
           )
@@ -40,8 +40,9 @@
       'ticket.save'             : 'onTicketSave',
       'ticket.submit.done'      : 'onTicketSubmitDone',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
-      'fetchAudits.done'        : 'onFetchAuditsDone',
       'fetchRequirements.done'  : 'onFetchRequirementsDone',
+      'fetchAuditsPage.done'    : 'onFetchAuditsPageDone',
+      'fetchAllAudits.done'     : 'onFetchAllAuditsDone',
       'click .pause'            : 'onPauseClicked',
       'click .play'             : 'onPlayClicked',
       'click .reset'            : 'onResetClicked',
@@ -113,9 +114,9 @@
       _.delay(this.getTimelogs.bind(this), 1000);
     },
 
-    onFetchAuditsDone: function(data) {
+    onFetchAllAuditsDone: function() {
       var status = "",
-          timelogs = _.reduce(data.audits, function(memo, audit) {
+          timelogs = _.reduce(this.store('audits'), function(memo, audit) {
             var newStatus = _.find(audit.events, function(event) {
               return event.field_name == 'status';
             }, this),
@@ -133,7 +134,7 @@
                 date: new Date(audit.created_at).toLocaleString(),
                 status: status,
                 localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
-                user: _.find(data.users, function(user) {
+                user: _.find(this.store('users'), function(user) {
                   return user.id === audit.author_id;
                 })
               });
@@ -283,10 +284,25 @@
       });
     },
 
-    getTimelogs: function() {
-      if (this.isTimelogsEnabled()) {
-        this.ajax('fetchAudits');
+    fetchAllAudits: function(url, data, callback) {
+      this.store('audits', []);
+      this.store('users', []);
+      this.ajax('fetchAuditsPage');
+    },
+
+    onFetchAuditsPageDone: function(data) {
+      this.store('audits', this.store('audits').concat(data.audits));
+      this.store('users', this.store('users').concat(data.users));
+
+      if (data.next_page === null) {
+        this.trigger('fetchAllAudits.done');
+      } else {
+        this.ajax('fetchAuditsPage', data.next_page);
       }
+    },
+
+    getTimelogs: function() {
+      if (this.isTimelogsEnabled()) { this.fetchAllAudits(); }
     },
 
     updateMainView: function(time) {
