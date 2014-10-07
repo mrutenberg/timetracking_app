@@ -213,6 +213,8 @@
           $modal.modal('hide');
         }
       }.bind(this), 1000);
+
+      $modal.find('.modal-save').focus();
     },
 
     onModalHidden: function() {
