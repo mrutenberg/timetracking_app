@@ -16,6 +16,15 @@
           )
         };
       },
+      fetchRequirements: function() {
+        return {
+          url: helpers.fmt(
+            '/api/v2/apps/installations/%@/requirements.json',
+            this.installationId()
+          ),
+          dataType: 'json'
+        };
+      },
       fetchTicketForms: function(url) {
         return {
           url: url || '/api/v2/ticket_forms.json'
@@ -31,6 +40,7 @@
       'ticket.save'             : 'onTicketSave',
       'ticket.submit.done'      : 'onTicketSubmitDone',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
+      'fetchRequirements.done'  : 'onFetchRequirementsDone',
       'fetchAuditsPage.done'    : 'onFetchAuditsPageDone',
       'fetchAllAudits.done'     : 'onFetchAllAuditsDone',
       'click .pause'            : 'onPauseClicked',
@@ -49,12 +59,7 @@
      */
     onAppCreated: function() {
       if (this.installationId()) {
-        var totalTimeField = this.requirement('total_time_field'),
-            timeLastUpdateField = this.requirement('time_last_update_field');
-        this.storage.totalTimeFieldId = totalTimeField && totalTimeField.requirement_id;
-        this.storage.timeFieldId = timeLastUpdateField && timeLastUpdateField.requirement_id;
-
-        this.initialize();
+        this.ajax('fetchRequirements');
       } else {
         _.defer(this.initialize.bind(this));
         this.storage.totalTimeFieldId = parseInt(this.setting('total_time_field_id'), 10);
@@ -139,6 +144,15 @@
           }, [], this);
 
       this.renderTimelogs(timelogs.reverse());
+    },
+
+    onFetchRequirementsDone: function(data) {
+      var totalTimeField = this._findWhere(data.requirements, {identifier: 'total_time_field'});
+      var timeLastUpdateField = this._findWhere(data.requirements, {identifier: 'time_last_update_field'});
+      this.storage.totalTimeFieldId = totalTimeField && totalTimeField.requirement_id;
+      this.storage.timeFieldId = timeLastUpdateField && timeLastUpdateField.requirement_id;
+
+      this.initialize();
     },
 
     onPauseClicked: function(e) {
