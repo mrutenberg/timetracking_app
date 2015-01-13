@@ -111,12 +111,13 @@
 
     onFetchAllAuditsDone: function() {
       var status = "",
+          timeDiff,
           timelogs = _.reduce(this.store('audits'), function(memo, audit) {
             var newStatus = _.find(audit.events, function(event) {
               return event.field_name == 'status';
             }, this),
             event = _.find(audit.events, function(event) {
-              return event.field_name == this.storage.timeFieldId;
+              return event.field_name == this.storage.totalTimeFieldId;
             }, this);
 
             if (newStatus){
@@ -124,8 +125,9 @@
             }
 
             if (event) {
+              timeDiff = event.value - (event.previous_value || 0);
               memo.push({
-                time: this.TimeHelper.secondsToTimeString(parseInt(event.value, 0)),
+                time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 0)),
                 date: new Date(audit.created_at).toLocaleString(),
                 status: status,
                 localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
