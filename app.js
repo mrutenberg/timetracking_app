@@ -31,6 +31,7 @@
       'ticket.save'             : 'onTicketSave',
       'ticket.submit.done'      : 'onTicketSubmitDone',
       'ticket.form.id.changed'  : 'onTicketFormChanged',
+      'ticket.updated'          : 'onTicketUpdated',
       'fetchAuditsPage.done'    : 'onFetchAuditsPageDone',
       'fetchAllAudits.done'     : 'onFetchAllAuditsDone',
       'click .pause'            : 'onPauseClicked',
@@ -107,6 +108,12 @@
     onTicketSubmitDone: function() {
       this.resetElapsedTime();
       _.delay(this.getTimelogs.bind(this), 1000);
+    },
+
+    onTicketUpdated: function(updatedBy) {
+      if (updatedBy.id() !== this.currentUser().id()) {
+        this.getTimelogs();
+      }
     },
 
     onFetchAllAuditsDone: function() {
