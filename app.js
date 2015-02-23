@@ -80,8 +80,7 @@
     },
 
     onAppFocusIn: function() {
-      if (this.setting('auto_pause_resume') &&
-         !this.manuallyPaused) {
+      if (this.setting('auto_pause_resume') && !this.manuallyPaused) {
         this.autoResume();
       }
     },
@@ -121,20 +120,20 @@
           timeDiff,
           timelogs = _.reduce(this.store('audits'), function(memo, audit) {
             var newStatus = _.find(audit.events, function(event) {
-              return event.field_name == 'status';
-            }, this),
-            event = _.find(audit.events, function(event) {
-              return event.field_name == this.storage.totalTimeFieldId;
-            }, this);
+                  return event.field_name == 'status';
+                }, this),
+                auditEvent = _.find(audit.events, function(event) {
+                  return event.field_name == this.storage.totalTimeFieldId;
+                }, this);
 
             if (newStatus){
               status = newStatus.value;
             }
 
-            if (event) {
-              timeDiff = event.value - (event.previous_value || 0);
+            if (auditEvent) {
+              timeDiff = auditEvent.value - (auditEvent.previous_value || 0);
               memo.push({
-                time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 0)),
+                time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 10)),
                 date: new Date(audit.created_at).toLocaleString(),
                 status: status,
                 localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
@@ -272,6 +271,10 @@
       this.hideFields();
       this.checkForms();
 
+      if (this.currentLocation() == 'new_ticket_sidebar') {
+        this.totalTime('0');
+      }
+
       this.timeLoopID = this.setTimeLoop();
 
       this.switchTo('main', {
@@ -337,7 +340,6 @@
 
       return setInterval(function() {
         if (!this.paused) {
-          // Update elapsed time by 1 second
           this.elapsedTime += 1;
 
           this.updateMainView(this.elapsedTime);
@@ -396,12 +398,6 @@
       return _.find(obj, this._matches(attrs));
     },
 
-    /*
-     *
-     * HELPERS
-     *
-     */
-
     isTimelogsEnabled: function() {
       return this.ticket().id() && this.setting('display_timelogs');
     },
@@ -427,11 +423,11 @@
     },
 
     getOrSetField: function(fieldLabel, value) {
-      if (value) {
+      if (value !== undefined) {
         return this.ticket().customField(fieldLabel, value);
       }
 
-      return parseInt((this.ticket().customField(fieldLabel) || 0), 0);
+      return parseInt((this.ticket().customField(fieldLabel) || 0), 10);
     },
 
     TimeHelper: {
