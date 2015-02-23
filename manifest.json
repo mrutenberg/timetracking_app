@@ -5,14 +5,15 @@
     "email": "support@zendesk.com",
     "url": "https://www.zendesk.com"
   },
-
   "defaultLocale": "en",
   "private": false,
   "singleInstall": true,
-  "location": [ "new_ticket_sidebar", "ticket_sidebar" ],
+  "location": [
+    "new_ticket_sidebar",
+    "ticket_sidebar"
+  ],
   "frameworkVersion": "1.0",
-  "version": "0.2.3",
-
+  "version": "0.3.0",
   "parameters": [
     {
       "name": "time_field_id",
