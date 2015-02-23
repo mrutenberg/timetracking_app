@@ -271,6 +271,10 @@
       this.hideFields();
       this.checkForms();
 
+      if (this.currentLocation() == 'new_ticket_sidebar') {
+        this.totalTime('0');
+      }
+
       this.timeLoopID = this.setTimeLoop();
 
       this.switchTo('main', {
@@ -419,7 +423,7 @@
     },
 
     getOrSetField: function(fieldLabel, value) {
-      if (value) {
+      if (value !== undefined) {
         return this.ticket().customField(fieldLabel, value);
       }
 
