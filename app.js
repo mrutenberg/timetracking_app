@@ -98,7 +98,7 @@
           this.renderTimeModal();
         }.bind(this));
       } else {
-        this.updateTime(this.elapsedTime);
+        this.updateTime(this.elapsedTime());
 
         return true;
       }
@@ -335,15 +335,25 @@
      * TIME RELATED
      */
 
+    elapsedTime: function(time) {
+      if (time !== undefined) {
+        this.realElapsedTime = time * 1000;
+      }
+      return (this.realElapsedTime / 1000) | 0;
+    },
+
     setTimeLoop: function() {
-      this.elapsedTime = 0;
+      this.lastTick = new Date();
+      this.elapsedTime(0);
 
       return setInterval(function() {
+        var now = new Date();
         if (!this.paused) {
-          this.elapsedTime += 1;
+          this.realElapsedTime += now.valueOf() - this.lastTick.valueOf();
 
-          this.updateMainView(this.elapsedTime);
+          this.updateMainView(this.elapsedTime());
         }
+        this.lastTick = now;
       }.bind(this), 1000);
     },
 
@@ -362,16 +372,16 @@
 
     renderTimeModal: function() {
       if (this.setting('simple_submission')) {
-        this.$('.modal-time').val(Math.floor(this.elapsedTime / 60));
+        this.$('.modal-time').val(Math.floor(this.elapsedTime() / 60));
       } else {
-        this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime));
+        this.$('.modal-time').val(this.TimeHelper.secondsToTimeString(this.elapsedTime()));
       }
       this.$('.modal').modal('show');
     },
 
     resetElapsedTime: function() {
-      this.elapsedTime = 0;
-      this.updateMainView(this.elapsedTime);
+      this.elapsedTime(0);
+      this.updateMainView(this.elapsedTime());
     },
 
     /*
