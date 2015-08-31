@@ -409,7 +409,7 @@
     },
 
     isTimelogsEnabled: function() {
-      return this.ticket().id() && this.setting('display_timelogs');
+      return this.ticket() && this.ticket().id() && this.setting('display_timelogs');
     },
 
     time: function(time) {
