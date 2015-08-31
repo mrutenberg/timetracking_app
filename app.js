@@ -118,7 +118,28 @@
     onFetchAllAuditsDone: function() {
       var status = "",
           timeDiff,
-          timelogs = _.reduce(this.store('audits'), function(memo, audit) {
+          isFollowUp = _.reduce(this.store('audits'), function(isFollowUp, audit) {
+            return isFollowUp || (audit.via && audit.via.source && audit.via.source.rel === 'follow_up');
+          });
+
+      if (isFollowUp) {
+        var totalTimeEvents = _.reduce(this.store('audits'), function(totalTimeEvents, audit) {
+          var totalTimeEvent = _.find(audit.events, function(event) {
+                return event.field_name == this.storage.totalTimeFieldId;
+              }, this);
+
+          if (totalTimeEvent) {
+            totalTimeEvents.push(totalTimeEvent);
+          }
+          return totalTimeEvents;
+        }.bind(this), []);
+
+        if (!totalTimeEvents.length) {
+          this.totalTime('0');
+        }
+      }
+
+      var timelogs = _.reduce(this.store('audits'), function(memo, audit) {
             var newStatus = _.find(audit.events, function(event) {
                   return event.field_name == 'status';
                 }, this),
@@ -131,6 +152,9 @@
             }
 
             if (auditEvent) {
+              if (!memo.length) {
+                auditEvent.previous_value = 0;
+              }
               timeDiff = auditEvent.value - (auditEvent.previous_value || 0);
               memo.push({
                 time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 10)),
