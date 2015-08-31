@@ -294,7 +294,7 @@
       this.store('audits', this.store('audits').concat(data.audits));
       this.store('users', this.store('users').concat(data.users));
 
-      if (data.next_page === null) {
+      if (!data.next_page) {
         this.trigger('fetchAllAudits.done');
       } else {
         this.ajax('fetchAuditsPage', data.next_page);
