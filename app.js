@@ -126,7 +126,7 @@
                   return event.field_name == this.storage.totalTimeFieldId;
                 }, this);
 
-            if (newStatus){
+            if (newStatus) {
               status = newStatus.value;
             }
 
