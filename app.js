@@ -123,16 +123,19 @@
           });
 
       if (isFollowUp) {
-        var totalTimeEvents = _.filter(this.store('audits'), function(audit) {
-          var totalTimeEvent = _.find(audit.events, function(event) {
+        var audits = this.store('audits');
+        for (var i = 0; i < audits.length; i++) {
+          var audit = audits[i],
+              totalTimeEvent = _.find(audit.events, function(event) {
                 return event.field_name == this.storage.totalTimeFieldId;
               }, this);
 
-          return !!totalTimeEvent;
-        }, this);
+          if (totalTimeEvent) break;
 
-        if (!totalTimeEvents.length) {
-          this.totalTime('0');
+          /* If we got to the last one without breaking out so far, we can reset it */
+          if (i === audits.length - 1) {
+            this.totalTime('0');
+          }
         }
       }
 
