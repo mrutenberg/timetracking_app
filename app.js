@@ -360,7 +360,7 @@
      */
 
     elapsedTime: function(time) {
-      if (time !== undefined) {
+      if (typeof time !== "undefined") {
         this.realElapsedTime = time * 1000;
       }
       return (this.realElapsedTime / 1000) | 0;
@@ -457,7 +457,7 @@
     },
 
     getOrSetField: function(fieldLabel, value) {
-      if (value !== undefined) {
+      if (typeof value !== "undefined") {
         return this.ticket().customField(fieldLabel, value);
       }
 
