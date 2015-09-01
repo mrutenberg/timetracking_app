@@ -123,16 +123,13 @@
           });
 
       if (isFollowUp) {
-        var totalTimeEvents = _.reduce(this.store('audits'), function(totalTimeEvents, audit) {
+        var totalTimeEvents = _.filter(this.store('audits'), function(audit) {
           var totalTimeEvent = _.find(audit.events, function(event) {
                 return event.field_name == this.storage.totalTimeFieldId;
               }, this);
 
-          if (totalTimeEvent) {
-            totalTimeEvents.push(totalTimeEvent);
-          }
-          return totalTimeEvents;
-        }.bind(this), []);
+          return !!totalTimeEvent;
+        }, this);
 
         if (!totalTimeEvents.length) {
           this.totalTime('0');
