@@ -414,24 +414,6 @@
      *
      */
 
-    // CRUFT: Can be removed when using recent versions of Underscore.js
-
-    // Returns a predicate for checking whether an object has a given set of `key:value` pairs.
-    _matches: function(attrs) {
-      return function(obj) {
-        if (obj == null) return _.isEmpty(attrs);
-        if (obj === attrs) return true;
-        for (var key in attrs) if (attrs[key] !== obj[key]) return false;
-        return true;
-      };
-    },
-
-    // Convenience version of a common use case of `find`: getting the first object
-    // containing specific `key:value` pairs.
-    _findWhere: function(obj, attrs) {
-      return _.find(obj, this._matches(attrs));
-    },
-
     isTimelogsEnabled: function() {
       return this.ticket() && this.ticket().id() && this.setting('display_timelogs');
     },
