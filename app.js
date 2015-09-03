@@ -125,8 +125,8 @@
       if (isFollowUp) {
         var audits = this.store('audits'),
             isThisEvent = function(event) {
-                return event.field_name == this.storage.totalTimeFieldId;
-              };
+              return event.field_name == this.storage.totalTimeFieldId;
+            };
         for (var i = 0; i < audits.length; i++) {
           var audit = audits[i],
               totalTimeEvent = _.find(audit.events, isThisEvent, this);
