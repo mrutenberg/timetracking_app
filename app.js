@@ -118,7 +118,28 @@
     onFetchAllAuditsDone: function() {
       var status = "",
           timeDiff,
-          timelogs = _.reduce(this.store('audits'), function(memo, audit) {
+          isFollowUp = _.reduce(this.store('audits'), function(isFollowUp, audit) {
+            return isFollowUp || (audit.via && audit.via.source && audit.via.source.rel === 'follow_up');
+          });
+
+      if (isFollowUp) {
+        var audits = this.store('audits');
+        for (var i = 0; i < audits.length; i++) {
+          var audit = audits[i],
+              totalTimeEvent = _.find(audit.events, function(event) {
+                return event.field_name == this.storage.totalTimeFieldId;
+              }, this);
+
+          if (totalTimeEvent) break;
+
+          /* If we got to the last one without breaking out so far, we can reset it */
+          if (i === audits.length - 1) {
+            this.totalTime('0');
+          }
+        }
+      }
+
+      var timelogs = _.reduce(this.store('audits'), function(memo, audit) {
             var newStatus = _.find(audit.events, function(event) {
                   return event.field_name == 'status';
                 }, this),
@@ -126,11 +147,14 @@
                   return event.field_name == this.storage.totalTimeFieldId;
                 }, this);
 
-            if (newStatus){
+            if (newStatus) {
               status = newStatus.value;
             }
 
             if (auditEvent) {
+              if (!memo.length) {
+                auditEvent.previous_value = 0;
+              }
               timeDiff = auditEvent.value - (auditEvent.previous_value || 0);
               memo.push({
                 time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 10)),
@@ -294,7 +318,7 @@
       this.store('audits', this.store('audits').concat(data.audits));
       this.store('users', this.store('users').concat(data.users));
 
-      if (data.next_page === null) {
+      if (!data.next_page) {
         this.trigger('fetchAllAudits.done');
       } else {
         this.ajax('fetchAuditsPage', data.next_page);
@@ -336,7 +360,7 @@
      */
 
     elapsedTime: function(time) {
-      if (time !== undefined) {
+      if (typeof time !== "undefined") {
         this.realElapsedTime = time * 1000;
       }
       return (this.realElapsedTime / 1000) | 0;
@@ -390,26 +414,8 @@
      *
      */
 
-    // CRUFT: Can be removed when using recent versions of Underscore.js
-
-    // Returns a predicate for checking whether an object has a given set of `key:value` pairs.
-    _matches: function(attrs) {
-      return function(obj) {
-        if (obj == null) return _.isEmpty(attrs);
-        if (obj === attrs) return true;
-        for (var key in attrs) if (attrs[key] !== obj[key]) return false;
-        return true;
-      };
-    },
-
-    // Convenience version of a common use case of `find`: getting the first object
-    // containing specific `key:value` pairs.
-    _findWhere: function(obj, attrs) {
-      return _.find(obj, this._matches(attrs));
-    },
-
     isTimelogsEnabled: function() {
-      return this.ticket().id() && this.setting('display_timelogs');
+      return this.ticket() && this.ticket().id() && this.setting('display_timelogs');
     },
 
     time: function(time) {
@@ -433,7 +439,7 @@
     },
 
     getOrSetField: function(fieldLabel, value) {
-      if (value !== undefined) {
+      if (typeof value !== "undefined") {
         return this.ticket().customField(fieldLabel, value);
       }
 
