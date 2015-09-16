@@ -1,0 +1,81 @@
+{
+  "app": {
+    "description": "Vă ajută să urmăriţi timpul petrecut cu tichetele.",
+    "name": "Cronometru",
+    "parameters": {
+      "time_field_id": {
+        "label": "Identificator câmp timp",
+        "helpText": "Identificatorul unui câmp numeric personalizat care va conţine timpul total."
+      },
+      "time_object_field_id": {
+        "label": "Identificator câmp configuraţie",
+        "helpText": "Identificatorul unui câmp numeric personalizat care va conţine timpul petrecut cu un tichet."
+      },
+      "display_timelogs": {
+        "label": "Se afişează desfăşurătoarele pentru agenţi",
+        "helpText": "Agenţii pot vedea activităţile desfăşurătorului în tichete."
+      },
+      "manual_pause_resume": {
+        "label": "Se afişează controalele cronometrului",
+        "helpText": "Agenţii pot să pună manual pe pauză sau să reseteze manual cronometrul."
+      },
+      "auto_pause_resume": {
+        "label": "Punere automată pe pauză",
+        "helpText": "Cronometrul este pus pe pauză atunci când agentul părăseşte tichetul şi este repornit atunci când agentul revine la tichet."
+      },
+      "reset": {
+        "label": "Resetare timp curent",
+        "helpText": "Agenţii pot să reseteze timpul curent petrecut cu un tichet."
+      },
+      "time_submission": {
+        "label": "Trimitere a timpului editat",
+        "helpText": "Agenţii pot să îşi revizuiască şi să îşi editeze timpul înainte de a trimite tichetul."
+      },
+      "simple_submission": {
+        "label": "Trimitere simplificată a timpului",
+        "helpText": "Se solicită agenţilor să introducă o valoare exprimată în minute înainte de a trimite tichetul"
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "d",
+    "pending": "a",
+    "hold": "p",
+    "solved": "s",
+    "closed": "î"
+  },
+  "views": {
+    "main": {
+      "pause": "Pauză",
+      "total_time_spent": "Timp total",
+      "play": "Redare",
+      "reset": "Resetare",
+      "timelogs": "Desfăşurător",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Oră",
+        "status": "Stare"
+      }
+    },
+    "timelogs": {
+      "title": "Desfăşurătoare",
+      "csv_export": "Export CSV",
+      "error": "Nu am putut încărca niciun desfăşurător.",
+      "empty": "Nu există desfăşurătoare de afişat"
+    },
+    "modal": {
+      "body": "Acesta este volumul de timp petrecut de dumneavoastră cu acest tichet. Editaţi timpul, dacă este nevoie, apoi faceţi clic pe „Trimitere timp”.",
+      "close": "Anulare",
+      "save": "Trimitere timp"
+    }
+  },
+  "errors": {
+    "setup": {
+      "question": "Aţi urmat instrucţiunile de instalare pentru această aplicaţie şi aţi configurat ambele câmpuri obligatorii pentru tichet astfel încât să apară pe fiecare formular pentru tichete?",
+      "solution": "Dacă nu, vă rugăm să consultaţi <a href=\"{{url}}\" target=\"_blank\">aceste instrucţiuni</a> şi să mergeţi la pagina de gestionare a formularelor pentru tichete pentru a finaliza configurarea."
+    },
+    "save_hook": "Trebuie să vă trimiteţi timpul petrecut cu acest tichet.",
+    "bad_time_format": "Format orar incorect (HH:MM:SS)."
+  }
+}

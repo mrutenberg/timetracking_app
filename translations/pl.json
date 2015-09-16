@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Ułatwia śledzenie czasu poświęcanego na obsługę zgłoszeń.",
-    "name": "Śledzenie czasu",
+    "name": "Monitorowanie czasu",
     "parameters": {
       "time_field_id": {
         "label": "Identyfikator pola czasu",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "Identyfikator pola konfiguracji",
         "helpText": "Identyfikator niestandardowego pola numerycznego, w którym będzie przechowywany czas poświęcony na zgłoszenie."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Pokaż rejestry czasu agentom",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Edytuj wysyłany czas",
         "helpText": "Agenci mogą przeglądać i edytować swój czas przed wysłaniem zgłoszenia."
+      },
+      "simple_submission": {
+        "label": "Uproszczone wysyłanie czasu",
+        "helpText": "Przed wysłaniem zgłoszenia agenci mogą podać wartość w minutach."
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Rejestr czasu",
       "csv_export": "Eksportuj jako CSV",
+      "error": "Nie można załadować żadnych rejestrów czasu.",
       "empty": "Brak rejestrów czasu do wyświetlenia"
     },
     "modal": {

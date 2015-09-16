@@ -11,10 +11,6 @@
         "label": "Yapılandırma Alanı Kimliği",
         "helpText": "Bir kayıt üzerinde harcanan zamanı gösterecek özel bir sayısal alan kimliği."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "Zaman günlüklerini temsilcilere göster",
         "helpText": "Temsilciler, kayıtlar üzerindeki zaman günlüğü etkinliklerini görebilirler."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Zaman bilgilerinin gönderilmesini düzenle",
         "helpText": "Temsilciler kaydı göndermeden önce harcadıkları zamanı görüntüleyebilir ve düzenleyebilirler."
+      },
+      "simple_submission": {
+        "label": "Basitleştirilmiş zaman bilgisi gönderimi",
+        "helpText": "Temsilciler kaydı göndermeden önce dakika cinsinden bir değer girebilir"
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Zaman günlüğü",
       "csv_export": "CSV olarak dışarı Aktar",
+      "error": "Zaman günlüğü yükleyemiyoruz.",
       "empty": "Görüntülenecek zaman günlüğü yok"
     },
     "modal": {

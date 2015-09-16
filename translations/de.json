@@ -11,10 +11,6 @@
         "label": "ID des Konfigurationsfelds",
         "helpText": "Die ID eines angepassten numerischen Felds für die mit der Bearbeitung des Tickets verbrachte Zeit."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "Zeitprotokolle für Agenten anzeigen",
         "helpText": "Agenten können die Zeitprotokollaktivitäten in Tickets sehen."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Eingereichte Zeit bearbeiten",
         "helpText": "Agenten können die verbrachte Zeit vor dem Einreichen des Tickets überprüfen und bearbeiten"
+      },
+      "simple_submission": {
+        "label": "Vereinfachte Zeiterfassung",
+        "helpText": "Agenten können vor Einreichen des Tickets einen Wert in Minuten eingeben."
       }
     }
   },
@@ -43,7 +43,7 @@
     "pending": "w",
     "hold": "a",
     "solved": "l",
-    "closed": "g"
+    "closed": "s"
   },
   "views": {
     "main": {
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Zeitprotokolle",
       "csv_export": "CSV exportieren",
+      "error": "Es können keine Zeitprotokolle geladen werden.",
       "empty": "Keine Zeitprotokoll zur Anzeige verfügbar"
     },
     "modal": {

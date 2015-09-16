@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "帮助您跟踪花在工单上的时间。",
-    "name": "时间跟踪",
+    "name": "时间记录",
     "parameters": {
       "time_field_id": {
         "label": "时间字段 ID",
@@ -11,36 +11,36 @@
         "label": "配置字段 ID",
         "helpText": "自定义数字字段的 ID，显示花在工单上的时间。"
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
-        "label": "向代理显示时间日志",
-        "helpText": "代理可在工单上看到时间日志。"
+        "label": "向专员显示时间日志",
+        "helpText": "专员可在工单上看到时间日志。"
       },
       "manual_pause_resume": {
         "label": "显示计时器控件",
-        "helpText": "代理可手动暂停或重置计时器。"
+        "helpText": "专员可手动暂停或重置计时器。"
       },
       "auto_pause_resume": {
         "label": "自动暂停",
-        "helpText": "当代理离开工单时，计时器会暂停，当代理返回工单时，计时器会继续。"
+        "helpText": "当专员离开工单时，计时器会暂停，当专员返回工单时，计时器会继续。"
       },
       "reset": {
         "label": "重置当前时间",
-        "helpText": "代理可重置当前花在工单上的时间。"
+        "helpText": "专员可重置当前花在工单上的时间。"
       },
       "time_submission": {
         "label": "编辑提交的时间",
-        "helpText": "代理在提交工单前，可查看并编辑其时间。"
+        "helpText": "专员在提交工单前，可查看并编辑其时间。"
+      },
+      "simple_submission": {
+        "label": "简化时间提交",
+        "helpText": "专员可在提交工单前，输入以分钟为单位的值。"
       }
     }
   },
   "statuses": {
     "new": "新",
     "open": "开",
-    "pending": "未",
+    "pending": "待",
     "hold": "停",
     "solved": "解",
     "closed": "闭"
@@ -53,7 +53,7 @@
       "reset": "重置",
       "timelogs": "时间日志",
       "timelogs_table": {
-        "agent": "代理",
+        "agent": "专员",
         "time": "时间",
         "status": "状态"
       }
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "时间日志",
       "csv_export": "导出 CSV",
+      "error": "我们无法加载任何时间日志。",
       "empty": "没有时间日志可显示"
     },
     "modal": {

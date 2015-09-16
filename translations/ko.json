@@ -11,10 +11,6 @@
         "label": "구성 필드 ID",
         "helpText": "티켓에 소모한 시간을 보유할 사용자 지정 숫자 필드의 ID."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "상담원에게 시간 로그 표시",
         "helpText": "상담원은 티켓에 대한 시간 로그 활동을 볼 수 있습니다."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "시간 제출 편집",
         "helpText": "상담원은 티켓을 제출하기 전에 시간을 검토 및 편집할 수 있습니다."
+      },
+      "simple_submission": {
+        "label": "간단 시간 제출",
+        "helpText": "상담원은 티켓을 제출하기 전에 분 단위로 값을 입력할 수 있습니다."
       }
     }
   },
@@ -61,10 +61,11 @@
     "timelogs": {
       "title": "시간 로그",
       "csv_export": "CSV로 내보내기",
-      "empty": "표시할 시간 로그가 없습니다"
+      "error": "시간 로그를 로드할 수 없습니다.",
+      "empty": "표시할 시간 로그가 없습니다."
     },
     "modal": {
-      "body": "이 티켓에 소모한 시간입니다. 필요하면 시간을 편집한 후 “시간 제출”을 클릭하십시오.",
+      "body": "이 티켓에 소모한 시간입니다. 필요하면 시간을 편집한 후 “시간 제출”을 클릭하세요.",
       "close": "취소",
       "save": "시간 제출"
     }
@@ -72,7 +73,7 @@
   "errors": {
     "setup": {
       "question": "이 앱의 설치 지침에 따르고 필수 티켓 필드가 둘 다 모든 티켓 양식에 나타나도록 구성하셨습니까?",
-      "solution": "그렇게 하지 않은 경우에는 <a href=\"{{url}}\" target=\"_blank\">설치 지침</a>을 참조하여 티켓 양식 관리 페이지로 이동하여 설치를 완료하십시오."
+      "solution": "그렇게 하지 않은 경우에는 <a href=\"{{url}}\" target=\"_blank\">설치 지침</a>을 참조하여 티켓 양식 관리 페이지로 이동하여 설치를 완료하세요."
     },
     "save_hook": "이 티켓에 대한 시간을 제출해야 합니다.",
     "bad_time_format": "올바르지 않은 시간 형식(HH:MM:SS)."

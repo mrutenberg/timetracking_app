@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Holder rede på hvor my tid som brukes på sakene.",
-    "name": "\r",
+    "name": "Tidssporing",
     "parameters": {
       "time_field_id": {
         "label": "Tidsfelt-ID",
@@ -11,29 +11,29 @@
         "label": "Konfigurasjonsfelt-ID",
         "helpText": "IDen til et tilpasset tallfelt som inneholder tiden som ble brukt på saken."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
-        "label": "Vis tidslogg til konsulentene",
-        "helpText": "Konsulentene kan se aktivitet i tidsloggen for sakene."
+        "label": "Vis tidslogg til kundekonsulentene",
+        "helpText": "Kundekonsulentene kan se aktivitet i tidsloggen for sakene."
       },
       "manual_pause_resume": {
         "label": "Vis tidtakerkontroller",
-        "helpText": "Konsulentene kan manuelt stanse eller tilbakestille tidtakeren."
+        "helpText": "Kundekonsulentene kan manuelt stanse eller tilbakestille tidtakeren."
       },
       "auto_pause_resume": {
         "label": "Auto-stans",
-        "helpText": "Tidtakeren tar pause når konsulenten går bort fra saken og starter igjen når konsulenten kommer tilbake til saken."
+        "helpText": "Tidtakeren tar pause når kundekonsulenten går bort fra saken og starter igjen når kundekonsulenten kommer tilbake til saken."
       },
       "reset": {
         "label": "Tilbakestill gjeldende tid",
-        "helpText": "Konsulentene kan tilbakestille tiden som til nå er brukt på saken."
+        "helpText": "Kundekonsulentene kan tilbakestille tiden som til nå er brukt på saken."
       },
       "time_submission": {
         "label": "Rediger tiden som sendes inn",
-        "helpText": "Konsulentene kan se gjennom og korrigere tiden før saken sendes inn."
+        "helpText": "Kundekonsulentene kan se gjennom og korrigere tiden før saken sendes inn."
+      },
+      "simple_submission": {
+        "label": "Forenklet tidsinnsending",
+        "helpText": "Kundekonsulenter kan legge inn en verdi bare minutter før de sender inn en sak."
       }
     }
   },
@@ -53,7 +53,7 @@
       "reset": "Tilbakestill",
       "timelogs": "Tidslogger",
       "timelogs_table": {
-        "agent": "Konsulent",
+        "agent": "Kundekonsulent",
         "time": "Tid",
         "status": "Status"
       }
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Tidslogger",
       "csv_export": "Eksporter CSV",
+      "error": "Kan ikke laste inn noen tidslogger.",
       "empty": "Ingen tidslogger å vise"
     },
     "modal": {
