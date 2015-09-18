@@ -120,7 +120,7 @@
           timeDiff,
           isFollowUp = _.reduce(this.store('audits'), function(isFollowUp, audit) {
             return isFollowUp || (audit.via && audit.via.source && audit.via.source.rel === 'follow_up');
-          });
+          }, false);
 
       if (isFollowUp) {
         var audits = this.store('audits'),
@@ -296,10 +296,6 @@
       this.hideFields();
       this.checkForms();
 
-      if (this.currentLocation() == 'new_ticket_sidebar') {
-        this.totalTime('0');
-      }
-
       this.timeLoopID = this.setTimeLoop();
 
       this.switchTo('main', {
@@ -424,7 +420,7 @@
     },
 
     totalTime: function(time) {
-      return this.getOrSetField(this.totalTimeFieldLabel(), time);
+      return this.getOrSetField(this.totalTimeFieldLabel(), time) || 0;
     },
 
     totalTimeFieldLabel: function() {
