@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Hiermee kunt u bijhouden hoeveel tijd u aan tickets besteedt.",
-    "name": "Time Tracking",
+    "name": "Tijdregistratie",
     "parameters": {
       "time_field_id": {
         "label": "Id van tijdveld",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "Id van configuratieveld",
         "helpText": "De id van een aangepast numeriek veld waarin de totale tijd is vastgelegd die aan een ticket is besteed."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Tijdlogs weergeven aan agenten",
@@ -34,13 +30,17 @@
       "time_submission": {
         "label": "In te dienen tijd bewerken",
         "helpText": "Agenten kunnen hun tijd bekijken en bewerken alvorens het ticket in te dienen."
+      },
+      "simple_submission": {
+        "label": "Vereenvoudigde in te dienen tijd",
+        "helpText": "Agenten kunnen een waarde in minuten invoeren voordat het ticket wordt ingediend."
       }
     }
   },
   "statuses": {
     "new": "n",
     "open": "o",
-    "pending": "a",
+    "pending": "w",
     "hold": "p",
     "solved": "s",
     "closed": "g"
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Tijdlogs",
       "csv_export": "Exporteren als CSV",
+      "error": "Er kunnen geen tijdlogboeken worden geladen.",
       "empty": "Geen tijdlogs om weer te geven"
     },
     "modal": {

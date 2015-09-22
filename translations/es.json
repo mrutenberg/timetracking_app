@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Le ayuda a llevar un registro del tiempo que dedica a los tickets.",
-    "name": "Time Tracking",
+    "name": "Seguimiento del tiempo",
     "parameters": {
       "time_field_id": {
         "label": "ID de campo de tiempo",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "ID de campo de configuración",
         "helpText": "La ID de un campo numérico personalizado que muestra el tiempo dedicado al ticket."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Mostrar registros de tiempo a los agentes",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Editar envío de tiempo",
         "helpText": "Los agentes pueden revisar y editar su tiempo antes de enviar el ticket."
+      },
+      "simple_submission": {
+        "label": "Envío de tiempo simplificado",
+        "helpText": "Los agentes pueden ingresar un valor en minutos antes de enviar el ticket."
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Registros de tiempo",
       "csv_export": "Exportar como CSV",
+      "error": "No podemos cargar ningún registro de tiempo.",
       "empty": "No hay registros de tiempo para mostrar"
     },
     "modal": {

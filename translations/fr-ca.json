@@ -1,6 +1,6 @@
 {
   "app": {
-    "description": "Vous aide à suivre le temps consacré aux tickets.",
+    "description": "Vous aide à suivre le temps consacré aux billets.",
     "name": "Suivi du temps",
     "parameters": {
       "time_field_id": {
@@ -9,11 +9,7 @@
       },
       "time_object_field_id": {
         "label": "ID du champ de configuration",
-        "helpText": "L’ID d’un champ numérique personnalisé qui contiendra le temps consacré au ticket."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
+        "helpText": "L’ID d’un champ numérique personnalisé qui contiendra le temps consacré au billet."
       },
       "display_timelogs": {
         "label": "Afficher les journaux horaires pour les agents",
@@ -25,15 +21,19 @@
       },
       "auto_pause_resume": {
         "label": "Pause automatique",
-        "helpText": "Le minuteur s’arrête quand l’agent quitte le ticket et reprend quand l’agent revient au ticket."
+        "helpText": "Le minuteur s’arrête quand l’agent quitte le billet et reprend quand l’agent revient au billet."
       },
       "reset": {
         "label": "Réinitialiser le temps actuel",
-        "helpText": "Les agents peuvent réinitialiser le temps actuel consacré à un ticket."
+        "helpText": "Les agents peuvent réinitialiser le temps actuel consacré à un billet."
       },
       "time_submission": {
         "label": "Modifier l’envoi du temps",
-        "helpText": "Les agents peuvent consulter et modifier leur temps avant d’envoyer le ticket."
+        "helpText": "Les agents peuvent consulter et modifier leur temps avant d’envoyer le billet."
+      },
+      "simple_submission": {
+        "label": "Envoi du temps simplifié",
+        "helpText": "Les agents peuvent saisir une valeur en minutes avant d’envoyer le billet."
       }
     }
   },
@@ -61,20 +61,21 @@
     "timelogs": {
       "title": "Journal horaire",
       "csv_export": "Exporter au format CSV",
+      "error": "Impossible de charger des journaux horaires.",
       "empty": "Aucun journal horaire à afficher"
     },
     "modal": {
-      "body": "C’est le temps que vous avez consacré à ce ticket. Modifiez le temps si nécessaire, puis cliquez sur Envoyer le temps.",
+      "body": "C’est le temps que vous avez consacré à ce billet. Modifiez le temps si nécessaire, puis cliquez sur Envoyer le temps.",
       "close": "Annuler",
       "save": "Envoyer le temps"
     }
   },
   "errors": {
     "setup": {
-      "question": "Avez-vous suivi les instructions d’installation pour cette application et configuré les deux champs de tickets obligatoires pour qu’ils s’affichent sur chaque formulaire de ticket ?",
-      "solution": "Si ce n’est pas le cas, consultez <a href=\"{{url}}\" target=\"_blank\">ces instructions</a> et allez à votre page de gestion des formulaires de tickets pour finaliser la configuration."
+      "question": "Avez-vous suivi les instructions d’installation pour cette application et configuré les deux champs de billets obligatoires pour qu’ils s’affichent sur chaque formulaire de billet ?",
+      "solution": "Si ce n’est pas le cas, consultez <a href=\"{{url}}\" target=\"_blank\">ces instructions</a> et allez à votre page de gestion des formulaires de billets pour finaliser la configuration."
     },
-    "save_hook": "Vous devez envoyer votre temps pour ce ticket.",
+    "save_hook": "Vous devez envoyer votre temps pour ce billet.",
     "bad_time_format": "Format de temps incorrect (HH:MM:SS)."
   }
 }

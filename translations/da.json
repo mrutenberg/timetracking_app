@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Hjælper dig med at spore tid brugt på tickets.",
-    "name": "Time Tracking",
+    "name": "Tidsregistrering",
     "parameters": {
       "time_field_id": {
         "label": "Tidsfelt-id",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "Konfig felt-id",
         "helpText": "Id'et til et brugerdefineret numerisk felt, der vil indeholde tid brugt på ticket."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Vis agenter tidslogge",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Rediger indsendt tid",
         "helpText": "Agenter kan gennemse og redigere deres tid, inden de sender ticket'en."
+      },
+      "simple_submission": {
+        "label": "Forenklet indsending af tid",
+        "helpText": "Agenter kan indtaste en værdi i minutter, inden ticket’en oprettes"
       }
     }
   },
@@ -41,8 +41,8 @@
     "new": "n",
     "open": "å",
     "pending": "v",
-    "hold": "t",
-    "solved": "s",
+    "hold": "b",
+    "solved": "ø",
     "closed": "l"
   },
   "views": {
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Tidslog",
       "csv_export": "Eksporter som CSV",
+      "error": "Vi kan ikke indlæse nogen tidslogge.",
       "empty": "Ingen tidslogge at vise"
     },
     "modal": {

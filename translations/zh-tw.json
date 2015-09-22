@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "幫您追蹤工單花費的時間。",
-    "name": "時間追蹤",
+    "name": "時間記錄",
     "parameters": {
       "time_field_id": {
         "label": "時間欄位 ID",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "設定欄位 ID",
         "helpText": "顯示工單花費時間的自訂數值欄位 ID。"
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "向代理顯示時間記錄",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "編輯提交的時間",
         "helpText": "提交工單前，代理可檢查並編輯其時間。"
+      },
+      "simple_submission": {
+        "label": "簡化時間提交",
+        "helpText": "代理可在提交工單前以分鐘輸入一個值。"
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "時間記錄",
       "csv_export": "匯出 CSV",
+      "error": "我們不能載入任何時間記錄。",
       "empty": "沒有可顯示的時間記錄"
     },
     "modal": {

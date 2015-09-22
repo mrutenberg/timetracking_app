@@ -11,10 +11,6 @@
         "label": "Kokoonpanokentän tunnus",
         "helpText": "Tunnus mukautetulle numerokentälle, joka sisältää tikettiin käytetyn ajan."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "Näytä aikalokit tukihenkilöille",
         "helpText": "Tukihenkilöt voivat nähdä ajankäytön tiketeissä."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Muokkaa aikalähetystä",
         "helpText": "Tukihenkilöt voivat tarkastaa ja muokata aikaa ennen tiketin lähettämistä."
+      },
+      "simple_submission": {
+        "label": "Yksinkertaistettu aikalähetys",
+        "helpText": "Tukihenkilöt voivat antaa arvon minuuteissa ennen tiketin lähettämistä."
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Aikalokit",
       "csv_export": "Vie CSV",
+      "error": "Emme pystyneet lataamaan aikalokeja.",
       "empty": "Ei esitettäviä aikalokeja"
     },
     "modal": {

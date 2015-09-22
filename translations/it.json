@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Aiuta a tenere traccia del tempo passato sui ticket.",
-    "name": "Traccia del tempo",
+    "name": "Cronometro",
     "parameters": {
       "time_field_id": {
         "label": "ID campo temporale",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "ID campo configurazione",
         "helpText": "ID di un campo numerico personalizzato che conterrà il tempo passato su un ticket."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Mostra registro temporale agli agenti",
@@ -32,16 +28,20 @@
         "helpText": "Gli agenti possono azzerare il conteggio del tempo trascorso su un ticket."
       },
       "time_submission": {
-        "label": "Modifica tempo al momento dell’inoltro",
-        "helpText": "Gli agenti possono rivedere e modificare il proprio tempo prima di inoltrare il ticket."
+        "label": "Modifica tempo al momento dell’invio",
+        "helpText": "Gli agenti possono rivedere e modificare il proprio tempo prima di inviare il ticket."
+      },
+      "simple_submission": {
+        "label": "Inoltro del tempo in formato semplificato",
+        "helpText": "Gli agenti possono inserire un valore in minuti prima di inviare il ticket."
       }
     }
   },
   "statuses": {
     "new": "n",
     "open": "a",
-    "pending": "s",
-    "hold": "i",
+    "pending": "i",
+    "hold": "s",
     "solved": "r",
     "closed": "c"
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Registro temporale",
       "csv_export": "Esporta CSV",
+      "error": "Impossibile caricare i registri temporali.",
       "empty": "Nessun registro temporale da visualizzare"
     },
     "modal": {

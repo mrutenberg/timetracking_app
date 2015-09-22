@@ -11,10 +11,6 @@
         "label": "Configuration Field ID",
         "helpText": "The ID of a custom numeric field that will hold the time spent on ticket."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "Display timelogs to agents",
         "helpText": "Agents can see timelog activity on tickets."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Edit time submission",
         "helpText": "Agents can review and edit their time before submitting the ticket."
+      },
+      "simple_submission": {
+        "label": "Simplified time submission",
+        "helpText": "Prompt agents to enter a value in minutes before submitting the ticket"
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Timelogs",
       "csv_export": "Export CSV",
+      "error": "We are unable to load any timelogs.",
       "empty": "No timelogs to display"
     },
     "modal": {
@@ -72,7 +73,7 @@
   "errors": {
     "setup": {
       "question": "Did you follow the installation instructions for this app and configure both required ticket fields to appear on every ticket form?",
-      "solution": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalize the setup."
+      "solution": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalise the setup."
     },
     "save_hook": "You need to submit your time on this ticket.",
     "bad_time_format": "Incorrect time format (HH:MM:SS)."

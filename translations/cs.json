@@ -1,0 +1,81 @@
+{
+  "app": {
+    "description": "Pomáhá sledovat dobu strávenou na tiketech.",
+    "name": "Sledování doby",
+    "parameters": {
+      "time_field_id": {
+        "label": "ID pole doby",
+        "helpText": "ID vlastního číselného pole, které bude obsahovat celkovou dobu."
+      },
+      "time_object_field_id": {
+        "label": "ID pole konfigurace",
+        "helpText": "ID vlastního číselného pole, které bude obsahovat celkovou dobu strávenou na tiketu."
+      },
+      "display_timelogs": {
+        "label": "Zobrazit časové záznamy agentům",
+        "helpText": "Agenti mohou zobrazit aktivitu časového záznamu na tiketech."
+      },
+      "manual_pause_resume": {
+        "label": "Zobrazit ovládací prvky časovače",
+        "helpText": "Agenti mohou časovač ručně pozastavit nebo vynulovat."
+      },
+      "auto_pause_resume": {
+        "label": "Automatická pauza",
+        "helpText": "Časovač se pozastaví, když agent odejde od tiketu, a obnoví se, když se agent k tiketu vrátí."
+      },
+      "reset": {
+        "label": "Vynulovat aktuální dobu",
+        "helpText": "Agenti mohou vynulovat aktuální dobu strávenou na tiketu."
+      },
+      "time_submission": {
+        "label": "Upravit odesílání doby",
+        "helpText": "Agenti mohou před odesláním tiketu svoji dobu zkontrolovat a upravit."
+      },
+      "simple_submission": {
+        "label": "Zjednodušené odesílání doby",
+        "helpText": "Vybídněte agenty, aby před odesláním tiketu zadali hodnotu v minutách"
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "č",
+    "hold": "p",
+    "solved": "v",
+    "closed": "u"
+  },
+  "views": {
+    "main": {
+      "pause": "Pozastavit",
+      "total_time_spent": "Celková doba",
+      "play": "Přehrát",
+      "reset": "Obnovit",
+      "timelogs": "Časový  záznam",
+      "timelogs_table": {
+        "agent": "Agent",
+        "time": "Doba",
+        "status": "Stav"
+      }
+    },
+    "timelogs": {
+      "title": "Časové záznamy",
+      "csv_export": "Export CSV",
+      "error": "Nepodařilo se načíst žádné časové záznamy.",
+      "empty": "Neexistují žádné časové záznamy k zobrazení"
+    },
+    "modal": {
+      "body": "Toto je doba, kterou jste strávili na tomto tiketu. V případě potřeby dobu upravte a pak klikněte na tlačítko „Odeslat dobu.“",
+      "close": "Zrušit",
+      "save": "Odeslat dobu"
+    }
+  },
+  "errors": {
+    "setup": {
+      "question": "Postupovali jste podle pokynů pro tuto aplikaci a nakonfigurovali jste obě povinná pole tiketu tak, aby se zobrazovala na všech formulářích tiketu?",
+      "solution": "Pokud tomu tak není, prostudujte si prosím <a href=\"{{url}}\" target=\"_blank\">tyto pokyny</a>, přejděte na stránku správy formulářů tiketů a instalaci dokončete."
+    },
+    "save_hook": "Musíte odeslat dobu, kterou jste strávili na tomto tiketu.",
+    "bad_time_format": "Nesprávný formát doby (HH:MM:SS)."
+  }
+}

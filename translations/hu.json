@@ -1,0 +1,81 @@
+{
+  "app": {
+    "description": "Segítség az idő követéséhez, amit a jegyek megoldására fordított.",
+    "name": "Nyomon követés",
+    "parameters": {
+      "time_field_id": {
+        "label": "Idő Mező azonosító",
+        "helpText": "Egy egyéni szám mező azonosítója, amely rögzíti teljes időt."
+      },
+      "time_object_field_id": {
+        "label": "Konfigurációs mező azonosító",
+        "helpText": "Egy egyéni szám mező azonosítója, amely rögzíti a jeggyel töltött időt."
+      },
+      "display_timelogs": {
+        "label": "Időbeosztás kijelzése a munkatársaknak",
+        "helpText": "Munkatársak megtekinthetik az időnapló tevékenységet a jegynél."
+      },
+      "manual_pause_resume": {
+        "label": "Időkorlátok kijelzése",
+        "helpText": "Munkatársak manuálisan szüneteltethetik vagy visszaállíthatják a számlálót."
+      },
+      "auto_pause_resume": {
+        "label": "Automatikus szünet",
+        "helpText": "Az időmérő szünetel, amikor a munkatárs elnavigál a jegyről és elindul, amikor visszatér a jegyre."
+      },
+      "reset": {
+        "label": "Aktuális idő visszaállítása",
+        "helpText": "Munkatársak visszaállíthatják az aktuális eltelt időt a jegynél."
+      },
+      "time_submission": {
+        "label": "Benyújtási idő szerkesztése",
+        "helpText": "Munkatársak megtekinthetik és szerkeszthetik az idejüket mielőtt elküldik a jegyet. "
+      },
+      "simple_submission": {
+        "label": "Egyszerűsített idő küldés",
+        "helpText": "Segítsen a munkatársaknak megadni egy percben megadott értéket mielőtt elküldik a jegyet"
+      }
+    }
+  },
+  "statuses": {
+    "new": "n",
+    "open": "o",
+    "pending": "P",
+    "hold": "tartás",
+    "solved": "s",
+    "closed": "m"
+  },
+  "views": {
+    "main": {
+      "pause": "Szünet",
+      "total_time_spent": "Teljes idő",
+      "play": "Lejátszás",
+      "reset": "Visszaállítás",
+      "timelogs": "Időnapló",
+      "timelogs_table": {
+        "agent": "Munkatárs",
+        "time": "Idő",
+        "status": "Állapot"
+      }
+    },
+    "timelogs": {
+      "title": "Időnaplók",
+      "csv_export": "CSV exportálása",
+      "error": "Nem tudunk betölteni semmilyen időnaplót.",
+      "empty": "Időnaplók nem jeleníthetőek meg"
+    },
+    "modal": {
+      "body": "Ezt a mennyiségű időt töltötte ezen a jegyen. Módosítsa az időt, ha szükséges, majd kattintson az \"Idő beadása\"-ra.",
+      "close": "Mégsem",
+      "save": "Idő beküldése"
+    }
+  },
+  "errors": {
+    "setup": {
+      "question": "Követte a telepítési utasításokat  ehhez az applikációhoz és beállított minden olyan szükséges mezőt a jegyen, amelyek a jegyen való helyes formai megjelenítéséhez szükségesek? ",
+      "solution": "Ha nem, kérem kövesse: <a href=\"{{url}}\" target=\"_blank\">ezeket az utasításokat</a>  és menjen a jegy bejelentés kezelő oldalra a beállítások befejezéséhez. "
+    },
+    "save_hook": "Meg kell mutatnia az időt ezen a jegyen. ",
+    "bad_time_format": "Helytelen idő formátum (HH:MM:SS)."
+  }
+}

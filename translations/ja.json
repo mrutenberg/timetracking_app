@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "チケットに費やす時間をトラッキングできます。",
-    "name": "Time Tracking",
+    "name": "タイムトラッキング",
     "parameters": {
       "time_field_id": {
         "label": "時間フィールドID",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "設定フィールドID",
         "helpText": "チケットに費やした時間を表示するカスタム数値フィールドのID。"
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "タイムログをエージェントに表示",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "時間の送信を編集",
         "helpText": "エージェントはチケットを送信する前に時間を確認し、編集することができます。"
+      },
+      "simple_submission": {
+        "label": "簡易時間送信",
+        "helpText": "エージェントはチケットを送信する前に値を分単位で入力できます。"
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "タイムログ",
       "csv_export": "CSVをエクスポート",
+      "error": "タイムログを読み込むことができません。",
       "empty": "表示するタイムログがありません"
     },
     "modal": {

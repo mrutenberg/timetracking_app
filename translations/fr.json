@@ -11,10 +11,6 @@
         "label": "ID du champ de configuration",
         "helpText": "L’ID d’un champ numérique personnalisé qui contiendra le temps consacré au ticket."
       },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
-      },
       "display_timelogs": {
         "label": "Afficher les journaux horaires pour les agents",
         "helpText": "Les agents peuvent voir l’activité des journaux horaires."
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Modifier l’envoi du temps",
         "helpText": "Les agents peuvent consulter et modifier leur temps avant d’envoyer le ticket."
+      },
+      "simple_submission": {
+        "label": "Envoi du temps simplifié",
+        "helpText": "Les agents peuvent saisir une valeur en minutes avant d’envoyer le ticket."
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Journal horaire",
       "csv_export": "Exporter au format CSV",
+      "error": "Impossible de charger des journaux horaires.",
       "empty": "Aucun journal horaire à afficher"
     },
     "modal": {

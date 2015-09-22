@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Hjälper till att spåra tid som ägnas åt ärenden.",
-    "name": "Tidsuppföljning",
+    "name": "Tidkort",
     "parameters": {
       "time_field_id": {
         "label": "Tidsfält-ID",
@@ -10,10 +10,6 @@
       "time_object_field_id": {
         "label": "Konfigurationsfält-ID",
         "helpText": "ID för ett eget numeriskt fält som kommer att innehålla den tid som ägnats åt ärendet."
-      },
-      "display_timer": {
-        "label": "Display timer to agents",
-        "helpText": "Agents can see the timers for elapsed and total time on tickets."
       },
       "display_timelogs": {
         "label": "Visa tidsloggar för agenter",
@@ -34,6 +30,10 @@
       "time_submission": {
         "label": "Redigera tidsinlämning",
         "helpText": "Agenter kan granska och redigera deras tidsåtgång innan de skickar ärendet."
+      },
+      "simple_submission": {
+        "label": "Förenklad tidsinlämning",
+        "helpText": "Agenter kan ange hur lång tid det ska ta (i minuter) innan ärendet skickas in."
       }
     }
   },
@@ -61,6 +61,7 @@
     "timelogs": {
       "title": "Tidsloggar",
       "csv_export": "Exportera CSV",
+      "error": "Det går inte att läsa in tidsloggar.",
       "empty": "Det finns inga tidsloggar att visa"
     },
     "modal": {
