@@ -29,6 +29,11 @@
       "default": true
     },
     {
+      "name": "hide_from_agents",
+      "type": "checkbox",
+      "default": false
+    },
+    {
       "name": "auto_pause_resume",
       "type": "checkbox",
       "default": true
