@@ -30,7 +30,7 @@
       'app.willDestroy'         : 'onAppWillDestroy',
       'ticket.save'             : 'onTicketSave',
       'ticket.submit.done'      : 'onTicketSubmitDone',
-      'ticket.form.id.changed'  : 'onTicketFormChanged',
+      '*.changed'               : 'onAnyTicketFieldChanged',
       'ticket.updated'          : 'onTicketUpdated',
       'fetchAuditsPage.done'    : 'onFetchAuditsPageDone',
       'fetchAllAudits.done'     : 'onFetchAllAuditsDone',
@@ -88,7 +88,7 @@
       }
     },
 
-    onTicketFormChanged: function() {
+    onAnyTicketFieldChanged: function() {
       _.defer(this.hideFields.bind(this));
     },
 
@@ -349,7 +349,7 @@
       _.each([this.timeFieldLabel(), this.totalTimeFieldLabel()], function(f) {
         var field = this.ticketFields(f);
 
-        if (field) {
+        if (field && field.isVisible()) {
           field.hide();
         }
       }, this);
