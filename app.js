@@ -384,6 +384,7 @@
     updateTime: function(time) {
       if (time < 0) {
         this.resetElapsedTime();
+        time = 0;
         console.error(this.I18n.t('errors.negative_time'));
       }
       this.time(time);
