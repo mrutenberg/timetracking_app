@@ -363,7 +363,7 @@
       if (typeof time !== "undefined") {
         this.realElapsedTime = time * 1000;
       }
-      return (this.realElapsedTime / 1000) | 0;
+      return Math.floor(this.realElapsedTime / 1000);
     },
 
     setTimeLoop: function() {
