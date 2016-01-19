@@ -382,6 +382,10 @@
     },
 
     updateTime: function(time) {
+      if (time < 0) {
+        this.resetElapsedTime();
+        console.error('Time was negative? Resetting to 0.');
+      }
       this.time(time);
       this.totalTime(this.totalTime() + time);
     },
