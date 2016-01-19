@@ -41,12 +41,12 @@
       },
       "hide_from_agents": {
         "label": {
-          "value": "Hide the app from Agents",
-          "title": "This is a checkbox setting label. If the admin checks this box the app will be hidden from any agent who is not an Admin."
+          "title": "This is a checkbox setting label. If the admin checks this box the app will be hidden from any agent who is not an Admin.",
+          "value": "Hide the app from agents"
         },
         "helpText": {
-          "value": "The app will not be shown to Agents who do not have the 'Admin' role. This also prevents them from being able to see & edit the time upon submission.",
-          "title": "This is the explanation helptext of the hide_from_agents checkbox for the admin who is installing the app."
+          "title": "This is the explanation helptext of the hide_from_agents checkbox for the admin who is installing the app. It is shown for the time tracking app (app to track time spent on tickets). Submission is the ticket submission (they cannot edit the time before submitting a ticket).",
+          "value": "The app will not be shown to agents who do not have the 'Admin' role. This also prevents them from being able to see & edit the time upon submission."
         }
       },
       "manual_pause_resume": {
@@ -216,6 +216,10 @@
     "bad_time_format": {
       "title": "error message when the agent has submitted time in an incorrect format",
       "value": "Incorrect time format (HH:MM:SS)."
+    },
+    "negative_time": {
+      "title": "error message when the agent has submitted a negative time",
+      "value": "Time was negative. Resetting to 0."
     }
   }
 }

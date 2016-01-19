@@ -185,3 +185,7 @@ parts:
       key: "txt.apps.time_tracking.errors.bad_time_format"
       title: "error message when the agent has submitted time in an incorrect format"
       value: "Incorrect time format (HH:MM:SS)."
+  - translation:
+      key: "txt.apps.time_tracking.errors.negative_time"
+      title: "error message when the agent has submitted a negative time"
+      value: "Time was negative. Resetting to 0."
