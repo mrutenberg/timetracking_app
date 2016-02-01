@@ -363,7 +363,7 @@
       if (typeof time !== "undefined") {
         this.realElapsedTime = time * 1000;
       }
-      return (this.realElapsedTime / 1000) | 0;
+      return Math.floor(this.realElapsedTime / 1000);
     },
 
     setTimeLoop: function() {
@@ -382,6 +382,11 @@
     },
 
     updateTime: function(time) {
+      if (time < 0) {
+        this.resetElapsedTime();
+        time = 0;
+        console.error(this.I18n.t('errors.negative_time'));
+      }
       this.time(time);
       this.totalTime(this.totalTime() + time);
     },
