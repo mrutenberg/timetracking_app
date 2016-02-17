@@ -14,10 +14,6 @@ $VENDORS: webkit, moz, ms, o, kthml;
   #{$property}: $values;
 }
 
-&.box.app_view {
-  padding-bottom: 0px;
-}
-
 section[data-main] {
   font-family: Lucida Grande;
 }
