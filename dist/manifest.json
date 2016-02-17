@@ -8,10 +8,12 @@
   "defaultLocale": "en",
   "private": false,
   "singleInstall": true,
-  "location": [
-    "new_ticket_sidebar",
-    "ticket_sidebar"
-  ],
+  "location": {
+    "zendesk": {
+      "new_ticket_sidebar": "https://localhost:8080/iframe.html",
+      "ticket_sidebar": "https://localhost:8080/iframe.html"
+    }
+  },
   "frameworkVersion": "1.0",
   "version": "0.4.0",
   "parameters": [
