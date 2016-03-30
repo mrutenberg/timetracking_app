@@ -1,6 +1,15 @@
 (function() {
-
   'use_strict';
+
+  function getTick() {
+    // for newer browsers rely on performance.now()
+    if (performance && performance.now) {
+      return Math.floor(performance.now());
+    }
+
+    // Otherwise fall back on Date.
+    return (new Date()).valueOf();
+  }
 
   return {
     SETUP_INFO: 'https://support.zendesk.com/entries/69791168-Setting-up-the-Time-Tracking-app',
@@ -367,13 +376,13 @@
     },
 
     setTimeLoop: function() {
-      this.lastTick = new Date();
+      this.lastTick = getTick();
       this.elapsedTime(0);
 
       return setInterval(function() {
-        var now = new Date();
+        var now = getTick();
         if (!this.paused) {
-          this.realElapsedTime += now.valueOf() - this.lastTick.valueOf();
+          this.realElapsedTime += now - this.lastTick;
 
           this.updateMainView(this.elapsedTime());
         }
