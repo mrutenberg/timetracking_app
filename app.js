@@ -1,9 +1,10 @@
+/*globals performance:false */
 (function() {
   'use_strict';
 
   function getTick() {
     // for newer browsers rely on performance.now()
-    if (performance && performance.now) {
+    if (typeof performance !== 'undefined' && performance.now) {
       return Math.floor(performance.now());
     }
 
