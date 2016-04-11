@@ -433,6 +433,7 @@
     },
 
     totalTime: function(time) {
+      if (this.currentLocation() === 'new_ticket_sidebar' && typeof time === 'undefined') return 0;
       return this.getOrSetField(this.totalTimeFieldLabel(), time) || 0;
     },
 
