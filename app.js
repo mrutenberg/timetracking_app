@@ -174,7 +174,7 @@
                 time: this.TimeHelper.secondsToTimeString(parseInt(timeDiff, 10)),
                 date: new Date(audit.created_at).toLocaleString(),
                 status: status,
-                localized_status: this.I18n.t(helpers.fmt('statuses.%@', status)),
+                localized_status: status ? this.I18n.t(helpers.fmt('statuses.%@', status)) : "",
                 user: _.find(this.store('users'), function(user) {
                   return user.id === audit.author_id;
                 })
