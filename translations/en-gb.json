@@ -15,6 +15,10 @@
         "label": "Display timelogs to agents",
         "helpText": "Agents can see timelog activity on tickets."
       },
+      "hide_from_agents": {
+        "label": "Hide the app from agents",
+        "helpText": "The app will not be shown to agents who do not have the 'Admin' role. This also prevents them from being able to see & edit the time upon submission."
+      },
       "manual_pause_resume": {
         "label": "Display timer controls",
         "helpText": "Agents can manually pause or reset the timer."
@@ -76,6 +80,7 @@
       "solution": "If not, please see <a href=\"{{url}}\" target=\"_blank\">these instructions</a> and go to your ticket forms management page to finalise the setup."
     },
     "save_hook": "You need to submit your time on this ticket.",
-    "bad_time_format": "Incorrect time format (HH:MM:SS)."
+    "bad_time_format": "Incorrect time format (HH:MM:SS).",
+    "negative_time": "Time was negative. Resetting to 0."
   }
 }

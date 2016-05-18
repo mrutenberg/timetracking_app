@@ -15,6 +15,10 @@
         "label": "向代理顯示時間記錄",
         "helpText": "代理可在工單上看到時間記錄。"
       },
+      "hide_from_agents": {
+        "label": "向代理隱藏此 app",
+        "helpText": "此 app 不會顯示給未擁有「管理員」角色的代理。這樣亦可使其無法在提交後檢視和編輯時間。"
+      },
       "manual_pause_resume": {
         "label": "顯示計時器控制項",
         "helpText": "代理可手動暫停或重設計時器。"
@@ -76,6 +80,7 @@
       "solution": "若尚未設定，請檢視<a href=\"{{url}}\" target=\"_blank\">這些說明</a>，前往您的工單表單管理頁面完成設定。"
     },
     "save_hook": "您需要提交工單花費的時間。",
-    "bad_time_format": "錯誤時間格式（HH:MM:SS）。"
+    "bad_time_format": "錯誤時間格式（HH:MM:SS）。",
+    "negative_time": "時間為負數。重設為 0。"
   }
 }

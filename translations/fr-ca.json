@@ -15,6 +15,10 @@
         "label": "Afficher les journaux horaires pour les agents",
         "helpText": "Les agents peuvent voir l’activité des journaux horaires."
       },
+      "hide_from_agents": {
+        "label": "Masquer l’application pour les agents",
+        "helpText": "Les agents ne disposant pas du rôle d’administrateur ne verront pas cette application. Cela les empêche également de voir et de modifier les données de temps au moment de l’envoi."
+      },
       "manual_pause_resume": {
         "label": "Afficher les contrôles du minuteur",
         "helpText": "Les agents peuvent arrêter ou réinitialiser le minuteur manuellement."
@@ -76,6 +80,7 @@
       "solution": "Si ce n’est pas le cas, consultez <a href=\"{{url}}\" target=\"_blank\">ces instructions</a> et allez à votre page de gestion des formulaires de billets pour finaliser la configuration."
     },
     "save_hook": "Vous devez envoyer votre temps pour ce billet.",
-    "bad_time_format": "Format de temps incorrect (HH:MM:SS)."
+    "bad_time_format": "Format de temps incorrect (HH:MM:SS).",
+    "negative_time": "Le temps était négatif. Réinitialisation à 0."
   }
 }

@@ -15,6 +15,10 @@
         "label": "Tijdlogs weergeven aan agenten",
         "helpText": "Agenten kunnen de tijdlogactiviteit op de tickets zien."
       },
+      "hide_from_agents": {
+        "label": "De app verbergen voor agenten",
+        "helpText": "De app wordt niet aan agenten getoond die niet de rol Admin hebben. Hiermee wordt ook voorkomen dat ze de tijd van indiening zien en kunnen bewerken."
+      },
       "manual_pause_resume": {
         "label": "Bedieningselementen voor timer weergeven",
         "helpText": "Agenten kunnen de timer handmatig onderbreken en opnieuw instellen."
@@ -76,6 +80,7 @@
       "solution": "Als u dat niet hebt gedaan, raadpleeg dan <a href=\"{{url}}\" target=\"_blank\">deze instructies</a> en ga naar de beheerpagina voor ticketformulieren om de configuratie te voltooien."
     },
     "save_hook": "U dient uw tijd voor dit ticket in te dienen.",
-    "bad_time_format": "Onjuiste tijdnotatie (HH:MM:SS)."
+    "bad_time_format": "Onjuiste tijdnotatie (HH:MM:SS).",
+    "negative_time": "Tijd was negatief. Wordt opnieuw ingesteld op 0."
   }
 }

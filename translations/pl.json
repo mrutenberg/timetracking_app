@@ -15,6 +15,10 @@
         "label": "Pokaż rejestry czasu agentom",
         "helpText": "Rejestry czasu obsługi zgłoszeń są widoczne dla agentów."
       },
+      "hide_from_agents": {
+        "label": "Ukryj aplikację przed agentami",
+        "helpText": "Ta aplikacja nie będzie widoczna dla agentów, którzy nie mają roli Administrator. Nie będą oni też mogli zobaczyć ani edytować czasu przy wysyłaniu."
+      },
       "manual_pause_resume": {
         "label": "Pokaż elementy sterujące licznikiem",
         "helpText": "Agenci mogą ręcznie wstrzymywać lub resetować licznik."
@@ -76,6 +80,7 @@
       "solution": "Jeśli nie, zapoznaj się z <a href=\"{{url}}\" target=\"_blank\">instrukcjami</a> i przejdź do strony zarządzania formularzami zgłoszeń, aby ukończyć konfigurację."
     },
     "save_hook": "Musisz wysłać informacje o czasie poświęconym na to zgłoszenie.",
-    "bad_time_format": "Nieprawidłowy format czasu (GG:MM:SS)."
+    "bad_time_format": "Nieprawidłowy format czasu (GG:MM:SS).",
+    "negative_time": "Czas był ujemny. Zostanie zresetowany do wartości 0."
   }
 }

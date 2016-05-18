@@ -15,6 +15,10 @@
         "label": "Visa tidsloggar för agenter",
         "helpText": "Agenter kan se tidsloggsaktiviteter på ärenden."
       },
+      "hide_from_agents": {
+        "label": "Gör appen osynlig för agenter",
+        "helpText": "Appen kommer inte att visas för agenter som inte har administratörsrollen. Detta förhindrar dem även från att kunna se och redigera tiden vid inlämning."
+      },
       "manual_pause_resume": {
         "label": "Visa timerreglage",
         "helpText": "Agenter kan pausa eller återställa timern manuellt."
@@ -76,6 +80,7 @@
       "solution": "Om du inte gjorde det bör du läsa <a href=\"{{url}}\" target=\"_blank\">dessa anvisningar</a> och gå till sidan för hantering av ärendeformulär för att slutföra inställningen."
     },
     "save_hook": "Du måste skicka in den tid du ägnat åt detta ärende.",
-    "bad_time_format": "Felaktigt tidsformat (TT:MM:SS)."
+    "bad_time_format": "Felaktigt tidsformat (TT:MM:SS).",
+    "negative_time": "Tiden var ett negativt värde. Återställer till 0."
   }
 }

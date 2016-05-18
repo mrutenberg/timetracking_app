@@ -15,6 +15,10 @@
         "label": "Exibir registros de tempo para os agentes",
         "helpText": "Os agentes podem ver a atividade de registro de tempo em tickets."
       },
+      "hide_from_agents": {
+        "label": "Ocultar esse aplicativo dos agentes",
+        "helpText": "O aplicativo não será exibido para agentes sem a função de Administrador. Isso também não permite que eles vejam e editem a hora no momento do envio."
+      },
       "manual_pause_resume": {
         "label": "Exibir controles do cronômetro",
         "helpText": "Os agentes podem pausar ou redefinir manualmente o cronômetro."
@@ -76,6 +80,7 @@
       "solution": "Se não, consulte <a href=\"{{url}}\" target=\"_blank\">essas instruções</a> e vá para a página de gerenciamento de formulários de ticket para finalizar a configuração."
     },
     "save_hook": "Você precisa enviar seu tempo neste ticket.",
-    "bad_time_format": "Formato de tempo incorreto (HH:MM:SS)."
+    "bad_time_format": "Formato de tempo incorreto (HH:MM:SS).",
+    "negative_time": "Tempo negativo. Redefinindo para 0."
   }
 }

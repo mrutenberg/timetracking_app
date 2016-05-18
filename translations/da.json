@@ -15,6 +15,10 @@
         "label": "Vis agenter tidslogge",
         "helpText": "Agenter kan se tidslog-aktiviteter for tickets."
       },
+      "hide_from_agents": {
+        "label": "Skjul app’en fra agenter",
+        "helpText": "App’en vil ikke blive vist for agenter, som ikke har 'Admin'-rollen. Dette forhindrer dem også i at kunne se og redigere tiden ved indsending."
+      },
       "manual_pause_resume": {
         "label": "Vis kontrolelementer for timeren",
         "helpText": "Agenter kan standse timeren midlertidigt eller nulstille den manuelt."
@@ -76,6 +80,7 @@
       "solution": "Hvis ikke, henvises du til <a href=\"{{url}}\" target=\"_blank\">disse instruktioner,</a> og du skal åbne siden til adminstration af ticket-formularer for at afslutte installationen."
     },
     "save_hook": "Du skal indsende din tid for denne ticket.",
-    "bad_time_format": "Forkert tidsformat (TT:MM:SS)."
+    "bad_time_format": "Forkert tidsformat (TT:MM:SS).",
+    "negative_time": "Tid var negativ. Nulstiller til 0."
   }
 }
