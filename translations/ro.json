@@ -15,6 +15,10 @@
         "label": "Se afişează desfăşurătoarele pentru agenţi",
         "helpText": "Agenţii pot vedea activităţile desfăşurătorului în tichete."
       },
+      "hide_from_agents": {
+        "label": "Ascundere aplicaţie faţă de agenţi",
+        "helpText": "Aplicaţia nu va fi afişată agenţilor care nu deţin rolul „Administrator”. Aceasta previne, de asemenea, posibilitatea ca aceştia să poată vedea şi edita ora în momentul trimiterii tichetelor."
+      },
       "manual_pause_resume": {
         "label": "Se afişează controalele cronometrului",
         "helpText": "Agenţii pot să pună manual pe pauză sau să reseteze manual cronometrul."
@@ -76,6 +80,7 @@
       "solution": "Dacă nu, vă rugăm să consultaţi <a href=\"{{url}}\" target=\"_blank\">aceste instrucţiuni</a> şi să mergeţi la pagina de gestionare a formularelor pentru tichete pentru a finaliza configurarea."
     },
     "save_hook": "Trebuie să vă trimiteţi timpul petrecut cu acest tichet.",
-    "bad_time_format": "Format orar incorect (HH:MM:SS)."
+    "bad_time_format": "Format orar incorect (HH:MM:SS).",
+    "negative_time": "Durata este negativă. Se resetează la 0."
   }
 }

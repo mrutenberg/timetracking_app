@@ -15,6 +15,10 @@
         "label": "Zaman günlüklerini temsilcilere göster",
         "helpText": "Temsilciler, kayıtlar üzerindeki zaman günlüğü etkinliklerini görebilirler."
       },
+      "hide_from_agents": {
+        "label": "Uygulamayı temsilcilerden gizle",
+        "helpText": "Uygulama, “Yönetici” rolüne sahip olmayan temsilcilere gösterilmez. Bu, gönderdikten sonra zamanı görmelerini ve düzenlemelerini de engeller."
+      },
       "manual_pause_resume": {
         "label": "Zamanlayıcı kontrollerini görüntüle",
         "helpText": "Temsilciler zamanlayıcıyı manüel olarak duraklatabilir ya da sıfırlayabilir."
@@ -76,6 +80,7 @@
       "solution": "Yapmadıysanız, lütfen <a href=\"{{url}}\" target=\"_blank\">bu talimatları</a> izleyin ve kurulumu tamamlamak için kayıt formları yönetim sayfanıza gidin."
     },
     "save_hook": "Bu kayıt için harcadığınız zamanı bildirmeniz gerekiyor.",
-    "bad_time_format": "Zaman biçimi hatalı (SA:DD:SN)."
+    "bad_time_format": "Zaman biçimi hatalı (SA:DD:SN).",
+    "negative_time": "Zaman negatif bir değer olarak girilmiş. Yeniden 0’a ayarlanıyor."
   }
 }

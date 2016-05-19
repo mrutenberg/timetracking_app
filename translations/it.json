@@ -15,6 +15,10 @@
         "label": "Mostra registro temporale agli agenti",
         "helpText": "Gli agenti possono vedere le attività nel registro temporale per i ticket."
       },
+      "hide_from_agents": {
+        "label": "Nascondi app agli agenti",
+        "helpText": "L’app non sarà visibile agli agenti il cui ruolo non è di “Amministratore”. In questo modo non potranno vedere né modificare il tempo trascorso al momento dell’inoltro del ticket."
+      },
       "manual_pause_resume": {
         "label": "Mostra controlli timer",
         "helpText": "Gli agenti possono avviare o fermare il timer manualmente."
@@ -76,6 +80,7 @@
       "solution": "In caso contrario, consulta <a href=\"{{url}}\" target=\"_blank\">queste istruzioni</a> e visita la pagina di gestione dei moduli ticket per finalizzare l’impostazione."
     },
     "save_hook": "Devi indicare il tempo trascorso su questo ticket.",
-    "bad_time_format": "Formato orario errato (HH:MM:SS)."
+    "bad_time_format": "Formato orario errato (HH:MM:SS).",
+    "negative_time": "Il tempo ha un valore negativo. Verrà reimpostato a 0."
   }
 }

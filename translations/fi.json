@@ -15,6 +15,10 @@
         "label": "Näytä aikalokit tukihenkilöille",
         "helpText": "Tukihenkilöt voivat nähdä ajankäytön tiketeissä."
       },
+      "hide_from_agents": {
+        "label": "Piilota sovellus tukihenkilöiltä",
+        "helpText": "Sovellusta ei näy tukihenkilöille, joilla ei ole Järjestelmänvalvoja-roolia. Tämä estää myös heitä näkemästä ja muokkaamasta aikaa lähetyksen yhteydessä."
+      },
       "manual_pause_resume": {
         "label": "Näytä ajastimen ohjaimet",
         "helpText": "Tukihenkilöt voivat pysäyttää tai nollata ajastimen manuaalisesti."
@@ -76,6 +80,7 @@
       "solution": "Jos et, lue <a href=\"{{url}}\" target=\"_blank\">nämä ohjeet</a> ja suorita asennus loppuun tikettilomakkeiden hallintasivulla."
     },
     "save_hook": "Sinun pitää lähettää tähän tikettiin käytetty aika.",
-    "bad_time_format": "Virheellinen aikamuoto (HH:MM:SS)."
+    "bad_time_format": "Virheellinen aikamuoto (HH:MM:SS).",
+    "negative_time": "Aika oli negatiivinen. Nollataan."
   }
 }

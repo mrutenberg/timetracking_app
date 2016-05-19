@@ -15,6 +15,10 @@
         "label": "Zeitprotokolle für Agenten anzeigen",
         "helpText": "Agenten können die Zeitprotokollaktivitäten in Tickets sehen."
       },
+      "hide_from_agents": {
+        "label": "App für Agenten ausblenden",
+        "helpText": "Für Agenten, die keine Administratoren sind, ist diese App nicht sichtbar. Dadurch wird verhindert, dass sie beim Einreichen die Zeit sehen und ändern können."
+      },
       "manual_pause_resume": {
         "label": "Timerfunktionen anzeigen",
         "helpText": "Agenten können den Timer manuell anhalten oder zurücksetzen."
@@ -76,6 +80,7 @@
       "solution": "Wenn nicht, lesen Sie <a href=\"{{url}}\" target=\"_blank\">diese Anweisungen</a> und stellen Sie die Einrichtung auf der Seite zur Verwaltung von Ticketformularen fertig."
     },
     "save_hook": "Sie müssen die mit der Bearbeitung dieses Tickets verbrachte Zeit einreichen.",
-    "bad_time_format": "Falsches Zeitformat (HH:MM:SS)."
+    "bad_time_format": "Falsches Zeitformat (HH:MM:SS).",
+    "negative_time": "Die eingegebene Zeit war ein negativer Wert. Der Wert wird auf 0 zurückgesetzt."
   }
 }

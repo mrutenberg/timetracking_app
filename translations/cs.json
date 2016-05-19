@@ -15,6 +15,10 @@
         "label": "Zobrazit časové záznamy agentům",
         "helpText": "Agenti mohou zobrazit aktivitu časového záznamu na tiketech."
       },
+      "hide_from_agents": {
+        "label": "Skrýt tuto aplikaci pro agenty",
+        "helpText": "Aplikace se nezobrazí agentům, kteří nemají roli „Administrátor“. Tito agenti také neuvidí a nebudou moci změnit čas příspěvku."
+      },
       "manual_pause_resume": {
         "label": "Zobrazit ovládací prvky časovače",
         "helpText": "Agenti mohou časovač ručně pozastavit nebo vynulovat."
@@ -76,6 +80,7 @@
       "solution": "Pokud tomu tak není, prostudujte si prosím <a href=\"{{url}}\" target=\"_blank\">tyto pokyny</a>, přejděte na stránku správy formulářů tiketů a instalaci dokončete."
     },
     "save_hook": "Musíte odeslat dobu, kterou jste strávili na tomto tiketu.",
-    "bad_time_format": "Nesprávný formát doby (HH:MM:SS)."
+    "bad_time_format": "Nesprávný formát doby (HH:MM:SS).",
+    "negative_time": "Doba byla záporná. Nastavena na 0."
   }
 }

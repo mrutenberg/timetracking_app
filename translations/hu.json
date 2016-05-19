@@ -15,6 +15,10 @@
         "label": "Időbeosztás kijelzése a munkatársaknak",
         "helpText": "Munkatársak megtekinthetik az időnapló tevékenységet a jegynél."
       },
+      "hide_from_agents": {
+        "label": "Rejtse el az alkalmazást a munkatársak elől",
+        "helpText": "Az alkalmazás nem fog megjelenni azoknak a munkatársaknak akik nem rendelkeznek a 'Rendszergazda' szereppel. Ez tehát megakadályozza a számukra, hogy képesek legyenek megnézni vagy szerkeszteni az idő függő beküldést."
+      },
       "manual_pause_resume": {
         "label": "Időkorlátok kijelzése",
         "helpText": "Munkatársak manuálisan szüneteltethetik vagy visszaállíthatják a számlálót."
@@ -76,6 +80,7 @@
       "solution": "Ha nem, kérem kövesse: <a href=\"{{url}}\" target=\"_blank\">ezeket az utasításokat</a>  és menjen a jegy bejelentés kezelő oldalra a beállítások befejezéséhez. "
     },
     "save_hook": "Meg kell mutatnia az időt ezen a jegyen. ",
-    "bad_time_format": "Helytelen idő formátum (HH:MM:SS)."
+    "bad_time_format": "Helytelen idő formátum (HH:MM:SS).",
+    "negative_time": "Az idő negatív volt. Visszaállítva 0-ra."
   }
 }

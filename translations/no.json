@@ -15,6 +15,10 @@
         "label": "Vis tidslogg til kundekonsulentene",
         "helpText": "Kundekonsulentene kan se aktivitet i tidsloggen for sakene."
       },
+      "hide_from_agents": {
+        "label": "Skjul appen fra kundekonsulentene",
+        "helpText": "Appen vil ikke bli vist til kundekonsulenter som ikke har rollen «Admin». De kan heller ikke se og redigere tiden før saken sendes inn."
+      },
       "manual_pause_resume": {
         "label": "Vis tidtakerkontroller",
         "helpText": "Kundekonsulentene kan manuelt stanse eller tilbakestille tidtakeren."
@@ -76,6 +80,7 @@
       "solution": "Hvis ikke, kan du lese <a href=\"{{url}}\" target=\"_blank\">disse instruksjonene</a> og gå til siden for saksskjemabehandling for å konfigurere ferdig."
     },
     "save_hook": "Du må sende inn tiden brukt på denne saken.",
-    "bad_time_format": "Feil tidsformat (TT:MM:SS)."
+    "bad_time_format": "Feil tidsformat (TT:MM:SS).",
+    "negative_time": "Tiden var negativ. Tilbakestiller til 0."
   }
 }

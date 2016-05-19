@@ -15,6 +15,10 @@
         "label": "Mostrar registros de tiempo a los agentes",
         "helpText": "Los agentes pueden ver la actividad del registro de tiempo en los tickets."
       },
+      "hide_from_agents": {
+        "label": "Ocultar la aplicación para que no la vean los agentes",
+        "helpText": "Los agentes que no tengan el rol de \"Administrador\" no verán la aplicación. Esto también evita que puedan ver y editar el tiempo durante el envío."
+      },
       "manual_pause_resume": {
         "label": "Mostrar controles del temporizador",
         "helpText": "Los agentes pueden detener o restablecer manualmente el temporizador."
@@ -76,6 +80,7 @@
       "solution": "De no ser así, consulte <a href=\"{{url}}\" target=\"_blank\">estas instrucciones</a> y vaya a la página de gestión de sus formularios de ticket para finalizar la configuración."
     },
     "save_hook": "Tiene que enviar su tiempo para este ticket.",
-    "bad_time_format": "Formato de tiempo incorrecto (HH:MM:SS)."
+    "bad_time_format": "Formato de tiempo incorrecto (HH:MM:SS).",
+    "negative_time": "El tiempo era negativo. Se restablecerá en 0."
   }
 }
