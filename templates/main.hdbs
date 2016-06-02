@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button class="btn" aria-hidden="true" data-dismiss="modal">{{t "views.modal.close"}} (<span class="modal-timer">15</span>)</button>
+    <button class="btn modal-cancel" aria-hidden="true" data-dismiss="modal">{{t "views.modal.close"}} (<span class="modal-timer">15</span>)</button>
     <button class="btn btn-primary modal-save">{{t "views.modal.save"}}</button>
   </div>
 </div>

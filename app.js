@@ -50,6 +50,7 @@
       'click .modal-save'       : 'onModalSaveClicked',
       'shown .modal'            : 'onModalShown',
       'hidden .modal'           : 'onModalHidden',
+      'click .modal-cancel'     : 'onModalHidden',
       'click .expand-bar'       : 'onTimelogsClicked'
     },
 
